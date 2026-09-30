@@ -163,7 +163,7 @@ function ActivationForm() {
                 type="text"
                 value={activationKey}
                 onChange={handleKeyChange}
-                placeholder="OURO-XXXX-XXXX-XXXX"
+                placeholder="SERP-XXXX-XXXX-XXXX"
                 disabled={loading || !!successData}
                 className="w-full bg-zinc-950/60 border border-zinc-800 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-950/30 rounded-xl px-4 py-3.5 text-white font-mono text-center tracking-widest text-lg outline-none transition disabled:opacity-50 uppercase placeholder:text-zinc-700"
                 maxLength={19}

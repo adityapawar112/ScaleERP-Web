@@ -48,14 +48,16 @@ export default function Home() {
           
           <BlurIn delay={0.4}>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4 z-20 relative w-full sm:w-auto">
-              <Link href="/pricing" passHref>
-                <Button size="lg" className="bg-navy hover:bg-navy/90 text-white rounded-lg px-8 h-14 text-base w-full sm:w-auto flex items-center gap-2 group shadow-sm transition-all border border-navy/20">
-                  {t('view_pricing', 'View Pricing')} <FaArrowRight className="text-sm group-hover:translate-x-1 transition-transform opacity-70" />
+              <Link href="/demo" passHref>
+                <Button size="lg" className="bg-terracotta hover:bg-terracotta/90 text-white rounded-lg px-8 h-14 text-base w-full sm:w-auto flex items-center gap-2 group shadow-sm transition-all border border-terracotta/20">
+                  {t('demo_badge', 'Free Trial License')} <FaArrowRight className="text-sm group-hover:translate-x-1 transition-transform opacity-70" />
                 </Button>
               </Link>
-              <Button size="lg" variant="outline" className="bg-background/70 backdrop-blur-md border-border/60 text-foreground hover:bg-background/90 rounded-lg px-8 h-14 text-base w-full sm:w-auto shadow-sm">
-                {t('explore_platform', 'Explore the Platform')}
-              </Button>
+              <Link href="/pricing" passHref>
+                <Button size="lg" variant="outline" className="bg-background/70 backdrop-blur-md border-border/60 text-foreground hover:bg-background/90 rounded-lg px-8 h-14 text-base w-full sm:w-auto shadow-sm">
+                  {t('view_pricing', 'View Pricing')}
+                </Button>
+              </Link>
             </div>
           </BlurIn>
           
@@ -219,12 +221,16 @@ export default function Home() {
           </div>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-            <Button size="lg" className="bg-terracotta hover:bg-[#9c4623] text-white rounded-lg px-10 h-14 text-base w-full sm:w-auto font-medium transition-colors">
-              {t('get_started', 'Get Started')}
-            </Button>
-            <Button size="lg" variant="outline" className="border-white/20 bg-white/5 hover:bg-white/10 text-white rounded-lg px-10 h-14 text-base w-full sm:w-auto font-medium transition-colors backdrop-blur-md">
-              {t('talk_sales', 'Talk to Sales')}
-            </Button>
+            <Link href="/demo" passHref>
+              <Button size="lg" className="bg-terracotta hover:bg-[#9c4623] text-white rounded-lg px-10 h-14 text-base w-full sm:w-auto font-medium transition-colors">
+                {t('demo_badge', 'Free Trial License')}
+              </Button>
+            </Link>
+            <Link href="/contact" passHref>
+              <Button size="lg" variant="outline" className="border-white/20 bg-white/5 hover:bg-white/10 text-white rounded-lg px-10 h-14 text-base w-full sm:w-auto font-medium transition-colors backdrop-blur-md">
+                {t('talk_sales', 'Talk to Sales')}
+              </Button>
+            </Link>
           </div>
           
         </div>

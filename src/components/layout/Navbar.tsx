@@ -57,7 +57,7 @@ export function Navbar() {
         <div className="flex gap-6 md:gap-10">
           <Link href="/" className="flex items-center space-x-2">
             <span className="font-bebas text-2xl font-bold tracking-wider text-terracotta">
-              {t('OUROFEEDS')}
+              ScaleERP
             </span>
           </Link>
           <NavigationMenu className="hidden md:flex">
@@ -183,8 +183,10 @@ export function Navbar() {
               {t('activateLicense', 'Activate License')}
             </Link>
           </Button>
-          <Button className="bg-terracotta text-white hover:bg-terracotta/90 rounded-lg px-6">
-            {t('bookDemo', 'Book Demo')}
+          <Button asChild className="bg-terracotta text-white hover:bg-terracotta/90 rounded-lg px-6">
+            <Link href="/demo">
+              {t('demo_badge', 'Free Trial')}
+            </Link>
           </Button>
         </div>
 
@@ -227,8 +229,10 @@ export function Navbar() {
                       {t('activateLicense', 'Activate License')}
                     </Link>
                   </Button>
-                  <Button className="w-full justify-center bg-terracotta text-white hover:bg-terracotta/90">
-                    {t('bookDemo', 'Book Demo')}
+                  <Button asChild className="w-full justify-center bg-terracotta text-white hover:bg-terracotta/90">
+                    <Link href="/demo">
+                      {t('demo_badge', 'Free Trial')}
+                    </Link>
                   </Button>
                 </div>
               </nav>

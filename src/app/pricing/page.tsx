@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { TopographicPattern } from "@/components/ui/topographic-pattern";
 import { useTranslation } from "react-i18next";
 import { Check, Zap, HardDrive, Download, ChevronRight, Key, Server, Cpu } from "lucide-react";
@@ -159,8 +160,10 @@ export default function PricingPage() {
               </div>
             </CardContent>
             <CardFooter className="pb-8">
-              <Button className="w-full h-12 text-md" variant="outline">
-                {t("pricing_cta_primary")}
+              <Button asChild className="w-full h-12 text-md" variant="outline">
+                <Link href="/demo">
+                  {t("pricing_cta_primary")}
+                </Link>
               </Button>
             </CardFooter>
           </Card>
@@ -207,8 +210,10 @@ export default function PricingPage() {
               </div>
             </CardContent>
             <CardFooter className="pb-8">
-              <Button className="w-full h-12 text-md bg-terracotta hover:bg-[#C96B50] text-white">
-                {t("pricing_cta_primary")}
+              <Button asChild className="w-full h-12 text-md bg-terracotta hover:bg-[#C96B50] text-white">
+                <Link href="/demo">
+                  {t("pricing_cta_primary")}
+                </Link>
               </Button>
             </CardFooter>
           </Card>

@@ -18,7 +18,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-1">
             <span className="font-bebas text-3xl font-bold tracking-wider text-terracotta mb-4 block">
-              {t('OUROFEEDS')}
+              ScaleERP
             </span>
             <p className="text-sm text-gray-300 font-public mb-6">
               {t('Rooted in Soil, Empowered by Precision. The lightning-fast, ')}<JargonTooltip explanation={t("Works without an active internet connection by saving data locally on your device.")}>{t('offline-first')}</JargonTooltip>{t(' inventory and ledger engine built explicitly for India’s feed stores.')}
@@ -33,6 +33,8 @@ export function Footer() {
               <li><Link href="/product/use-cases/wholesale-brokers" className="hover:text-terracotta transition-colors">{t('Wholesale Brokers')}</Link></li>
               <li><Link href="/product/features/comparison" className="hover:text-terracotta transition-colors">{t('Compare to Tally')}</Link></li>
               <li><Link href="/pricing" className="hover:text-terracotta transition-colors">{t('pricing', 'Pricing')}</Link></li>
+              <li><Link href="/demo" className="hover:text-terracotta transition-colors">{t('demo_badge', 'Free Trial License')}</Link></li>
+              <li><Link href="/download" className="hover:text-terracotta transition-colors">{t('Download Client', 'Download Client')}</Link></li>
               <li><Link href="/activate" className="hover:text-terracotta transition-colors">{t('activateLicense', 'License Activation')}</Link></li>
             </ul>
           </div>
@@ -93,7 +95,7 @@ export function Footer() {
           </p>
           <div className="mt-4 md:mt-0 flex items-center space-x-2">
             <span className="text-xs text-gray-400 font-public uppercase tracking-widest">{t('Engineered By')}</span>
-            <span className="font-bebas text-xl tracking-wider text-white">{t('OUROSCALE')}</span>
+            <span className="font-bebas text-xl tracking-wider text-white">ScaleERP</span>
           </div>
         </div>
       </div>
