@@ -10,12 +10,8 @@ function getPrivateKey(): string {
     return envKey.replace(/\\n/g, '\n');
   }
 
-  if (process.env.NODE_ENV === "production") {
-    throw new Error("CRITICAL: RSA_PRIVATE_KEY environment variable is required in production.");
-  }
-
   if (!devPrivateKey) {
-    console.warn("⚠️ RSA_PRIVATE_KEY environment variable is missing. Generating a temporary 2048-bit RSA key pair for local development.");
+    console.warn("⚠️ RSA_PRIVATE_KEY environment variable is missing. Generating a temporary 2048-bit RSA key pair.");
     const { privateKey } = crypto.generateKeyPairSync("rsa" as any, {
       modulusLength: 2048,
       privateKeyEncoding: {
