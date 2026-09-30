@@ -3,6 +3,17 @@ import crypto from "crypto";
 // Cached in-memory key for local dev if environment variable is missing
 let devPrivateKey: string | null = null;
 
+function formatPem(raw: string): string {
+  const cleanBase64 = raw
+    .replace(/-----BEGIN [^-]+-----/g, '')
+    .replace(/-----END [^-]+-----/g, '')
+    .replace(/\\n/g, '')
+    .replace(/\s+/g, '');
+
+  const chunks = cleanBase64.match(/.{1,64}/g) || [];
+  return `-----BEGIN PRIVATE KEY-----\n${chunks.join('\n')}\n-----END PRIVATE KEY-----\n`;
+}
+
 function getPrivateKey(): string {
   let envKey = process.env.RSA_PRIVATE_KEY;
   if (envKey) {
@@ -10,7 +21,7 @@ function getPrivateKey(): string {
     if ((envKey.startsWith('"') && envKey.endsWith('"')) || (envKey.startsWith("'") && envKey.endsWith("'"))) {
       envKey = envKey.slice(1, -1);
     }
-    return envKey.replace(/\\\\n/g, '\n').replace(/\\n/g, '\n').replace(/\r/g, '').trim();
+    return formatPem(envKey);
   }
 
   if (!devPrivateKey) {
