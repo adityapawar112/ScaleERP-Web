@@ -1,4 +1,4 @@
-﻿---
+---
 name: ScaleERP Web
 description: Premium Offline Inventory & Ledger Software for Feed Stores
 colors:

@@ -1,4 +1,4 @@
-﻿# Product Context
+# Product Context
 
 ## Purpose
 ScaleERP-Web exists to provide a premium, modern user interface for the ScaleERP ecosystem.

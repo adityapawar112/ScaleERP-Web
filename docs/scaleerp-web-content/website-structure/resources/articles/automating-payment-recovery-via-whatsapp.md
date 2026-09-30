@@ -1,4 +1,4 @@
-﻿# Automating Payment Recovery via WhatsApp
+# Automating Payment Recovery via WhatsApp
 
 *Stop making awkward phone calls. Use WhatsApp automation to collect pending dues faster.*
 

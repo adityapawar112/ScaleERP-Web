@@ -1,4 +1,4 @@
-﻿import { Metadata } from "next";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "ScaleERP Features | Complete Offline Inventory & Ledger Engine",

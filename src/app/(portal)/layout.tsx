@@ -1,4 +1,4 @@
-﻿import { Bebas_Neue, Public_Sans } from "next/font/google";
+import { Bebas_Neue, Public_Sans } from "next/font/google";
 import type { Metadata } from "next";
 
 const bebasNeue = Bebas_Neue({

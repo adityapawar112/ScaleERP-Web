@@ -1,4 +1,4 @@
-﻿# Project Brief: ScaleERP-Web
+# Project Brief: ScaleERP-Web
 
 ## Core Requirements & Goals
 ScaleERP-Web is a modern web application designed with a high standard of visual excellence and dynamic design.

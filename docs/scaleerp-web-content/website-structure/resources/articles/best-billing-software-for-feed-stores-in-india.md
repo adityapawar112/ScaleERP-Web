@@ -1,4 +1,4 @@
-﻿# Best Billing Software for Feed Stores in India
+# Best Billing Software for Feed Stores in India
 
 *Discover the unique challenges of a cattle and poultry feed store and why standard POS systems fail.*
 

@@ -1,4 +1,4 @@
-﻿# Tally Prime vs. ScaleERP for Retail Counters
+# Tally Prime vs. ScaleERP for Retail Counters
 
 *While Tally is the gold standard for CA compliance, is it the right tool for your checkout counter?*
 

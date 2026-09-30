@@ -1,4 +1,4 @@
-﻿# Managing Multiple Godowns Effectively
+# Managing Multiple Godowns Effectively
 
 *How to stop stock-outs and track inventory across multiple warehouses without manual counting.*
 

@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 
 export const SafariMockup = ({ children, url = "scaleerp.com" }: { children: React.ReactNode; url?: string }) => {
   return (

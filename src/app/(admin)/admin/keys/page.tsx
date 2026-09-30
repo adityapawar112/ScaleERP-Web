@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState, useEffect } from "react";
 import { Key, RotateCcw, ShieldAlert, ShieldCheck, Database, Server, CalendarPlus, Ban, Clock, Copy, User } from "lucide-react";

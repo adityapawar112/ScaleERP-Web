@@ -1,4 +1,4 @@
-﻿import Link from 'next/link';
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getDocsNav } from '@/lib/docs';
 import { FileText, ArrowRight } from 'lucide-react';

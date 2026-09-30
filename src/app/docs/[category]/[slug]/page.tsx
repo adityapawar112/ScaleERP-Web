@@ -1,4 +1,4 @@
-﻿import { notFound } from 'next/navigation';
+import { notFound } from 'next/navigation';
 import { getDocContent, getDocsNav } from '@/lib/docs';
 import { MarkdownRenderer } from '@/components/docs/MarkdownRenderer';
 

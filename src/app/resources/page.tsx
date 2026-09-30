@@ -1,4 +1,4 @@
-﻿import Link from 'next/link';
+import Link from 'next/link';
 import { Search, ArrowRight, Mail } from 'lucide-react';
 import { getAllResources } from '@/lib/resources';
 

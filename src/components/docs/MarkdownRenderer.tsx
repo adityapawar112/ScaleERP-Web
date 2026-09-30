@@ -50,11 +50,12 @@ function processTextNodes(children: React.ReactNode): React.ReactNode {
     return children.map((child, i) => <React.Fragment key={i}>{processTextNodes(child)}</React.Fragment>);
   }
   if (React.isValidElement(children)) {
-    return React.cloneElement(children, {
-      ...children.props,
-      // @ts-ignore - ReactMarkdown elements can have children
-      children: processTextNodes(children.props.children)
-    });
+    const props = (children.props || {}) as Record<string, any>;
+    return React.cloneElement(
+      children as React.ReactElement<any>,
+      props,
+      processTextNodes(props.children) as any
+    );
   }
   return children;
 }

@@ -1,4 +1,4 @@
-﻿import { Metadata } from "next";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "About ScaleERP | Engineered by ScaleERP for Indian Agriculture",

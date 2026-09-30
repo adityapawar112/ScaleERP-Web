@@ -1,4 +1,4 @@
-﻿# Standardized Non-Home Page Pattern
+# Standardized Non-Home Page Pattern
 
 To maintain a consistent and premium visual identity across ScaleERP Web, all non-home pages (e.g., Pricing, About, Contact, Case Studies) must adhere to the following structural patterns for their Hero sections, content sections, and Call-to-Action (CTA) sections.
 

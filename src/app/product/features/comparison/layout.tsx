@@ -1,4 +1,4 @@
-﻿import { Metadata } from "next";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "ScaleERP vs Legacy ERPs (Tally/Marg) | Best Software for Feed Stores",
