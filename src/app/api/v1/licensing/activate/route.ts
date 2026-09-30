@@ -231,7 +231,7 @@ export async function POST(req: NextRequest) {
   } catch (error: any) {
     console.error("Activation error:", error);
     return NextResponse.json(
-      { success: false, message: "Internal server error occurred during activation." },
+      { success: false, message: error?.message || "Internal server error occurred during activation.", error: String(error) },
       { status: 500 }
     );
   }
