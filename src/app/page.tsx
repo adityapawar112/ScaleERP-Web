@@ -17,26 +17,26 @@ export default function Home() {
   const { t } = useTranslation();
 
   return (
-    <div className="flex flex-col w-full bg-background selection:bg-terracotta/20 relative">
+    <div className="flex flex-col w-full bg-background selection:bg-brand-primary/20 relative">
       
       {/* 1. Hero Section */}
       <section className="relative w-full pt-24 pb-20 md:pt-36 md:pb-32 flex flex-col items-center justify-center text-center px-4 overflow-hidden">
         
-        {/* New Organic Farm Field SVG Pattern */}
+        {/* Organic Farm Field SVG Pattern with subtle opacity */}
         <FarmHeroPattern />
         
         {/* Subtle Radial Glow in center to ensure text readability */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-background/40 rounded-full blur-[100px] z-0 pointer-events-none"></div>
         
         <div className="z-10 max-w-5xl space-y-10 w-full flex flex-col items-center">
-          <Badge variant="outline" className="text-terracotta border-terracotta/20 bg-background/70 backdrop-blur-md px-5 py-1.5 text-xs font-medium tracking-wide uppercase rounded-full shadow-sm">
+          <Badge variant="outline" className="text-brand-dark dark:text-brand-primary border-brand-primary/40 bg-background/80 backdrop-blur-md px-5 py-1.5 text-xs font-semibold tracking-wide uppercase rounded-full shadow-sm">
             {t('hero_badge', 'Rooted in Soil, Empowered by Precision')}
           </Badge>
           
           <BlurIn delay={0}>
-            <h1 className="text-5xl md:text-[5.5rem] leading-[1.05] font-heading tracking-tight text-foreground drop-shadow-sm">
+            <h1 className="text-5xl md:text-[5.5rem] leading-[1.05] font-heading font-extrabold tracking-tight text-foreground drop-shadow-sm">
               {t('hero_title_1', 'Reclaim Your Counter.')}<br />
-              <span className="text-terracotta italic">{t('hero_title_2', 'Master Your Stock.')}</span>
+              <span className="text-brand-primary italic">{t('hero_title_2', 'Master Your Stock.')}</span>
             </h1>
           </BlurIn>
           
@@ -49,7 +49,7 @@ export default function Home() {
           <BlurIn delay={0.4}>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4 z-20 relative w-full sm:w-auto">
               <Link href="/demo" passHref>
-                <Button size="lg" className="bg-terracotta hover:bg-terracotta/90 text-white rounded-lg px-8 h-14 text-base w-full sm:w-auto flex items-center gap-2 group shadow-sm transition-all border border-terracotta/20">
+                <Button size="lg" className="bg-brand-primary hover:bg-brand-primary/90 text-brand-dark font-bold rounded-lg px-8 h-14 text-base w-full sm:w-auto flex items-center gap-2 group shadow-sm transition-all border border-brand-primary/20">
                   {t('demo_badge', 'Free Trial License')} <FaArrowRight className="text-sm group-hover:translate-x-1 transition-transform opacity-70" />
                 </Button>
               </Link>
@@ -222,7 +222,7 @@ export default function Home() {
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
             <Link href="/demo" passHref>
-              <Button size="lg" className="bg-terracotta hover:bg-[#9c4623] text-white rounded-lg px-10 h-14 text-base w-full sm:w-auto font-medium transition-colors">
+              <Button size="lg" className="bg-terracotta hover:bg-terracotta/90 text-white rounded-lg px-10 h-14 text-base w-full sm:w-auto font-medium transition-colors">
                 {t('demo_badge', 'Free Trial License')}
               </Button>
             </Link>

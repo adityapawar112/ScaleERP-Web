@@ -134,7 +134,7 @@ export default function ComparisonPage() {
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link href="/contact" passHref>
-            <Button size="lg" className="w-full sm:w-auto h-14 px-8 text-base bg-terracotta hover:bg-[#C96B50] text-white">
+            <Button size="lg" className="w-full sm:w-auto h-14 px-8 text-base bg-terracotta hover:bg-terracotta/90 text-white">
               {t("comp_cta_primary")} <ChevronRight className="ml-2 h-5 w-5" />
             </Button>
           </Link>

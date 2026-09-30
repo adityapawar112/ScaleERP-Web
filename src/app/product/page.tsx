@@ -102,7 +102,7 @@ export default function ProductOverviewPage() {
           {t("Get a hands-on demo of the ScaleERP engine today.", "Get a hands-on demo of the ScaleERP engine today.")}
         </p>
         <Link href="/contact" passHref>
-          <Button size="lg" className="h-14 px-10 text-base bg-terracotta hover:bg-[#C96B50] text-white rounded-lg">
+          <Button size="lg" className="h-14 px-10 text-base bg-terracotta hover:bg-terracotta/90 text-white rounded-lg">
             {t("Book a Demo", "Book a Demo")}
           </Button>
         </Link>

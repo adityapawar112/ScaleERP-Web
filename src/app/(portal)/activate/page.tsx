@@ -126,7 +126,7 @@ function ActivationForm() {
   return (
     <div className="w-full max-w-4xl mx-auto space-y-8 font-public">
       <div className="text-center space-y-3">
-        <h1 className="font-heading font-bebas text-5xl md:text-6xl tracking-widest text-[#004B72] dark:text-cyan-400 uppercase drop-shadow-md">
+        <h1 className="font-heading font-bebas text-5xl md:text-6xl tracking-widest text-brand-primary dark:text-brand-primary uppercase drop-shadow-md">
           {t('Offline Licensing Authority')}
         </h1>
         <p className="text-sm md:text-base text-zinc-400 max-w-2xl mx-auto font-medium">
@@ -138,7 +138,7 @@ function ActivationForm() {
         {/* Left Column: Form */}
         <div className="md:col-span-7 bg-zinc-900/40 border border-zinc-800 backdrop-blur-md rounded-lg p-6 md:p-8 flex flex-col justify-between shadow-2xl relative overflow-hidden group">
           {/* Subtle glow accent */}
-          <div className="absolute top-0 right-0 w-32 h-32 bg-[#004B72]/10 rounded-full blur-3xl group-hover:bg-[#004B72]/15 transition-all"></div>
+          <div className="absolute top-0 right-0 w-32 h-32 bg-brand-primary/10 rounded-full blur-3xl group-hover:bg-brand-primary/15 transition-all"></div>
           
           <form onSubmit={handleSubmit} className="space-y-6">
             <h2 className="font-heading text-lg font-bold tracking-tight text-white border-b border-zinc-800/80 pb-3 flex items-center gap-2">
@@ -197,7 +197,7 @@ function ActivationForm() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-[#004B72] hover:bg-[#004B72]/90 text-white font-bold py-4 px-6 rounded-xl transition shadow-lg shadow-[#004B72]/20 flex items-center justify-center gap-2 outline-none focus:ring-2 focus:ring-cyan-400/50 disabled:opacity-50 cursor-pointer"
+                className="w-full bg-brand-primary hover:bg-brand-primary/90 text-brand-dark font-bold py-4 px-6 rounded-xl transition shadow-lg shadow-brand-primary/20 flex items-center justify-center gap-2 outline-none focus:ring-2 focus:ring-brand-primary/50 disabled:opacity-50 cursor-pointer"
               >
                 {loading ? (
                   <span className="inline-block size-5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
@@ -264,7 +264,7 @@ function ActivationForm() {
             <div className="space-y-4">
               {/* Step 1 */}
               <div className="flex gap-3">
-                <span className="flex items-center justify-center size-5 bg-[#004B72] text-white text-xs font-bold rounded-full mt-0.5 shrink-0">
+                <span className="flex items-center justify-center size-5 bg-brand-primary text-brand-dark text-xs font-bold rounded-full mt-0.5 shrink-0">
                   1
                 </span>
                 <div className="space-y-1">
@@ -277,7 +277,7 @@ function ActivationForm() {
 
               {/* Step 2 */}
               <div className="flex gap-3">
-                <span className="flex items-center justify-center size-5 bg-[#004B72] text-white text-xs font-bold rounded-full mt-0.5 shrink-0">
+                <span className="flex items-center justify-center size-5 bg-brand-primary text-brand-dark text-xs font-bold rounded-full mt-0.5 shrink-0">
                   2
                 </span>
                 <div className="space-y-1">
@@ -290,7 +290,7 @@ function ActivationForm() {
 
               {/* Step 3 */}
               <div className="flex gap-3">
-                <span className="flex items-center justify-center size-5 bg-[#004B72] text-white text-xs font-bold rounded-full mt-0.5 shrink-0">
+                <span className="flex items-center justify-center size-5 bg-brand-primary text-brand-dark text-xs font-bold rounded-full mt-0.5 shrink-0">
                   3
                 </span>
                 <div className="space-y-1">
@@ -303,7 +303,7 @@ function ActivationForm() {
 
               {/* Step 4 */}
               <div className="flex gap-3">
-                <span className="flex items-center justify-center size-5 bg-[#004B72] text-white text-xs font-bold rounded-full mt-0.5 shrink-0">
+                <span className="flex items-center justify-center size-5 bg-brand-primary text-brand-dark text-xs font-bold rounded-full mt-0.5 shrink-0">
                   4
                 </span>
                 <div className="space-y-1">
@@ -332,7 +332,7 @@ export default function ActivatePage() {
   return (
     <main className="min-h-screen py-12 px-4 md:px-8 flex items-center justify-center relative overflow-hidden">
       {/* Visual background lines */}
-      <div className="absolute top-1/4 left-1/4 size-80 bg-[#004B72]/5 rounded-full blur-[100px] pointer-events-none"></div>
+      <div className="absolute top-1/4 left-1/4 size-80 bg-brand-primary/5 rounded-full blur-[100px] pointer-events-none"></div>
       <div className="absolute bottom-1/4 right-1/4 size-80 bg-cyan-900/5 rounded-full blur-[100px] pointer-events-none"></div>
       
       <Suspense fallback={

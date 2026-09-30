@@ -52,11 +52,27 @@ export function Navbar() {
   }, []);
 
   return (
-    <header className={`sticky top-0 z-50 w-full transition-colors duration-300 ${isOverDarkSection ? 'dark bg-[#0a0a0a]/80 backdrop-blur-md border-b border-white/10 text-white' : 'bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border'}`}>
+    <header className={`sticky top-0 z-50 w-full transition-colors duration-300 ${isOverDarkSection ? 'dark bg-dark/80 backdrop-blur-md border-b border-white/10 text-white' : 'bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border'}`}>
       <div className="container flex h-16 items-center justify-between">
         <div className="flex gap-6 md:gap-10">
-          <Link href="/" className="flex items-center space-x-2">
-            <span className="font-bebas text-2xl font-bold tracking-wider text-terracotta">
+          <Link href="/" className="flex items-center gap-2.5 group">
+            {/* Light mode brand icon */}
+            <img
+              src="/brand/logomark-icon-green.png"
+              alt="ScaleERP Logo"
+              className={`h-7 w-auto object-contain transition-transform group-hover:scale-105 ${
+                isOverDarkSection ? 'hidden' : 'block dark:hidden'
+              }`}
+            />
+            {/* Dark mode brand icon */}
+            <img
+              src="/brand/app-icon-square-dark-green.png"
+              alt="ScaleERP Logo"
+              className={`h-7 w-auto object-contain transition-transform group-hover:scale-105 rounded-sm ${
+                isOverDarkSection ? 'block' : 'hidden dark:block'
+              }`}
+            />
+            <span className="font-logo font-bold text-2xl tracking-tight text-foreground">
               ScaleERP
             </span>
           </Link>
@@ -177,13 +193,13 @@ export function Navbar() {
         <div className="hidden md:flex items-center space-x-4">
           <LanguageSwitcher />
           <ThemeToggle />
-          <Button asChild variant="outline" className="border-terracotta text-terracotta hover:bg-terracotta/10 flex items-center gap-2">
+          <Button asChild variant="outline" className="border-brand-primary text-brand-dark dark:text-brand-primary hover:bg-brand-primary/10 flex items-center gap-2 font-medium">
             <Link href="/activate">
-              <FaKey className="w-4 h-4" />
+              <FaKey className="w-4 h-4 text-brand-primary" />
               {t('activateLicense', 'Activate License')}
             </Link>
           </Button>
-          <Button asChild className="bg-terracotta text-white hover:bg-terracotta/90 rounded-lg px-6">
+          <Button asChild className="bg-brand-primary text-brand-dark hover:bg-brand-primary/90 font-bold rounded-lg px-6">
             <Link href="/demo">
               {t('demo_badge', 'Free Trial')}
             </Link>
@@ -200,36 +216,51 @@ export function Navbar() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-              <nav className="flex flex-col gap-4 mt-8">
+              <div className="flex items-center gap-3 pt-2 pb-2">
+                <img
+                  src="/brand/logomark-icon-green.png"
+                  alt="ScaleERP Logo"
+                  className="h-7 w-auto object-contain block dark:hidden"
+                />
+                <img
+                  src="/brand/app-icon-square-dark-green.png"
+                  alt="ScaleERP Logo"
+                  className="h-7 w-auto object-contain rounded-sm hidden dark:block"
+                />
+                <span className="font-logo font-bold text-2xl tracking-tight text-foreground">
+                  ScaleERP
+                </span>
+              </div>
+              <nav className="flex flex-col gap-4 mt-4">
                 <div className="flex items-center gap-4 mb-4 border-b pb-4">
                   <LanguageSwitcher />
                   <ThemeToggle />
                 </div>
-                <Link href="/" className="text-lg font-medium hover:text-terracotta">{t('home', 'Home')}</Link>
-                <Link href="/pricing" className="text-lg font-medium hover:text-terracotta">{t('pricing', 'Pricing')}</Link>
+                <Link href="/" className="text-lg font-medium hover:text-brand-primary">{t('home', 'Home')}</Link>
+                <Link href="/pricing" className="text-lg font-medium hover:text-brand-primary">{t('pricing', 'Pricing')}</Link>
                 <div className="flex flex-col gap-2">
                   <span className="text-lg font-medium text-zinc-500">{t('Features')}</span>
-                  <Link href="/product/features/platform" className="text-base font-medium hover:text-terracotta pl-4 border-l-2 border-zinc-200 dark:border-zinc-800 ml-1">{t('Platform')}</Link>
-                  <Link href="/product/features/tools" className="text-base font-medium hover:text-terracotta pl-4 border-l-2 border-zinc-200 dark:border-zinc-800 ml-1">{t('Tools')}</Link>
-                  <Link href="/product/features/tasks" className="text-base font-medium hover:text-terracotta pl-4 border-l-2 border-zinc-200 dark:border-zinc-800 ml-1">{t('Tasks')}</Link>
-                  <Link href="/product/features/all-features" className="text-base font-medium hover:text-terracotta pl-4 border-l-2 border-zinc-200 dark:border-zinc-800 ml-1">{t('All Features')}</Link>
-                  <Link href="/product/features/comparison" className="text-base font-medium hover:text-terracotta pl-4 border-l-2 border-zinc-200 dark:border-zinc-800 ml-1">{t('Comparison')}</Link>
+                  <Link href="/product/features/platform" className="text-base font-medium hover:text-brand-primary pl-4 border-l-2 border-zinc-200 dark:border-zinc-800 ml-1">{t('Platform')}</Link>
+                  <Link href="/product/features/tools" className="text-base font-medium hover:text-brand-primary pl-4 border-l-2 border-zinc-200 dark:border-zinc-800 ml-1">{t('Tools')}</Link>
+                  <Link href="/product/features/tasks" className="text-base font-medium hover:text-brand-primary pl-4 border-l-2 border-zinc-200 dark:border-zinc-800 ml-1">{t('Tasks')}</Link>
+                  <Link href="/product/features/all-features" className="text-base font-medium hover:text-brand-primary pl-4 border-l-2 border-zinc-200 dark:border-zinc-800 ml-1">{t('All Features')}</Link>
+                  <Link href="/product/features/comparison" className="text-base font-medium hover:text-brand-primary pl-4 border-l-2 border-zinc-200 dark:border-zinc-800 ml-1">{t('Comparison')}</Link>
                   
                   <span className="text-lg font-medium text-zinc-500 mt-2">{t('Use Cases')}</span>
-                  <Link href="/product/use-cases/feed-stores" className="text-base font-medium hover:text-terracotta pl-4 border-l-2 border-zinc-200 dark:border-zinc-800 ml-1">{t('Feed Stores')}</Link>
-                  <Link href="/product/use-cases/wholesale-brokers" className="text-base font-medium hover:text-terracotta pl-4 border-l-2 border-zinc-200 dark:border-zinc-800 ml-1">{t('Wholesale Brokers')}</Link>
+                  <Link href="/product/use-cases/feed-stores" className="text-base font-medium hover:text-brand-primary pl-4 border-l-2 border-zinc-200 dark:border-zinc-800 ml-1">{t('Feed Stores')}</Link>
+                  <Link href="/product/use-cases/wholesale-brokers" className="text-base font-medium hover:text-brand-primary pl-4 border-l-2 border-zinc-200 dark:border-zinc-800 ml-1">{t('Wholesale Brokers')}</Link>
                 </div>
-                <Link href="/about" className="text-lg font-medium hover:text-terracotta">{t('about', 'About Us')}</Link>
-                <Link href="/contact" className="text-lg font-medium hover:text-terracotta">{t('contact', 'Contact')}</Link>
+                <Link href="/about" className="text-lg font-medium hover:text-brand-primary">{t('about', 'About Us')}</Link>
+                <Link href="/contact" className="text-lg font-medium hover:text-brand-primary">{t('contact', 'Contact')}</Link>
                 
                 <div className="flex flex-col gap-2 mt-4 border-t pt-4">
-                  <Button asChild variant="outline" className="w-full justify-center border-terracotta text-terracotta flex items-center gap-2">
+                  <Button asChild variant="outline" className="w-full justify-center border-brand-primary text-brand-dark dark:text-brand-primary flex items-center gap-2 font-medium">
                     <Link href="/activate">
-                      <FaKey className="w-4 h-4" />
+                      <FaKey className="w-4 h-4 text-brand-primary" />
                       {t('activateLicense', 'Activate License')}
                     </Link>
                   </Button>
-                  <Button asChild className="w-full justify-center bg-terracotta text-white hover:bg-terracotta/90">
+                  <Button asChild className="w-full justify-center bg-brand-primary text-brand-dark hover:bg-brand-primary/90 font-bold">
                     <Link href="/demo">
                       {t('demo_badge', 'Free Trial')}
                     </Link>

@@ -46,7 +46,7 @@ export default function WhatsappCloudBackupPage() {
             
             <BlurIn delay={0.6}>
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                <Button size="lg" className="h-14 px-8 text-base bg-terracotta hover:bg-[#C96B50] text-white border-transparent">
+                <Button size="lg" className="h-14 px-8 text-base bg-terracotta hover:bg-terracotta/90 text-white border-transparent">
                   {t("get_started", "Get Started")}
                 </Button>
                 <Button variant="outline" size="lg" className="h-14 px-8 text-base border-white/20 dark:border-zinc-900/20 !bg-transparent !text-white dark:!text-white hover:!bg-white/10 dark:hover:!bg-zinc-900/10">
@@ -141,7 +141,7 @@ export default function WhatsappCloudBackupPage() {
           {t("feat_cta_copy", "Experience the speed and precision of ScaleERP in your own business.")}
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button size="lg" className="w-full sm:w-auto h-14 px-8 text-base bg-terracotta hover:bg-[#C96B50] text-white border-transparent">
+          <Button size="lg" className="w-full sm:w-auto h-14 px-8 text-base bg-terracotta hover:bg-terracotta/90 text-white border-transparent">
             {t("feat_cta_primary", "Get Started Today")} <ChevronRight className="ml-2 h-5 w-5" />
           </Button>
           <Button size="lg" variant="outline" className="w-full sm:w-auto h-14 px-8 text-base border-zinc-300 dark:border-zinc-700">

@@ -1,15 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Stack+Sans+Notch:wght@200..700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.font-logo,
+.font-stack-notch {
+  font-family: var(--font-stack-sans-notch), "Stack Sans Notch", sans-serif;
+  font-optical-sizing: auto;
+}
 
 @layer base {
   .theme {
   }
   :root {
-    --background: oklch(0.985 0.015 75); /* Warm Off-White / Cream */
-    --foreground: oklch(0.15 0 0);
-    --card: oklch(1 0 0);
-    --card-foreground: oklch(0.15 0 0);
+    /* ScaleERP Centralized Brand Design Tokens */
+    --brand-primary: #00E600;
+    --brand-primary-tint-1: #4DEE4D;
+    --brand-primary-tint-2: #99F599;
+    --brand-primary-tint-3: #D9FBD9;
+
+    --brand-secondary: #F5F5F5;
+    --brand-secondary-tint-1: #F8F8F8;
+    --brand-secondary-tint-2: #FBFBFB;
+    --brand-secondary-tint-3: #FEFEFE;
+
+    --brand-dark: #171717;
+    --brand-dark-tint-1: #5D5D5D;
+    --brand-dark-tint-2: #A2A2A2;
+    --brand-dark-tint-3: #DCDCDC;
+
+    --brand-black: #000000;
+    --brand-gray-slate: #404040;
+    --brand-gray-silver: #BFBFBF;
+    --brand-white: #FFFFFF;
+
+    /* Semantic Brand Mappings */
+    --brand-accent: var(--brand-primary);
+    --brand-accent-hover: var(--brand-primary-tint-1);
+    --brand-accent-subtle: var(--brand-primary-tint-3);
+    --brand-surface: var(--brand-secondary);
+    --brand-header: var(--brand-dark);
+
+    /* Farm Hero Graphic / Map Pattern Tokens */
+    --pattern-field-1: var(--brand-primary);
+    --pattern-field-2: var(--brand-primary-dark, #00B800);
+    --pattern-field-3: var(--brand-primary-tint-1);
+    --pattern-field-4: var(--brand-primary-tint-2);
+    --pattern-field-5: var(--brand-dark);
+    --pattern-field-6: var(--brand-dark-tint-1);
+    --pattern-river-outer: var(--brand-primary);
+    --pattern-river-mid: var(--brand-primary-tint-1);
+    --pattern-river-inner: var(--brand-primary-tint-3);
+
+    --background: var(--brand-secondary); /* Clean Brand Neutral Canvas #F5F5F5 */
+    --foreground: var(--brand-dark);
+    --card: #FFFFFF;
+    --card-foreground: var(--brand-dark);
     --popover: oklch(1 0 0);
     --popover-foreground: oklch(0.15 0 0);
     --primary: oklch(0.205 0 0);
@@ -40,6 +87,10 @@
     --sidebar-ring: oklch(0.708 0 0)
   }
   .dark {
+    /* ScaleERP Dark Mode Brand Variables */
+    --brand-surface: var(--brand-dark);
+    --brand-header: #0d0d0d;
+
     --background: oklch(0.15 0 0); /* Very Dark Gray */
     --foreground: oklch(0.985 0 0);
     --card: oklch(0.205 0 0);
@@ -84,7 +135,7 @@
   
   .bg-keel-pattern {
     --s: 100px; /* control the size*/
-    --c1: rgba(180, 83, 43, 0.05); /* Terracotta tint */
+    --c1: rgba(0, 230, 0, 0.05); /* Brand Primary tint */
     --c2: transparent;
     
     --_g: #0000, #0004 5%,
@@ -99,6 +150,6 @@
   }
   
   .dark .bg-keel-pattern {
-    --c1: rgba(180, 83, 43, 0.08); /* slightly stronger terracotta for dark mode */
+    --c1: rgba(0, 230, 0, 0.08); /* slightly stronger for dark mode */
   }
 }

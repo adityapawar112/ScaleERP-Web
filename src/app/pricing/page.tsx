@@ -210,7 +210,7 @@ export default function PricingPage() {
               </div>
             </CardContent>
             <CardFooter className="pb-8">
-              <Button asChild className="w-full h-12 text-md bg-terracotta hover:bg-[#C96B50] text-white">
+              <Button asChild className="w-full h-12 text-md bg-terracotta hover:bg-terracotta/90 text-white">
                 <Link href="/demo">
                   {t("pricing_cta_primary")}
                 </Link>

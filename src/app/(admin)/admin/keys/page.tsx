@@ -180,8 +180,8 @@ export default function AdminKeysPage() {
       <div className="min-h-screen bg-zinc-950 flex items-center justify-center p-4">
         <form onSubmit={handleLogin} className="bg-zinc-900 border border-zinc-800 p-8 rounded-lg w-full max-w-md space-y-6 shadow-2xl">
           <div className="flex justify-center mb-2">
-            <div className="p-4 bg-[#004B72]/20 rounded-full">
-              <ShieldCheck className="size-8 text-[#004B72]" />
+            <div className="p-4 bg-brand-primary/20 rounded-full">
+              <ShieldCheck className="size-8 text-brand-primary" />
             </div>
           </div>
           <div className="text-center">
@@ -194,10 +194,10 @@ export default function AdminKeysPage() {
             value={adminSecret}
             onChange={e => setAdminSecret(e.target.value)}
             placeholder="Enter ADMIN_SECRET"
-            className="w-full bg-zinc-950 border border-zinc-800 text-white p-3 rounded-lg focus:border-[#004B72] outline-none transition"
+            className="w-full bg-zinc-950 border border-zinc-800 text-white p-3 rounded-lg focus:border-brand-primary outline-none transition"
             required
           />
-          <button type="submit" disabled={loading} className="w-full bg-[#004B72] text-white p-3 rounded-lg font-semibold hover:bg-[#004B72]/90 disabled:opacity-50">
+          <button type="submit" disabled={loading} className="w-full bg-brand-primary text-brand-dark p-3 rounded-lg font-bold hover:bg-brand-primary/90 disabled:opacity-50">
             {loading ? "Authenticating..." : "Unlock Dashboard"}
           </button>
         </form>
@@ -212,7 +212,7 @@ export default function AdminKeysPage() {
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-zinc-800 pb-6">
           <div>
             <h1 className="font-heading text-3xl font-bold text-white flex items-center gap-3">
-              <Database className="size-6 text-[#004B72]" />
+              <Database className="size-6 text-brand-primary" />
               License Keys Management
             </h1>
             <p className="text-zinc-500 mt-1">{t('Generate, monitor, and reset 16-digit activation keys for ScaleERP.')}</p>
@@ -245,7 +245,7 @@ export default function AdminKeysPage() {
                   <option value="1200">{t('Lifetime (100 Yrs)')}</option>
                 </select>
               </div>
-              <button onClick={handleGenerate} disabled={loading} className="bg-[#004B72] hover:bg-[#004B72]/80 text-white text-xs font-bold px-4 py-2.5 rounded mt-5 flex items-center justify-center gap-2 transition disabled:opacity-50 whitespace-nowrap">
+              <button onClick={handleGenerate} disabled={loading} className="bg-brand-primary hover:bg-brand-primary/90 text-brand-dark text-xs font-bold px-4 py-2.5 rounded mt-5 flex items-center justify-center gap-2 transition disabled:opacity-50 whitespace-nowrap">
                 <Key className="size-4" />
                 {t('Generate Key')}
               </button>

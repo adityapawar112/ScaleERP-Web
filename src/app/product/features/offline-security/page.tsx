@@ -150,7 +150,7 @@ export default function OfflineSecurityPage() {
           {t("feat_cta_copy", "Experience the speed and precision of ScaleERP in your own business.")}
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button size="lg" className="w-full sm:w-auto h-14 px-8 text-base bg-terracotta hover:bg-[#C96B50] text-white border-transparent">
+          <Button size="lg" className="w-full sm:w-auto h-14 px-8 text-base bg-terracotta hover:bg-terracotta/90 text-white border-transparent">
             {t("feat_cta_primary", "Get Started Today")} <ChevronRight className="ml-2 h-5 w-5" />
           </Button>
           <Button size="lg" variant="outline" className="w-full sm:w-auto h-14 px-8 text-base border-zinc-300 dark:border-zinc-700">

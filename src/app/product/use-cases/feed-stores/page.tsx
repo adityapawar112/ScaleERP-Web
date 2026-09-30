@@ -48,7 +48,7 @@ export default function FeedStoresPage() {
               <BlurIn delay={0.6}>
                 <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
                   <Link href="/pricing" passHref>
-                    <Button size="lg" className="h-14 px-8 text-base bg-terracotta hover:bg-[#C96B50] text-white rounded-lg">
+                    <Button size="lg" className="h-14 px-8 text-base bg-terracotta hover:bg-terracotta/90 text-white rounded-lg">
                       {t("fs_cta_primary")} <ChevronRight className="ml-2 h-5 w-5" />
                     </Button>
                   </Link>
@@ -180,7 +180,7 @@ export default function FeedStoresPage() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link href="/pricing" passHref>
-              <Button size="lg" className="w-full sm:w-auto h-14 px-8 text-base bg-terracotta hover:bg-[#C96B50] text-white">
+              <Button size="lg" className="w-full sm:w-auto h-14 px-8 text-base bg-terracotta hover:bg-terracotta/90 text-white">
                 {t("fs_cta_primary")} <ChevronRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
