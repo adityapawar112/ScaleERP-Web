@@ -4,10 +4,13 @@ import crypto from "crypto";
 let devPrivateKey: string | null = null;
 
 function getPrivateKey(): string {
-  const envKey = process.env.RSA_PRIVATE_KEY;
+  let envKey = process.env.RSA_PRIVATE_KEY;
   if (envKey) {
-    // Replace literal newlines if passed in environment strings
-    return envKey.replace(/\\n/g, '\n');
+    envKey = envKey.trim();
+    if ((envKey.startsWith('"') && envKey.endsWith('"')) || (envKey.startsWith("'") && envKey.endsWith("'"))) {
+      envKey = envKey.slice(1, -1);
+    }
+    return envKey.replace(/\\\\n/g, '\n').replace(/\\n/g, '\n').replace(/\r/g, '').trim();
   }
 
   if (!devPrivateKey) {
