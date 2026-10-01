@@ -91,7 +91,7 @@ export default function FeedStoresPage() {
                   {t("fs_card_a_copy")}
                 </CardDescription>
                 <div className="relative w-full h-48 rounded-xl overflow-hidden border border-zinc-100 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900 mt-6">
-                  <MediaMockup type="image" src="/assets/stock_tracking.png" caption="Predictive Text & Instant Godown Check" />
+                  <MediaMockup type="image" src="/assets/TransactionRecords.png" caption="Predictive Text & Instant Godown Check" />
                 </div>
               </CardContent>
             </Card>

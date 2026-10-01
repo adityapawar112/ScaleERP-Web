@@ -57,7 +57,7 @@ export default function InventoryTrackingPage() {
               <div className="relative bg-zinc-900 dark:bg-zinc-100 border border-zinc-800 dark:border-zinc-200 rounded-lg p-4 shadow-2xl overflow-hidden group hover:-translate-y-1 transition-transform duration-500">
                 <MediaMockup 
                   type="image" 
-                  src="/assets/stock_tracking.png"
+                  src="/assets/TransactionRecords.png"
                   caption="A clean crop of the Inventory table showing real-time stock deductions as a bill is processed." 
                 />
               </div>

@@ -93,7 +93,7 @@ export default function WholesaleBrokersPage() {
                   {t("wb_card_a_copy")}
                 </CardDescription>
                 <div className="relative w-full h-40 rounded-xl overflow-hidden border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 mt-6">
-                  <MediaMockup type="image" src="/assets/stock_tracking.png" caption={t("wb_mockup_1", "Godown 1: 450 Bags | Godown 2: 120 Bags")} />
+                  <MediaMockup type="image" src="/assets/TransactionRecords.png" caption={t("wb_mockup_1", "Godown 1: 450 Bags | Godown 2: 120 Bags")} />
                 </div>
               </CardContent>
             </Card>

@@ -41,7 +41,7 @@ export default function AboutPage() {
               type="video" 
               caption="Paper Ledger -> ScaleERP Digital UI Transition" 
               className="h-64 sm:h-80 border-terracotta/20 shadow-xl" 
-              src="/assets/about_hero.png"
+              src="/assets/Dashboard.png"
             />
           </BlurIn>
         </div>
@@ -68,7 +68,7 @@ export default function AboutPage() {
                 {t("about_mission_grid_card_a_copy")}
               </p>
               <div className="mt-4 opacity-80">
-                <MediaMockup type="image" caption="Digital Stock Tracking" className="h-40" src="/assets/stock_tracking.png" />
+                <MediaMockup type="image" caption="Digital Stock Tracking" className="h-40" src="/assets/TransactionRecords.png" />
               </div>
             </CardContent>
           </Card>
@@ -85,7 +85,7 @@ export default function AboutPage() {
                 {t("about_mission_grid_card_b_copy")}
               </p>
               <div className="flex-1 shrink-0 w-full sm:w-1/2">
-                <MediaMockup type="image" caption="Legacy vs ScaleERP Fast Billing" className="h-32" src="/assets/fast_billing.png" />
+                <MediaMockup type="image" caption="Legacy vs ScaleERP Fast Billing" className="h-32" src="/assets/AddTransaction.png" />
               </div>
             </CardContent>
           </Card>
@@ -147,7 +147,7 @@ export default function AboutPage() {
                 <p className="text-sm font-mono text-zinc-300">127.0.0.1:DB_SYNC</p>
               </div>
             </div>
-            <MediaMockup type="video" caption="Cryptographic Offline Data Streams" className="h-48 border-zinc-800 bg-zinc-900/80" src="/assets/crypto_data.png" />
+            <MediaMockup type="video" caption="Cryptographic Offline Data Streams" className="h-48 border-zinc-800 bg-zinc-900/80" src="/assets/scaleerp-licensing-lifecycle.png" />
           </div>
         </div>
       </section>

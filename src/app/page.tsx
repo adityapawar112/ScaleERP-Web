@@ -121,7 +121,7 @@ export default function Home() {
                 <CardDescription className="text-foreground/60 mt-3 text-base max-w-md leading-relaxed">{t('lightning_desc', 'Designed for the chaos of the retail checkout counter. Generate invoices and clear parties instantly with keyboard-first navigation.')}</CardDescription>
               </CardHeader>
               <CardContent className="relative flex-grow ml-6 md:ml-10 mt-2 md:mt-0 p-0 overflow-hidden rounded-tl-2xl border-t border-l border-border/40 shadow-sm group-hover:scale-[1.01] transition-transform duration-500 ease-out origin-top-left bg-card">
-                <Image src="/media/billing_checkout_ui.png" alt="Billing UI" fill className="object-cover object-left-top" />
+                <Image src="/assets/AddTransaction.png" alt="Billing UI" fill className="object-cover object-left-top" />
               </CardContent>
             </Card>
 
@@ -134,7 +134,7 @@ export default function Home() {
                   <CardDescription className="text-foreground/50 mt-1 text-sm">{t('replace_desc', 'Automate your ledgers securely.')}</CardDescription>
                 </CardHeader>
                 <CardContent className="relative flex-grow ml-6 md:ml-8 mt-2 md:mt-0 p-0 overflow-hidden rounded-tl-xl border-t border-l border-border/40 shadow-sm group-hover:scale-[1.02] transition-transform duration-500 ease-out origin-top-left bg-card">
-                  <Image src="/media/ledger_ui.png" alt="Ledger UI" fill className="object-cover object-left-top" />
+                  <Image src="/assets/TransactionRecords.png" alt="Ledger UI" fill className="object-cover object-left-top" />
                 </CardContent>
               </Card>
 
@@ -145,7 +145,7 @@ export default function Home() {
                   <CardDescription className="text-foreground/50 mt-1 text-sm">{t('know_desc', 'Real-time alerts & tracking.')}</CardDescription>
                 </CardHeader>
                 <CardContent className="relative flex-grow ml-6 md:ml-8 mt-2 md:mt-0 p-0 overflow-hidden rounded-tl-xl border-t border-l border-border/40 shadow-sm group-hover:scale-[1.02] transition-transform duration-500 ease-out origin-top-left bg-card">
-                  <Image src="/media/inventory_stock_ui.png" alt="Inventory UI" fill className="object-cover object-left-top" />
+                  <Image src="/assets/Reports.png" alt="Inventory UI" fill className="object-cover object-left-top" />
                 </CardContent>
               </Card>
             </div>

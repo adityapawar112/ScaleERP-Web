@@ -63,7 +63,7 @@ export default function WhatsappCloudBackupPage() {
                 type="image" 
                 caption={t("wc_mockup_1", "Payment Reminder Sent | Cloud Sync Successful")} 
                 className="h-48"
-                src="/assets/whatsapp_sync.png"
+                src="/assets/WhatappManager.png"
               />
             </div>
           </BlurIn>

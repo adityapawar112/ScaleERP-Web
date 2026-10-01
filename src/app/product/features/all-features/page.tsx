@@ -55,7 +55,7 @@ export default function AllFeaturesPage() {
           {/* Right Visual Component */}
           <BlurIn delay={0.6} className="w-full lg:w-[450px] shrink-0 relative">
             <div className="relative bg-zinc-900/50 dark:bg-white/50 backdrop-blur-2xl border border-white/10 dark:border-zinc-900/10 rounded-lg p-8 shadow-2xl overflow-hidden group hover:-translate-y-1 transition-transform duration-500">
-                <MediaMockup type="image" src="/assets/full_feature_suite.png" caption="Full Feature Suite" />
+                <MediaMockup type="image" src="/assets/Reports.png" caption="Full Feature Suite" />
             </div>
           </BlurIn>
         </div>

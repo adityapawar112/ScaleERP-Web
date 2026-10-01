@@ -86,7 +86,7 @@ export default function PlatformPage() {
             <div className="mt-6">
               <MediaMockup 
                 type="image" 
-                src="/assets/stock_tracking.png" 
+                src="/assets/TransactionRecords.png" 
                 caption={t("platform_inv_preview", "Live Godown Stock Inventory Grid")} 
               />
             </div>
