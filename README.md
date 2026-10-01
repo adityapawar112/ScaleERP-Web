@@ -53,43 +53,9 @@ The web portal interacts with the offline desktop client through a structured cr
 
 The licensing engine decouples license issuance from daily client runtime. The desktop app contacts ScaleERP-Web only for initial machine activation and periodic background synchronization.
 
-```mermaid
-sequenceDiagram
-    autonumber
-    participant C as ScaleERP Desktop Client
-    participant API as Next.js API (/api/v1/licensing)
-    participant PG as Supabase PostgreSQL
-    participant RSA as RSA Private Key Engine
-
-    Note over C,API: 1. Machine-Bound Activation Flow
-    C->>API: POST /activate { activationKey, deviceFingerprint, hostname }
-    API->>PG: Query license_keys where key_code = activationKey
-    alt License Not Found or Expired
-        API-->>C: 403 / 404 Error (Invalid Key or Expired)
-    else Device Quota Reached (active_devices >= max_devices)
-        API-->>C: 403 Forbidden (Device Limit Reached)
-    else Valid Activation
-        API->>RSA: signLicense(payload) using RSA-PSS SHA-256
-        RSA-->>API: Base64 Signed Envelope (.lic)
-        API->>PG: Insert device_activations & increment active_devices
-        API->>PG: Write SUCCESS to activation_logs
-        API-->>C: 200 OK { licenseBlob, validUntil, edition }
-    end
-
-    Note over C,API: 2. Periodic Heartbeat & Anti-Tamper Check
-    C->>API: POST /sync-heartbeat { key, fingerprint, clientSystemTime, dbState }
-    API->>PG: Verify active device binding
-    alt Clock Rewind (> 24h negative chronometric shift)
-        API->>PG: Log SECURITY_TAMPER_LOCK to client_heartbeats
-        API-->>C: 200 OK { securityLockout: true, reason: "CLOCK_REWIND_DETECTED" }
-    else Database Manipulation (local expiry > cloud expiry)
-        API->>PG: Log SECURITY_TAMPER_LOCK to client_heartbeats
-        API-->>C: 200 OK { securityLockout: true, reason: "DATABASE_MANIPULATION_DETECTED" }
-    else Normal Synchronization
-        API->>PG: Update last_sync_at in device_activations
-        API-->>C: 200 OK { securityLockout: false, serverTime }
-    end
-```
+<div align="center">
+  <img src="public/assets/scaleerp-licensing-lifecycle.svg" alt="ScaleERP Cryptographic Licensing Lifecycle &amp; Anti-Tamper Architecture" width="100%" />
+</div>
 
 ---
 
