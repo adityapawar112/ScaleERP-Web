@@ -1,0 +1,33 @@
+# ScaleERP
+
+> ScaleERP is a modern, offline-first inventory management, rapid billing, and ledger platform built for agricultural suppliers, feed retailers, and wholesale distributors.
+
+ScaleERP combines a resilient offline Electron + SQLite desktop client with a cloud-synchronized licensing and telemetry engine built on Next.js 15, Tailwind CSS, and Supabase.
+
+## Core Capabilities
+- **Offline-First Resilience**: Full operational autonomy powered by local SQLite 3 in Write-Ahead Logging (WAL) mode. Does not require internet connectivity for billing, inventory, or reports.
+- **Cryptographic Offline Licensing**: Enterprise-grade RSA-2048 asymmetric signature verification (`.lic` files) bound to machine hardware fingerprints (CPU, Motherboard UUID, MAC address).
+- **Sub-Second Thermal Billing**: High-velocity invoice creation with multi-format template engine (80mm Thermal, Standard A4, Modern Clean, Compact A5) and direct WhatsApp payment reminders.
+- **Wholesale Broker & Ledger System**: Double-entry accounting, brokerage calculations, freight charges, and transaction rollback protections.
+- **Anti-Tamper & 7-Day Grace Engine**: Automatic clock-tampering detection, 7-day grace period for expiring licenses, and Soft-Lock / Hard-Lock states.
+- **Automated Cloud Backup**: Scheduled local SQLite snapshots with optional encrypted Google Drive synchronization.
+
+## Core Documentation
+- [Quick Start Guide](https://scaleerp.vercel.app/docs/getting-started/installation-and-license): Installation, first-run wizard, and license activation.
+- [Inventory & Godown Operations](https://scaleerp.vercel.app/docs/inventory-godowns/manage-products): Stock tracking, multi-godown allocation, low-stock thresholds.
+- [Retail Billing & Invoicing](https://scaleerp.vercel.app/docs/retail-customers/create-retail-bill): Counter sales, GST calculations, thermal print dispatch.
+- [Wholesale Broker Ledgers](https://scaleerp.vercel.app/docs/wholesale-brokers/broker-ledgers): Commission tracking, consignment purchases, balance reconciliation.
+- [Data Backups & Recovery](https://scaleerp.vercel.app/docs/backups-security/data-backups): Local backup scheduling and automated recovery procedures.
+- [Cryptographic Licensing Protocol](https://scaleerp.vercel.app/docs/backups-security/offline-licensing): Offline asymmetric signing, envelope verification, and public key verification.
+
+## Public Platform Links
+- [Product Overview](https://scaleerp.vercel.app/product): Complete feature architecture, speed benchmarks, and comparisons.
+- [Pricing Plans](https://scaleerp.vercel.app/pricing): Transparent pricing tiers with 30-day trial and perpetual options.
+- [Download Desktop Client](https://scaleerp.vercel.app/download): Windows 64-bit installer (`ScaleERP-Setup-1.0.0.exe`) and portable standalone package.
+- [Interactive Demo](https://scaleerp.vercel.app/demo): Interactive browser-based simulation of the billing workflow.
+- [Resource Hub](https://scaleerp.vercel.app/resources): Technical articles on godown inventory, thermal printer setup, and GST ledger compliance.
+
+## Developer & Telemetry API
+- [POST /api/v1/licensing/activate](https://scaleerp.vercel.app/api/v1/licensing/activate): Cryptographically signs license payloads using RSA-PSS SHA-256.
+- [POST /api/v1/licensing/sync-heartbeat](https://scaleerp.vercel.app/api/v1/licensing/sync-heartbeat): Background workstation heartbeat check and entitlement updates.
+- [GET /api/v1/download](https://scaleerp.vercel.app/api/v1/download): Release binary and portable installer distribution router.
