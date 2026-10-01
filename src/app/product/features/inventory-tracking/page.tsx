@@ -57,6 +57,7 @@ export default function InventoryTrackingPage() {
               <div className="relative bg-zinc-900 dark:bg-zinc-100 border border-zinc-800 dark:border-zinc-200 rounded-lg p-4 shadow-2xl overflow-hidden group hover:-translate-y-1 transition-transform duration-500">
                 <MediaMockup 
                   type="image" 
+                  src="/assets/stock_tracking.png"
                   caption="A clean crop of the Inventory table showing real-time stock deductions as a bill is processed." 
                 />
               </div>
@@ -93,7 +94,7 @@ export default function InventoryTrackingPage() {
                 Catch discrepancies immediately. Perform lightning-fast <JargonTooltip explanation={t("tooltip_audit")}>audits</JargonTooltip> to reconcile physical counts with digital records.
               </p>
               <div className="mt-4 border border-zinc-200 dark:border-zinc-800 rounded-xl overflow-hidden bg-white dark:bg-zinc-950 p-2">
-                <MediaMockup type="image" caption='"Adjust Stock" modal with quick + / - inputs.' />
+                <MediaMockup type="image" src="/assets/AddTransaction.png" caption='"Adjust Stock" modal with quick + / - inputs.' />
               </div>
             </div>
 

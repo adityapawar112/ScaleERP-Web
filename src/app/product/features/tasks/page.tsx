@@ -60,7 +60,11 @@ export default function TasksPage() {
           {/* Right Visual Component */}
           <BlurIn delay={0.6} className="w-full lg:w-[450px] shrink-0 relative">
             <div className="relative bg-zinc-900/50 dark:bg-white/50 backdrop-blur-2xl border border-white/10 dark:border-zinc-900/10 rounded-lg p-8 shadow-2xl overflow-hidden group hover:-translate-y-1 transition-transform duration-500">
-                <MediaMockup type="video" caption="Video: 5-second seamless loop. Sending a WhatsApp payment reminder directly from the Ledger." />
+                <MediaMockup 
+                  type="image" 
+                  src="/assets/WhatappManager.png" 
+                  caption={t("tasks_hero_caption", "Instant WhatsApp Share & Payment Tracking")} 
+                />
             </div>
           </BlurIn>
         </div>
@@ -80,14 +84,22 @@ export default function TasksPage() {
             <h3 className="text-2xl font-bold mb-4 text-zinc-900 dark:text-zinc-100">{t('tasks_comm_card_a_headline')}</h3>
             <p className="text-zinc-600 dark:text-zinc-400">{t('tasks_comm_card_a_copy')}</p>
             <div className="mt-6">
-              <MediaMockup type="image" caption='Micro-UI: Invoice success screen with a "Send via WhatsApp" button.' />
+              <MediaMockup 
+                type="image" 
+                src="/assets/AddTransaction.png" 
+                caption={t("tasks_bill_share", "One-Click WhatsApp Share on Invoice Generation")} 
+              />
             </div>
           </div>
           <div className="flex flex-col bg-terracotta/10 dark:bg-terracotta/5 border border-terracotta/20 rounded-lg p-8 shadow-sm">
             <h3 className="text-2xl font-bold mb-4 text-zinc-900 dark:text-zinc-100">{t('tasks_comm_card_b_headline')}</h3>
             <p className="text-zinc-600 dark:text-zinc-400">{t('tasks_comm_card_b_copy')}</p>
             <div className="mt-6">
-              <MediaMockup type="image" caption="Micro-UI: Snippet of a generated WhatsApp payment reminder message." />
+              <MediaMockup 
+                type="image" 
+                src="/assets/WhatappManager.png" 
+                caption={t("tasks_whatsapp_reminder", "Customizable WhatsApp Payment Reminders & Message Templates")} 
+              />
             </div>
           </div>
         </div>
@@ -107,14 +119,22 @@ export default function TasksPage() {
             <h3 className="text-2xl font-bold mb-4">{t('tasks_sec_card_c_headline')}</h3>
             <p className="text-zinc-400">{t('tasks_sec_card_c_copy')}</p>
             <div className="mt-6">
-              <MediaMockup type="image" caption='Micro-UI: Progress bar showing "Encrypting Local Data..." turning to "Backup Successful".' />
+              <MediaMockup 
+                type="image" 
+                src="/assets/Backups.png" 
+                caption={t("tasks_backup_status", "Automated Local & Cloud Backup Encryption")} 
+              />
             </div>
           </div>
           <div className="flex flex-col bg-zinc-900 border border-zinc-800 rounded-lg p-8 shadow-sm">
             <h3 className="text-2xl font-bold mb-4">{t('tasks_sec_card_d_headline')}</h3>
             <p className="text-zinc-400">{t('tasks_sec_card_d_copy')}</p>
             <div className="mt-6">
-              <MediaMockup type="image" caption='Micro-UI: Settings menu highlighting an "Export All Data (XLSX)" action button.' />
+              <MediaMockup 
+                type="image" 
+                src="/assets/Reports.png" 
+                caption={t("tasks_export_reports", "Comprehensive Data Export to Excel & PDF Reports")} 
+              />
             </div>
           </div>
           <div className="flex flex-col bg-zinc-900 border border-zinc-800 rounded-lg p-8 shadow-sm">
@@ -123,7 +143,11 @@ export default function TasksPage() {
               <JargonTooltip explanation="We authenticate your PC's exact hardware ID against our secure RSA-PSS licensing server to ensure no unauthorized access.">{t('tasks_sec_card_e_copy')}</JargonTooltip>
             </p>
             <div className="mt-6">
-              <MediaMockup type="image" caption='Micro-UI: Secure "Restore from Cloud" prompt with a timestamp.' />
+              <MediaMockup 
+                type="image" 
+                src="/assets/LicenseMangement.png" 
+                caption={t("tasks_license_mgmt", "Cryptographic Hardware ID & Offline Machine Licensing")} 
+              />
             </div>
           </div>
         </div>

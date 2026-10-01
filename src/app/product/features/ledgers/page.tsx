@@ -58,6 +58,7 @@ export default function LedgersPage() {
               <div className="relative bg-zinc-900 dark:bg-zinc-100 border border-zinc-800 dark:border-zinc-200 rounded-lg p-4 shadow-2xl overflow-hidden group hover:-translate-y-1 transition-transform duration-500">
                 <MediaMockup 
                   type="image" 
+                  src="/assets/TransactionRecords.png"
                   caption='A single Party Profile page showing a red "Total Outstanding: ₹45,200" metric above recent invoices.' 
                 />
               </div>
@@ -94,7 +95,7 @@ export default function LedgersPage() {
                 {t("ledgers_card_b_desc")}
               </p>
               <div className="mt-4 border border-zinc-200 dark:border-zinc-800 rounded-xl overflow-hidden bg-white dark:bg-zinc-950 p-2">
-                <MediaMockup type="image" caption='The "Settle Account" button transitioning to a green "Settled" state.' />
+                <MediaMockup type="image" src="/assets/Reports.png" caption='The "Settle Account" button transitioning to a green "Settled" state.' />
               </div>
             </div>
 

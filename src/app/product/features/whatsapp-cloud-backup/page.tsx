@@ -127,6 +127,14 @@ export default function WhatsappCloudBackupPage() {
                 </JargonTooltip>
                 {t("wc_card_c_copy_pt3", " database and pushes a secure backup to the cloud for disaster recovery.")}
               </p>
+              <div className="mt-6">
+                <MediaMockup 
+                  type="image" 
+                  src="/assets/Backups.png" 
+                  caption="1-Click Automated Database Encryption & Cloud Sync Utility" 
+                  className="max-w-2xl mx-auto"
+                />
+              </div>
             </CardContent>
           </Card>
         </div>

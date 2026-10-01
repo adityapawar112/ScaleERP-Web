@@ -57,6 +57,7 @@ export default function InvoiceCustomizationPage() {
               <div className="relative bg-zinc-900 dark:bg-zinc-100 border border-zinc-800 dark:border-zinc-200 rounded-lg p-4 shadow-2xl overflow-hidden group hover:-translate-y-1 transition-transform duration-500">
                 <MediaMockup 
                   type="image" 
+                  src="/assets/CustomBills.png"
                   caption="A zoomed-in preview toggling between A4 Invoice and Thermal Receipt formats." 
                 />
               </div>

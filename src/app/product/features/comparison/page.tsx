@@ -60,7 +60,11 @@ export default function ComparisonPage() {
           {/* Right Visual Component */}
           <BlurIn delay={0.6} className="w-full lg:w-[450px] shrink-0 relative">
             <div className="relative bg-zinc-900/50 dark:bg-white/50 backdrop-blur-2xl border border-white/10 dark:border-zinc-900/10 rounded-lg p-8 shadow-2xl overflow-hidden group hover:-translate-y-1 transition-transform duration-500">
-                <MediaMockup type="video" caption="Video: A 5-second split-screen loop. Left side (Legacy) vs Right side (ScaleERP) fast billing." />
+                <MediaMockup 
+                  type="image" 
+                  src="/assets/InvoiceExample.png" 
+                  caption="Clean, High-Velocity Invoice Generation vs Legacy ERP" 
+                />
             </div>
           </BlurIn>
         </div>
@@ -84,7 +88,11 @@ export default function ComparisonPage() {
             <h3 className="text-2xl font-bold mb-4">{t('comp_card_b_headline')}</h3>
             <p className="text-zinc-600 dark:text-zinc-400 mb-6 flex-1">{t('comp_card_b_copy')}</p>
             <div className="mt-auto pt-6">
-               <MediaMockup type="image" caption='Micro-UI: A clean, inviting "Add New Bill" button contrasting heavily with a grey, cluttered menu bar.' />
+               <MediaMockup 
+                 type="image" 
+                 src="/assets/AddTransaction.png" 
+                 caption="Modern Transaction Creation Interface" 
+               />
             </div>
           </div>
           
@@ -97,7 +105,11 @@ export default function ComparisonPage() {
             <h3 className="text-2xl font-bold mb-4">{t('comp_card_d_headline')}</h3>
             <p className="text-zinc-600 dark:text-zinc-400 mb-6 flex-1">{t('comp_card_d_copy')}</p>
             <div className="mt-auto pt-6">
-               <MediaMockup type="image" caption="Micro-UI: A tightly zoomed crop of the 3-field input row in ScaleERP." />
+               <MediaMockup 
+                 type="image" 
+                 src="/assets/TransactionRecords.png" 
+                 caption="Streamlined Transaction & Ledger Audit Views" 
+               />
             </div>
           </div>
         </div>

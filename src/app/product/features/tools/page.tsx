@@ -60,7 +60,11 @@ export default function ToolsPage() {
           {/* Right Visual Component */}
           <BlurIn delay={0.6} className="w-full lg:w-[450px] shrink-0 relative">
             <div className="relative bg-zinc-900/50 dark:bg-white/50 backdrop-blur-2xl border border-white/10 dark:border-zinc-900/10 rounded-lg p-8 shadow-2xl overflow-hidden group hover:-translate-y-1 transition-transform duration-500">
-                <MediaMockup type="video" caption="Video: 4-second interaction toggling between A4 and Thermal Print layouts." />
+                <MediaMockup 
+                  type="image" 
+                  src="/assets/CustomBills.png" 
+                  caption={t("tools_hero_caption", "Customizable Thermal & A4 Invoice Builder")} 
+                />
             </div>
           </BlurIn>
         </div>
@@ -80,14 +84,22 @@ export default function ToolsPage() {
             <h3 className="text-2xl font-bold mb-4 text-zinc-900 dark:text-zinc-100">{t('tools_pres_card_a_headline')}</h3>
             <p className="text-zinc-600 dark:text-zinc-400">{t('tools_pres_card_a_copy')}</p>
             <div className="mt-6">
-              <MediaMockup type="image" caption="Micro-UI: Zoomed-in crop of the Invoice Settings panel." />
+              <MediaMockup 
+                type="image" 
+                src="/assets/InvoiceExample.png" 
+                caption={t("tools_invoice_settings", "Invoice Customization: Terms, Signatures, and Tax Calculations")} 
+              />
             </div>
           </div>
           <div className="flex flex-col bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-lg p-8 shadow-sm">
             <h3 className="text-2xl font-bold mb-4 text-zinc-900 dark:text-zinc-100">{t('tools_pres_card_b_headline')}</h3>
             <p className="text-zinc-600 dark:text-zinc-400">{t('tools_pres_card_b_copy')}</p>
             <div className="mt-6">
-              <MediaMockup type="image" caption="Micro-UI: Printed invoice showing item names alongside localized Marathi equivalents." />
+              <MediaMockup 
+                type="image" 
+                src="/assets/MarathiDashboard.png" 
+                caption={t("tools_marathi_invoice", "Bilingual Localized Interface (मराठी & English)")} 
+              />
             </div>
           </div>
         </div>
@@ -107,21 +119,33 @@ export default function ToolsPage() {
             <h3 className="text-2xl font-bold mb-4">{t('tools_ana_card_c_headline')}</h3>
             <p className="text-zinc-400">{t('tools_ana_card_c_copy')}</p>
             <div className="mt-6">
-              <MediaMockup type="image" caption='Micro-UI: Dark-themed dashboard widget titled "End of Day Summary".' />
+              <MediaMockup 
+                type="image" 
+                src="/assets/Dashboard.png" 
+                caption={t("tools_summary_widget", "Executive Dashboard: Live Net Receivables & Profit Metrics")} 
+              />
             </div>
           </div>
           <div className="flex flex-col bg-zinc-900 border border-zinc-800 rounded-lg p-8 shadow-sm">
             <h3 className="text-2xl font-bold mb-4">{t('tools_ana_card_d_headline')}</h3>
             <p className="text-zinc-400">{t('tools_ana_card_d_copy')}</p>
             <div className="mt-6">
-              <MediaMockup type="image" caption='Micro-UI: Data table showing the top 3 parties sorted by "Highest Pending Amount".' />
+              <MediaMockup 
+                type="image" 
+                src="/assets/TransactionRecords.png" 
+                caption={t("tools_party_table", "Audit Trails & Party Ledger Breakdown")} 
+              />
             </div>
           </div>
           <div className="flex flex-col bg-zinc-900 border border-zinc-800 rounded-lg p-8 shadow-sm">
             <h3 className="text-2xl font-bold mb-4">{t('tools_ana_card_e_headline')}</h3>
             <p className="text-zinc-400">{t('tools_ana_card_e_copy')}</p>
             <div className="mt-6">
-              <MediaMockup type="image" caption="Micro-UI: Subtle, dark-mode bar chart illustrating the sales velocity." />
+              <MediaMockup 
+                type="image" 
+                src="/assets/Reports.png" 
+                caption={t("tools_analytics_chart", "Comprehensive Reporting: Sales, Purchases, Stock Flow")} 
+              />
             </div>
           </div>
         </div>

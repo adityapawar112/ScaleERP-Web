@@ -200,8 +200,8 @@ export default function Home() {
                   {t('airgapped_desc', 'Your data remains yours. Our robust, hardware-bound RSA licensing architecture ensures your application is protected and tamper-proof.')}
                 </CardDescription>
               </CardHeader>
-              <CardContent className="relative flex-grow p-6 md:p-10 flex items-center justify-center overflow-hidden group-hover:scale-[1.02] transition-transform duration-700">
-                <Image src="/media/license_active_pill.png" alt="License Security" fill className="object-contain p-6 md:p-12 opacity-80 mix-blend-screen" />
+              <CardContent className="relative flex-grow ml-6 md:ml-10 mt-2 md:mt-0 p-0 overflow-hidden rounded-tl-2xl border-t border-l border-white/10 shadow-2xl group-hover:scale-[1.01] transition-transform duration-700 origin-top-left bg-black ring-1 ring-white/10">
+                <Image src="/assets/LicenseMangement.png" alt="Hardware-Bound RSA License Manager" fill className="object-cover object-left-top" />
               </CardContent>
             </Card>
           </div>

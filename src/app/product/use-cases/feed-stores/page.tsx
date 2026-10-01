@@ -60,7 +60,8 @@ export default function FeedStoresPage() {
               <div className="absolute inset-0 bg-terracotta/20 rounded-lg blur-3xl transform rotate-3 scale-105 opacity-50 dark:opacity-30"></div>
               <div className="relative z-10">
                 <MediaMockup 
-                  type="video" 
+                  type="image" 
+                  src="/assets/AddTransaction.png"
                   caption="High-speed billing interface with thermal receipt printing" 
                   className="rounded-lg border border-zinc-200 dark:border-zinc-800 shadow-2xl bg-white dark:bg-zinc-900"
                 />
@@ -90,7 +91,7 @@ export default function FeedStoresPage() {
                   {t("fs_card_a_copy")}
                 </CardDescription>
                 <div className="relative w-full h-48 rounded-xl overflow-hidden border border-zinc-100 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900 mt-6">
-                  <MediaMockup type="image" caption="Predictive Text & Instant Godown Check" />
+                  <MediaMockup type="image" src="/assets/stock_tracking.png" caption="Predictive Text & Instant Godown Check" />
                 </div>
               </CardContent>
             </Card>
@@ -108,7 +109,7 @@ export default function FeedStoresPage() {
                   {t("fs_card_b_copy")}
                 </p>
                 <div className="mt-auto">
-                  <MediaMockup type="image" caption="Toggle: Cash Sale / Add to Party Ledger" className="h-24" />
+                  <MediaMockup type="image" src="/assets/TransactionRecords.png" caption="Toggle: Cash Sale / Add to Party Ledger" className="h-24" />
                 </div>
               </CardContent>
             </Card>

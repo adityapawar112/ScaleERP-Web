@@ -60,7 +60,11 @@ export default function PlatformPage() {
           {/* Right Visual Component */}
           <BlurIn delay={0.6} className="w-full lg:w-[450px] shrink-0 relative">
             <div className="relative bg-zinc-900/50 dark:bg-white/50 backdrop-blur-2xl border border-white/10 dark:border-zinc-900/10 rounded-lg p-8 shadow-2xl overflow-hidden group hover:-translate-y-1 transition-transform duration-500">
-                <MediaMockup type="video" caption="Video: 6-second dynamic loop showing a split screen of fast billing and instant ledger updates." />
+                <MediaMockup 
+                  type="image" 
+                  src="/assets/Dashboard.png" 
+                  caption={t("platform_hero_caption", "Offline-First Point of Sale & Operational Terminal")} 
+                />
             </div>
           </BlurIn>
         </div>
@@ -80,21 +84,33 @@ export default function PlatformPage() {
             <h3 className="text-2xl font-bold mb-4 text-zinc-900 dark:text-zinc-100">{t('platform_inv_card_a_headline')}</h3>
             <p className="text-zinc-600 dark:text-zinc-400">{t('platform_inv_card_a_copy')}</p>
             <div className="mt-6">
-              <MediaMockup type="image" caption="Micro-UI: Inventory table showing stock across godowns." />
+              <MediaMockup 
+                type="image" 
+                src="/assets/stock_tracking.png" 
+                caption={t("platform_inv_preview", "Live Godown Stock Inventory Grid")} 
+              />
             </div>
           </div>
           <div className="flex flex-col bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-lg p-8 shadow-sm">
             <h3 className="text-2xl font-bold mb-4 text-zinc-900 dark:text-zinc-100">{t('platform_inv_card_b_headline')}</h3>
             <p className="text-zinc-600 dark:text-zinc-400">{t('platform_inv_card_b_copy')}</p>
             <div className="mt-6">
-              <MediaMockup type="image" caption="Micro-UI: 'Adjust Stock' modal with + / - inputs." />
+              <MediaMockup 
+                type="image" 
+                src="/assets/AddTransaction.png" 
+                caption={t("platform_stock_adjust", "Rapid Stock Entry and Barcode/SKU Selection")} 
+              />
             </div>
           </div>
           <div className="flex flex-col bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-lg p-8 shadow-sm">
             <h3 className="text-2xl font-bold mb-4 text-zinc-900 dark:text-zinc-100">{t('platform_inv_card_c_headline')}</h3>
             <p className="text-zinc-600 dark:text-zinc-400">{t('platform_inv_card_c_copy')}</p>
             <div className="mt-6">
-              <MediaMockup type="image" caption="Micro-UI: 'Low Stock Warning' badge next to high-velocity product." />
+              <MediaMockup 
+                type="image" 
+                src="/assets/Reports.png" 
+                caption={t("platform_stock_reports", "Low Stock Alerts & Inventory Depletion Velocity")} 
+              />
             </div>
           </div>
         </div>
@@ -114,14 +130,22 @@ export default function PlatformPage() {
             <h3 className="text-2xl font-bold mb-4 text-zinc-900 dark:text-zinc-100">{t('platform_led_card_d_headline')}</h3>
             <p className="text-zinc-600 dark:text-zinc-400">{t('platform_led_card_d_copy')}</p>
             <div className="mt-6">
-              <MediaMockup type="image" caption='Micro-UI: Party Profile with "Total Outstanding: ₹45,200" metric.' />
+              <MediaMockup 
+                type="image" 
+                src="/assets/TransactionRecords.png" 
+                caption={t("platform_party_ledger", "Party Balances & Full Transaction History")} 
+              />
             </div>
           </div>
           <div className="flex flex-col bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-lg p-8 shadow-sm">
             <h3 className="text-2xl font-bold mb-4 text-zinc-900 dark:text-zinc-100">{t('platform_led_card_e_headline')}</h3>
             <p className="text-zinc-600 dark:text-zinc-400">{t('platform_led_card_e_copy')}</p>
             <div className="mt-6">
-              <MediaMockup type="image" caption='Micro-UI: "Settle Account" button transitioning to "Settled".' />
+              <MediaMockup 
+                type="image" 
+                src="/assets/InvoiceExample.png" 
+                caption={t("platform_settle_invoice", "Clean Settle Account Dialog & Payment Slips")} 
+              />
             </div>
           </div>
           <div className="flex flex-col bg-terracotta/10 dark:bg-terracotta/5 border border-terracotta/20 rounded-lg p-8 shadow-sm">
@@ -147,7 +171,11 @@ export default function PlatformPage() {
               <JargonTooltip explanation="A high-performance database mechanism ensuring data is saved securely to hardware without network latency.">{t('platform_eng_card_g_copy')}</JargonTooltip>
             </p>
             <div className="mt-6 max-w-2xl">
-              <MediaMockup type="image" caption='Micro-UI: Diagnostic view showing "Local DB Status: Active", "Latency: 2ms".' />
+              <MediaMockup 
+                type="image" 
+                src="/assets/scaleerp-architecture.png" 
+                caption={t("platform_engine_arch", "SQLite WAL Local Engine (<2ms Latency) & Cloud Telemetry")} 
+              />
             </div>
           </div>
         </div>

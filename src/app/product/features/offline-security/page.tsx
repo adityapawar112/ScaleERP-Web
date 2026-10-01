@@ -64,7 +64,7 @@ export default function OfflineSecurityPage() {
                 type="image" 
                 caption={t("os_mockup_1", "Local DB Status: Active | Latency: 2ms")} 
                 className="h-48"
-                src="/assets/local_db_status.png"
+                src="/assets/scaleerp-architecture.png"
               />
             </div>
           </BlurIn>
@@ -119,7 +119,7 @@ export default function OfflineSecurityPage() {
                   type="image" 
                   caption={t("os_mockup_2", "RSA License: ACTIVE")} 
                   className="h-32"
-                  src="/assets/rsa_active.png"
+                  src="/assets/LicenseMangement.png"
                 />
               </div>
             </CardContent>

@@ -62,7 +62,8 @@ export default function WholesaleBrokersPage() {
               <div className="absolute inset-0 bg-blue-500/20 rounded-lg blur-3xl transform -rotate-3 scale-105 opacity-50 dark:opacity-30"></div>
               <div className="relative z-10">
                 <MediaMockup 
-                  type="video" 
+                  type="image" 
+                  src="/assets/CustomBills.png"
                   caption="A4 Invoice Generation & WhatsApp Reminders Blast" 
                   className="rounded-lg border border-zinc-200 dark:border-zinc-800 shadow-2xl bg-white dark:bg-zinc-950"
                 />
@@ -92,7 +93,7 @@ export default function WholesaleBrokersPage() {
                   {t("wb_card_a_copy")}
                 </CardDescription>
                 <div className="relative w-full h-40 rounded-xl overflow-hidden border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 mt-6">
-                  <MediaMockup type="image" caption={t("wb_mockup_1", "Godown 1: 450 Bags | Godown 2: 120 Bags")} />
+                  <MediaMockup type="image" src="/assets/stock_tracking.png" caption={t("wb_mockup_1", "Godown 1: 450 Bags | Godown 2: 120 Bags")} />
                 </div>
               </CardContent>
             </Card>
@@ -110,7 +111,7 @@ export default function WholesaleBrokersPage() {
                   {t("wb_card_b_copy")}
                 </CardDescription>
                 <div className="relative w-full h-40 rounded-xl overflow-hidden border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 mt-6">
-                  <MediaMockup type="image" caption={t("wb_mockup_2", "Top Outstanding Accounts Widget")} />
+                  <MediaMockup type="image" src="/assets/TransactionRecords.png" caption={t("wb_mockup_2", "Top Outstanding Accounts Widget")} />
                 </div>
               </CardContent>
             </Card>
@@ -160,7 +161,7 @@ export default function WholesaleBrokersPage() {
                         : word + ' '
                     )}
                   </p>
-                  <MediaMockup type="image" caption={t("wb_mockup_3", "A4 Invoice Header with GST")} className="h-24 bg-zinc-950 border-zinc-800" />
+                  <MediaMockup type="image" src="/assets/InvoiceExample.png" caption={t("wb_mockup_3", "A4 Invoice Header with GST")} className="h-24 bg-zinc-950 border-zinc-800" />
                 </CardContent>
               </Card>
 

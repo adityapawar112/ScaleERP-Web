@@ -156,7 +156,12 @@ export default function PricingPage() {
               </ul>
               
               <div className="mt-8">
-                <MediaMockup type="image" caption="Print Thermal or A4 Invoice" className="h-40" />
+                <MediaMockup 
+                  type="image" 
+                  src="/assets/CustomBills.png" 
+                  caption="Print Thermal or A4 Invoice" 
+                  className="h-40" 
+                />
               </div>
             </CardContent>
             <CardFooter className="pb-8">
@@ -206,7 +211,12 @@ export default function PricingPage() {
               </ul>
 
               <div className="mt-8">
-                <MediaMockup type="video" caption="1-Click WhatsApp Reminders" className="h-40 border-terracotta/20" />
+                <MediaMockup 
+                  type="image" 
+                  src="/assets/WhatappManager.png" 
+                  caption="1-Click WhatsApp Reminders & Statements" 
+                  className="h-40 border-terracotta/20" 
+                />
               </div>
             </CardContent>
             <CardFooter className="pb-8">
@@ -246,7 +256,12 @@ export default function PricingPage() {
                   )}
                 </p>
                 <div className="mt-6">
-                  <MediaMockup type="image" caption="1-Click Local Backups" className="h-32" />
+                  <MediaMockup 
+                    type="image" 
+                    src="/assets/Backups.png" 
+                    caption="1-Click Local Backups & Restores" 
+                    className="h-32" 
+                  />
                 </div>
               </CardContent>
             </Card>

@@ -44,7 +44,7 @@ ScaleERP-Web provides the cloud management and licensing layer for the ScaleERP 
 The web portal interacts with the offline desktop client through a structured cryptographic handshake:
 
 <div align="center">
-  <img src="public/assets/scaleerp-architecture.svg" alt="ScaleERP Cloud Architecture" width="100%" />
+  <img src="public/assets/scaleerp-architecture.png" alt="ScaleERP Offline-to-Cloud Architecture" width="100%" />
 </div>
 
 ---
@@ -54,8 +54,58 @@ The web portal interacts with the offline desktop client through a structured cr
 The licensing engine decouples license issuance from daily client runtime. The desktop app contacts ScaleERP-Web only for initial machine activation and periodic background synchronization.
 
 <div align="center">
-  <img src="public/assets/scaleerp-licensing-lifecycle.svg" alt="ScaleERP Cryptographic Licensing Lifecycle &amp; Anti-Tamper Architecture" width="100%" />
+  <img src="public/assets/scaleerp-licensing-lifecycle.png" alt="ScaleERP Cryptographic Licensing Lifecycle &amp; Anti-Tamper Architecture" width="100%" />
 </div>
+
+---
+
+## 🖥️ Visual Tour: Integrated Cloud Management & Client Workflows
+
+Following modern ERP benchmark standards (Ever Gauzy, Dolibarr), ScaleERP pairs an agile Next.js web control plane with a high-velocity offline desktop client:
+
+### 1. Cryptographic Device Activation & Machine Binding
+Workstation operators enter their product key on the desktop client. ScaleERP-Web audits machine fingerprints, checks quota limits in Supabase PostgreSQL, and issues RSA-signed evaluation or production licenses.
+
+<div align="center">
+  <img src="public/assets/LicenseMangement.png" alt="ScaleERP Hardware-Bound RSA License Manager" width="90%" />
+</div>
+
+| Capability | Engineering Implementation | Operational Impact |
+| :--- | :--- | :--- |
+| **RSA-2048 Signing** | Node.js `crypto` sign on canonical machine metadata | Absolute tamper-resistance; runs offline for weeks without phone-home |
+| **Hardware ID Binding** | CPU ID + BIOS UUID + Motherboard Serial hashing | Prevents unauthorized license cloning across multiple workstations |
+| **Chronometric Drift Check** | Supabase UTC timestamp vs. local clock delta audit | Automatically freezes entitlement if user rewinds system clock |
+
+---
+
+### 2. Live POS Billing & High-Velocity Counter Checkout
+In retail godowns, sales must be finalized in seconds. ScaleERP-Desktop processes transactions directly into a local SQLite WAL database with zero network dependencies.
+
+<div align="center">
+  <img src="public/assets/AddTransaction.png" alt="ScaleERP High-Speed Point of Sale Billing" width="90%" />
+</div>
+
+| Capability | Engineering Implementation | Operational Impact |
+| :--- | :--- | :--- |
+| **Keyboard-First Flow** | Tab/Enter index navigation, quick search indexing | Generates full customer receipts in under 5 seconds |
+| **Thermal & A4 Formats** | Dynamic print templates for POS roll printers & laser jets | Supports 58mm/80mm thermal receipts and detailed GST A4 tax bills |
+| **Dual Language UI** | Localized English and Marathi (`मराठी`) interfaces | Effortless adoption for regional mandi operators and godown staff |
+
+---
+
+### 3. Double-Entry Ledgers & Encrypted Backup Synchronization
+All ledger records update in real-time. End-of-day operations sync encrypted backups to cloud storage without blocking ongoing checkout counters.
+
+<div align="center">
+  <img src="public/assets/TransactionRecords.png" alt="ScaleERP Audit-Grade Ledger Records" width="48%" />
+  <img src="public/assets/Backups.png" alt="ScaleERP Automated Encrypted Backups" width="48%" />
+</div>
+
+| Capability | Engineering Implementation | Operational Impact |
+| :--- | :--- | :--- |
+| **Instant Party Ledgers** | Direct SQL aggregations on debit/credit journals | Immediate visibility into outstanding balances and aging receivables |
+| **1-Click WhatsApp Sync** | Direct URL URI scheme dispatching formatted summaries | Sends balance reminders and invoice PDFs directly to client phones |
+| **Encrypted Backups** | AES-256 local database encryption with cloud archive | Zero risk of hardware data loss or workstation disk corruption |
 
 ---
 
