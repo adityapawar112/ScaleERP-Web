@@ -1,42 +1,34 @@
-# Product
+# ScaleERP — Product Specification & Requirements
 
-<!-- impeccable:product-schema 1 -->
+<!-- scaleerp:product-spec 1.0 -->
 
 ## Platform
+Modern Web Platform & Customer Documentation Portal (`ScaleERP-Web`), synchronized with the offline-first desktop application (`ScaleERP-Desktop`).
 
-web
+## Primary Target Users
+1. **Agricultural Wholesalers & Feed Store Retailers**: Shop owners and godown managers across Tier-2/Tier-3 agricultural hubs in India who need rapid checkout and robust offline resilience.
+2. **Wholesale Grain & Feed Brokers**: Intermediary broker networks tracking multi-party commission, freight (hamali) charges, and credit balances.
+3. **Engineering Evaluators & Recruiters**: Technical hiring managers and systems architects reviewing high-velocity full-stack desktop/web architecture.
 
-## Users
-Primary users are local agricultural wholesaler business owners in India. Secondarily, the site acts as a portfolio for Ouroscale (the parent company).
+## Product Purpose & Problem Statement
+Commercial retail and wholesale operations in regional markets face constant friction:
+- Unreliable internet infrastructure causes generic cloud ERPs to freeze at the billing counter.
+- Complex ERP suites (SAP, Zoho, Tally) present steep learning curves and lack tailor-made wholesale workflows (bag weights, moisture discount, broker deductions).
+- ScaleERP delivers an **offline-first, zero-latency desktop fortress** paired with an **automated cloud telemetry and cryptographic licensing engine**.
 
-## Product Purpose
-To provide a fast, offline-capable application for daily agricultural wholesale operations. It aims to deliver a "WOW-factor" premium experience and act as a showcase of Ouroscale's technical and design capabilities.
+## Core Capabilities & Technical Differentiators
+- **3-in-1 Unified Engine**: High-speed counter billing (thermal ESC/POS & A4), real-time godown inventory tracking, and double-entry broker ledger accounting.
+- **Air-Gapped Cryptographic Licensing**: Asymmetric RSA-2048 signing protocol with hardware machine-fingerprint binding and anti-clock-tampering protection.
+- **7-Day Operational Grace Mode**: View-only Soft Lock prevents catastrophic business interruption during renewal windows.
+- **Automated Cloud Backup**: Scheduled local SQLite database dumps with optional encrypted Google Drive synchronization.
+- **Multi-Language Accessibility**: Full localization across English, Hindi (हिंदी), and Marathi (मराठी).
 
-## Positioning
-An all-in-one suite (billing, inventory management, and ledger/finance reports) featuring an enhanced, modern UI with offline capabilities and lightning-fast performance—a rarity in this industry.
-
-## Operating Context
-Used daily in agricultural wholesale businesses in India. The application serves as the core operational tool for billing, inventory tracking, and running ledger/finance reports.
-
-## Capabilities and Constraints
-- **Core Features**: 3-in-1 billing, inventory management, and financial reporting.
-- **Constraints**: Must support offline capabilities.
-- **Stack**: React, TypeScript, Next.js / Vite
-- **UI Architecture**: TailwindCSS, Shadcn UI
-- **Design Rules**: Must implement rich aesthetics (dark mode, glassmorphism, vibrant colors, micro-animations). Avoid simple MVP looks.
-- **SEO**: Built-in SEO best practices.
-
-## Brand Commitments
-- **Brand Identity**: Ouroscale — Surgical transformation, editorial brutalism, tech power play.
-- **Typography**: Modern fonts (e.g., Inter, Outfit).
-- **Assets**: ScaleERP application logo, Ouroscale parent logo, and application banners.
-
-## Evidence on Hand
-- Pending product screenshots (to be added to `memory-bank/assets/`).
-- Pending testimonials (content to be provided).
-- Application and Ouroscale logos.
+## Technology Architecture
+- **Web App**: Next.js 15 (App Router, Server Components), React 19, Tailwind CSS, Radix UI.
+- **Backend & Telemetry**: Supabase PostgreSQL with Row Level Security (RLS) and Serverless Edge Functions.
+- **Desktop Client**: Electron 34, React 19, SQLite 3 (WAL mode), TypeScript 5.9, Bootstrap 5.
 
 ## Product Principles
-1. **Surgical & Powerful**: Interactions must feel fast, precise, and engineered.
-2. **Editorial Brutalism**: Bold, confident visual layouts that command attention.
-3. **Dynamic Vitality**: The interface should feel responsive and alive through micro-interactions and smooth motion.
+1. **Zero-Latency Resilience**: Counter billing must never block or wait on network requests.
+2. **Surgical Precision**: Financial ledgers and inventory balances must maintain strict transactional ACID integrity.
+3. **Approachable Modernity**: Clean, high-legibility interface with rich tactile aesthetics, dual light/dark modes, and no unnecessary enterprise bloat.
