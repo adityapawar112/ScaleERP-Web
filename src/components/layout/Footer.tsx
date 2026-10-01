@@ -40,9 +40,7 @@ export function Footer() {
               <li><Link href="/product/use-cases/wholesale-brokers" className="hover:text-brand-primary transition-colors">{t('Wholesale Brokers')}</Link></li>
               <li><Link href="/product/features/comparison" className="hover:text-brand-primary transition-colors">{t('Compare to Tally')}</Link></li>
               <li><Link href="/pricing" className="hover:text-brand-primary transition-colors">{t('pricing', 'Pricing')}</Link></li>
-              <li><Link href="/demo" className="hover:text-brand-primary transition-colors">{t('demo_badge', 'Free Trial License')}</Link></li>
-              <li><Link href="/download" className="hover:text-brand-primary transition-colors">{t('Download Client', 'Download Client')}</Link></li>
-              <li><Link href="/activate" className="hover:text-brand-primary transition-colors">{t('activateLicense', 'License Activation')}</Link></li>
+              <li><Link href="/download" className="hover:text-brand-primary transition-colors">{t('Download Client', 'Download Desktop App')}</Link></li>
             </ul>
           </div>
           

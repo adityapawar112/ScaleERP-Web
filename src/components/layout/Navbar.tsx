@@ -3,7 +3,7 @@
 import * as React from "react"
 import Link from "next/link"
 import { ShieldCheck, Menu, ChevronDown, Layers, Wrench, ListTodo, LayoutGrid, ArrowRightLeft, Package, BookOpenCheck, ReceiptText, MessageCircle } from "lucide-react"
-import { FaKey } from "react-icons/fa"
+import { FaKey, FaWindows } from "react-icons/fa"
 import { ThemeToggle } from "@/components/ThemeToggle"
 import { LanguageSwitcher } from "@/components/LanguageSwitcher"
 import { useTranslation } from "react-i18next"
@@ -193,15 +193,10 @@ export function Navbar() {
         <div className="hidden md:flex items-center space-x-4">
           <LanguageSwitcher />
           <ThemeToggle />
-          <Button asChild variant="outline" className="border-brand-primary text-brand-dark dark:text-brand-primary hover:bg-brand-primary/10 flex items-center gap-2 font-medium">
-            <Link href="/activate">
-              <FaKey className="w-4 h-4 text-brand-primary" />
-              {t('activateLicense', 'Activate License')}
-            </Link>
-          </Button>
-          <Button asChild className="bg-brand-primary text-brand-dark hover:bg-brand-primary/90 font-bold rounded-lg px-6">
-            <Link href="/demo">
-              {t('demo_badge', 'Free Trial')}
+          <Button asChild className="bg-brand-primary text-brand-dark hover:bg-brand-primary/90 font-bold rounded-lg px-5 flex items-center gap-2 shadow-sm">
+            <Link href="/download">
+              <FaWindows className="w-4 h-4 text-brand-dark" />
+              <span>{t('nav_download', 'Download')}</span>
             </Link>
           </Button>
         </div>
@@ -254,15 +249,10 @@ export function Navbar() {
                 <Link href="/contact" className="text-lg font-medium hover:text-brand-primary">{t('contact', 'Contact')}</Link>
                 
                 <div className="flex flex-col gap-2 mt-4 border-t pt-4">
-                  <Button asChild variant="outline" className="w-full justify-center border-brand-primary text-brand-dark dark:text-brand-primary flex items-center gap-2 font-medium">
-                    <Link href="/activate">
-                      <FaKey className="w-4 h-4 text-brand-primary" />
-                      {t('activateLicense', 'Activate License')}
-                    </Link>
-                  </Button>
-                  <Button asChild className="w-full justify-center bg-brand-primary text-brand-dark hover:bg-brand-primary/90 font-bold">
-                    <Link href="/demo">
-                      {t('demo_badge', 'Free Trial')}
+                  <Button asChild className="w-full justify-center bg-brand-primary text-brand-dark hover:bg-brand-primary/90 font-bold flex items-center gap-2">
+                    <Link href="/download">
+                      <FaWindows className="w-4 h-4 text-brand-dark" />
+                      <span>{t('nav_download', 'Download')}</span>
                     </Link>
                   </Button>
                 </div>

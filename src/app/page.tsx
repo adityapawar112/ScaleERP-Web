@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { FaBolt, FaBookOpen, FaBoxOpen, FaShieldAlt, FaWifi, FaArrowRight, FaCheckCircle, FaChartLine } from "react-icons/fa";
+import { FaBolt, FaBookOpen, FaBoxOpen, FaShieldAlt, FaWifi, FaArrowRight, FaCheckCircle, FaChartLine, FaWindows } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -48,9 +48,10 @@ export default function Home() {
           
           <BlurIn delay={0.4}>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4 z-20 relative w-full sm:w-auto">
-              <Link href="/demo" passHref>
-                <Button size="lg" className="bg-brand-primary hover:bg-brand-primary/90 text-brand-dark font-bold rounded-lg px-8 h-14 text-base w-full sm:w-auto flex items-center gap-2 group shadow-sm transition-all border border-brand-primary/20">
-                  {t('demo_badge', 'Free Trial License')} <FaArrowRight className="text-sm group-hover:translate-x-1 transition-transform opacity-70" />
+              <Link href="/download" passHref>
+                <Button size="lg" className="bg-brand-primary hover:bg-brand-primary/90 text-brand-dark font-bold rounded-lg px-8 h-14 text-base w-full sm:w-auto flex items-center gap-2.5 group shadow-sm transition-all border border-brand-primary/20">
+                  <FaWindows className="text-lg text-brand-dark" />
+                  <span>{t('hero_download_btn', 'Download for Windows')}</span>
                 </Button>
               </Link>
               <Link href="/pricing" passHref>
@@ -221,9 +222,10 @@ export default function Home() {
           </div>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-            <Link href="/demo" passHref>
-              <Button size="lg" className="bg-terracotta hover:bg-terracotta/90 text-white rounded-lg px-10 h-14 text-base w-full sm:w-auto font-medium transition-colors">
-                {t('demo_badge', 'Free Trial License')}
+            <Link href="/download" passHref>
+              <Button size="lg" className="bg-brand-primary hover:bg-brand-primary/90 text-brand-dark rounded-lg px-10 h-14 text-base w-full sm:w-auto font-bold transition-all flex items-center justify-center gap-2.5 shadow-md">
+                <FaWindows className="text-lg text-brand-dark" />
+                <span>{t('hero_download_btn', 'Download for Windows')}</span>
               </Button>
             </Link>
             <Link href="/contact" passHref>

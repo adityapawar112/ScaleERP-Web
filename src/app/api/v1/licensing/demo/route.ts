@@ -3,11 +3,29 @@ import { supabaseAdmin } from "@/lib/supabase";
 import { signLicense, LicensePayload } from "@/lib/licensing";
 import crypto from "crypto";
 
+// In-memory cache for IP and client token rate-limiting and key reuse
+interface CachedDemoKey {
+  keyCode: string;
+  licenseBlob: string;
+  validFrom: string;
+  validUntil: string;
+  maintenanceUntil: string;
+  edition: string;
+  customerName: string;
+  isUniversal: boolean;
+  deviceFingerprint: string | null;
+  createdAt: number;
+}
+
+const keyCacheByClient = new Map<string, CachedDemoKey>();
+const ipRequestHistory = new Map<string, number[]>();
+
 export async function POST(req: NextRequest) {
   let customerName = "Demo Customer";
   let deviceFingerprint = "";
   let edition = "Pro";
-  const ipAddress = req.headers.get("x-forwarded-for") || req.headers.get("x-real-ip") || "unknown";
+  let clientToken = "";
+  const ipAddress = (req.headers.get("x-forwarded-for") || req.headers.get("x-real-ip") || "127.0.0.1").split(",")[0].trim();
 
   try {
     const body = await req.json();
@@ -20,8 +38,44 @@ export async function POST(req: NextRequest) {
     if (body.edition && typeof body.edition === "string") {
       edition = body.edition.trim() || "Pro";
     }
+    if (body.clientToken && typeof body.clientToken === "string") {
+      clientToken = body.clientToken.trim().slice(0, 128);
+    }
   } catch {
     // If body is empty or not JSON, proceed with defaults
+  }
+
+  // Primary rate-limiting and reuse identifier
+  const cacheKey = clientToken || ipAddress;
+  const nowMs = Date.now();
+
+  // 1. Check if an active trial key already exists for this client / IP within the last 30 days
+  const existing = keyCacheByClient.get(cacheKey);
+  if (existing && (nowMs - existing.createdAt) < 30 * 24 * 60 * 60 * 1000) {
+    // If the request isn't trying to bind a different hardware fingerprint, reuse existing active key
+    if (!deviceFingerprint || existing.deviceFingerprint === deviceFingerprint) {
+      return NextResponse.json({
+        ...existing,
+        success: true,
+        reused: true,
+        message: "Retrieved existing active 30-day evaluation license.",
+      });
+    }
+  }
+
+  // 2. IP Rate-Limiting: allow maximum 3 new keys per IP every 24 hours to prevent script abuse
+  const recentRequests = (ipRequestHistory.get(ipAddress) || []).filter(
+    (t) => nowMs - t < 24 * 60 * 60 * 1000
+  );
+  if (recentRequests.length >= 3 && !existing) {
+    return NextResponse.json(
+      {
+        success: false,
+        message:
+          "Trial license quota reached for this workstation/IP. Please use your existing active trial key or contact developer support.",
+      },
+      { status: 429 }
+    );
   }
 
   // If a fingerprint is provided, validate that it matches 64 hex characters (SHA-256)
@@ -55,11 +109,35 @@ export async function POST(req: NextRequest) {
   };
   const keyCode = `DEMO-${randomSegment(4)}-${randomSegment(4)}-${randomSegment(4)}`;
   const activationId = crypto.randomUUID();
-  const customerId = `cust_demo_${crypto.randomBytes(4).toString("hex")}`;
+
+  // Create customer record in Supabase customers table first to obtain a valid UUID
+  let customerId: string | null = null;
+  try {
+    const dummyEmail = `demo-${Date.now()}-${crypto.randomBytes(3).toString("hex")}@scaleerp.local`;
+    const { data: customerRecord, error: custErr } = await supabaseAdmin
+      .from("customers")
+      .insert({
+        name: customerName || "Demo Evaluation Retailer",
+        email: dummyEmail,
+        phone: null,
+      })
+      .select()
+      .single();
+
+    if (!custErr && customerRecord) {
+      customerId = customerRecord.id;
+    } else if (custErr) {
+      console.warn("Supabase customer pre-creation warning for demo license:", custErr);
+    }
+  } catch (custErr) {
+    console.warn("Supabase customer pre-creation error for demo license:", custErr);
+  }
+
+  const effectiveCustomerId = customerId || crypto.randomUUID();
 
   const licensePayload: LicensePayload = {
     license_id: activationId,
-    customer_id: customerId,
+    customer_id: effectiveCustomerId,
     edition: edition,
     valid_from: now.toISOString(),
     valid_until: validUntil.toISOString(),
@@ -70,11 +148,30 @@ export async function POST(req: NextRequest) {
   const licenseBlob = signLicense(licensePayload);
   const isUniversal = !deviceFingerprint;
 
+  // Record IP request for rate-limiting
+  recentRequests.push(nowMs);
+  ipRequestHistory.set(ipAddress, recentRequests);
+
+  // Cache key response for seamless reuse
+  const responseData: CachedDemoKey = {
+    keyCode,
+    licenseBlob,
+    validFrom: now.toISOString(),
+    validUntil: validUntil.toISOString(),
+    maintenanceUntil: maintenanceUntil.toISOString(),
+    edition,
+    customerName,
+    isUniversal,
+    deviceFingerprint: deviceFingerprint || null,
+    createdAt: nowMs,
+  };
+  keyCacheByClient.set(cacheKey, responseData);
+
   // Attempt persistence into Supabase (graceful fallback if Supabase is offline or table constraints differ)
   try {
     const { error: keyError } = await supabaseAdmin.from("license_keys").insert({
       key_code: keyCode,
-      customer_id: customerId,
+      customer_id: customerId, // valid UUID referencing customers.id, or null if customer record failed
       edition: edition,
       max_devices: 1,
       active_devices: deviceFingerprint ? 1 : 0,
@@ -84,8 +181,10 @@ export async function POST(req: NextRequest) {
       is_revoked: false,
     });
 
-    if (!keyError && deviceFingerprint) {
-      await supabaseAdmin.from("device_activations").insert({
+    if (keyError) {
+      console.error("Supabase license_keys insert error in demo route:", keyError);
+    } else if (deviceFingerprint) {
+      const { error: actError } = await supabaseAdmin.from("device_activations").insert({
         activation_id: activationId,
         key_code: keyCode,
         device_fingerprint: deviceFingerprint,
@@ -94,6 +193,9 @@ export async function POST(req: NextRequest) {
         last_sync_at: now.toISOString(),
         license_blob: licenseBlob,
       });
+      if (actError) {
+        console.error("Supabase device_activations insert error in demo route:", actError);
+      }
     }
 
     await supabaseAdmin.from("activation_logs").insert({
@@ -108,14 +210,7 @@ export async function POST(req: NextRequest) {
 
   return NextResponse.json({
     success: true,
-    keyCode,
-    licenseBlob,
-    validFrom: now.toISOString(),
-    validUntil: validUntil.toISOString(),
-    maintenanceUntil: maintenanceUntil.toISOString(),
-    edition,
-    customerName,
-    isUniversal,
-    deviceFingerprint: deviceFingerprint || null,
+    ...responseData,
+    reused: false,
   });
 }

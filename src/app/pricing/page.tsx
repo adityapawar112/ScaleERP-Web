@@ -161,7 +161,7 @@ export default function PricingPage() {
             </CardContent>
             <CardFooter className="pb-8">
               <Button asChild className="w-full h-12 text-md" variant="outline">
-                <Link href="/demo">
+                <Link href="/download">
                   {t("pricing_cta_primary")}
                 </Link>
               </Button>
@@ -211,7 +211,7 @@ export default function PricingPage() {
             </CardContent>
             <CardFooter className="pb-8">
               <Button asChild className="w-full h-12 text-md bg-terracotta hover:bg-terracotta/90 text-white">
-                <Link href="/demo">
+                <Link href="/download">
                   {t("pricing_cta_primary")}
                 </Link>
               </Button>
