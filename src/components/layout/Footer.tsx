@@ -37,10 +37,10 @@ export function Footer() {
           <div className="col-span-1">
             <h3 className="font-bebas text-xl mb-4 tracking-wide text-gray-100">{t('Product')}</h3>
             <ul className="space-y-2 text-sm text-gray-300 font-public">
-              <li><Link href="/product/features/all-features" className="hover:text-brand-primary transition-colors">{t('All Features')}</Link></li>
-              <li><Link href="/product/use-cases/feed-stores" className="hover:text-brand-primary transition-colors">{t('Feed Stores')}</Link></li>
-              <li><Link href="/product/use-cases/wholesale-brokers" className="hover:text-brand-primary transition-colors">{t('Wholesale Brokers')}</Link></li>
-              <li><Link href="/product/features/comparison" className="hover:text-brand-primary transition-colors">{t('Compare to Tally')}</Link></li>
+              <li><Link href="/product/features/all-features" prefetch={false} className="hover:text-brand-primary transition-colors">{t('All Features')}</Link></li>
+              <li><Link href="/product/use-cases/feed-stores" prefetch={false} className="hover:text-brand-primary transition-colors">{t('Feed Stores')}</Link></li>
+              <li><Link href="/product/use-cases/wholesale-brokers" prefetch={false} className="hover:text-brand-primary transition-colors">{t('Wholesale Brokers')}</Link></li>
+              <li><Link href="/product/features/comparison" prefetch={false} className="hover:text-brand-primary transition-colors">{t('Compare to Tally')}</Link></li>
               <li><Link href="/pricing" className="hover:text-brand-primary transition-colors">{t('pricing', 'Pricing')}</Link></li>
               <li><Link href="/download" className="hover:text-brand-primary transition-colors">{t('Download Client', 'Download Desktop App')}</Link></li>
             </ul>
@@ -49,17 +49,17 @@ export function Footer() {
           <div className="col-span-1">
             <h3 className="font-bebas text-xl mb-4 tracking-wide text-gray-100">{t('Resources & Support')}</h3>
             <ul className="space-y-2 text-sm text-gray-300 font-public mb-6">
-              <li><Link href="/about" className="hover:text-brand-primary transition-colors">{t('about', 'About Us')}</Link></li>
-              <li><Link href="/contact" className="hover:text-brand-primary transition-colors">{t('contact', 'Contact')}</Link></li>
+              <li><Link href="/about" prefetch={false} className="hover:text-brand-primary transition-colors">{t('about', 'About Us')}</Link></li>
+              <li><Link href="/contact" prefetch={false} className="hover:text-brand-primary transition-colors">{t('contact', 'Contact')}</Link></li>
             </ul>
             <div className="flex flex-col gap-3">
-              <Link href="/docs" passHref>
+              <Link href="/docs" passHref prefetch={false}>
                 <Button variant="outline" className="w-full bg-white/5 border-white/10 hover:bg-white/10 hover:text-white justify-start text-gray-200">
                   <BookOpen className="w-4 h-4 mr-2 text-brand-primary" />
                   {t('SOPs / Tutorials')}
                 </Button>
               </Link>
-              <Link href="/resources" passHref>
+              <Link href="/resources" passHref prefetch={false}>
                 <Button variant="outline" className="w-full bg-white/5 border-white/10 hover:bg-white/10 hover:text-white justify-start text-gray-200">
                   <Newspaper className="w-4 h-4 mr-2 text-brand-primary" />
                   {t('Blogs & News')}
@@ -71,8 +71,8 @@ export function Footer() {
           <div className="col-span-1">
             <h3 className="font-bebas text-xl mb-4 tracking-wide text-gray-100">{t('Legal')}</h3>
             <ul className="space-y-2 text-sm text-gray-300 font-public mb-6">
-              <li><Link href="/privacy" className="hover:text-brand-primary transition-colors">{t('Privacy Policy')}</Link></li>
-              <li><Link href="/terms" className="hover:text-brand-primary transition-colors">{t('Terms of Service')}</Link></li>
+              <li><Link href="/privacy" prefetch={false} className="hover:text-brand-primary transition-colors">{t('Privacy Policy')}</Link></li>
+              <li><Link href="/terms" prefetch={false} className="hover:text-brand-primary transition-colors">{t('Terms of Service')}</Link></li>
             </ul>
             <h3 className="font-bebas text-xl mb-4 tracking-wide text-gray-100">{t('Social')}</h3>
             <div className="flex gap-4">
@@ -103,7 +103,7 @@ export function Footer() {
           <div className="mt-4 md:mt-0 flex items-center space-x-2">
             <span className="text-xs text-gray-400 font-public uppercase tracking-widest">{t('Engineered By')}</span>
             <span className="font-logo font-bold text-lg tracking-wider text-white flex items-center gap-1.5">
-              <img src="/brand/app-icon-square-dark-green.png" alt="ScaleERP" width={16} height={16} className="h-4 w-auto inline rounded-sm" />
+              <img src="/brand/app-icon-square-dark-green.png" alt="ScaleERP" width={16} height={16} className="h-4 w-4 inline rounded-sm" />
               ScaleERP
             </span>
           </div>

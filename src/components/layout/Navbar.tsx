@@ -123,17 +123,17 @@ export function Navbar() {
                     <div className="w-1/3 bg-muted/50 p-5 flex flex-col gap-6 border-r border-border/50">
                       <div className="flex flex-col gap-3">
                         <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1">{t('Use Cases')}</span>
-                        <Link href="/product/use-cases/feed-stores" className="text-sm font-medium hover:text-terracotta transition-colors">{t('Feed Stores')}</Link>
-                        <Link href="/product/use-cases/wholesale-brokers" className="text-sm font-medium hover:text-terracotta transition-colors">{t('Wholesale Brokers')}</Link>
+                        <Link href="/product/use-cases/feed-stores" prefetch={false} className="text-sm font-medium hover:text-terracotta transition-colors">{t('Feed Stores')}</Link>
+                        <Link href="/product/use-cases/wholesale-brokers" prefetch={false} className="text-sm font-medium hover:text-terracotta transition-colors">{t('Wholesale Brokers')}</Link>
                       </div>
                       
                       <div className="flex flex-col gap-3">
                         <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1">{t('Explore')}</span>
-                        <Link href="/product/features/all-features" className="text-sm font-medium flex items-center gap-2 hover:text-terracotta transition-colors group/link">
+                        <Link href="/product/features/all-features" prefetch={false} className="text-sm font-medium flex items-center gap-2 hover:text-terracotta transition-colors group/link">
                           <LayoutGrid className="w-4 h-4 text-muted-foreground group-hover/link:text-terracotta transition-colors" />
                           {t('All Features')}
                         </Link>
-                        <Link href="/product/features/comparison" className="text-sm font-medium flex items-center gap-2 hover:text-terracotta transition-colors group/link">
+                        <Link href="/product/features/comparison" prefetch={false} className="text-sm font-medium flex items-center gap-2 hover:text-terracotta transition-colors group/link">
                           <ArrowRightLeft className="w-4 h-4 text-muted-foreground group-hover/link:text-terracotta transition-colors" />
                           {t('Comparison')}
                         </Link>
@@ -145,17 +145,17 @@ export function Navbar() {
                       
                       {/* Top row: 3 main modules */}
                       <div className="grid grid-cols-3 gap-4 pb-4 border-b border-border/50">
-                        <Link href="/product/features/platform" className="flex flex-col gap-1 hover:bg-muted p-2 rounded-lg transition-colors group/item">
+                        <Link href="/product/features/platform" prefetch={false} className="flex flex-col gap-1 hover:bg-muted p-2 rounded-lg transition-colors group/item">
                           <Layers className="w-5 h-5 text-terracotta mb-1" />
                           <div className="text-sm font-bold">{t('Platform')}</div>
                           <p className="text-xs text-muted-foreground leading-tight">{t('Core Inventory Engine')}</p>
                         </Link>
-                        <Link href="/product/features/tools" className="flex flex-col gap-1 hover:bg-muted p-2 rounded-lg transition-colors group/item">
+                        <Link href="/product/features/tools" prefetch={false} className="flex flex-col gap-1 hover:bg-muted p-2 rounded-lg transition-colors group/item">
                           <Wrench className="w-5 h-5 text-emerald-500 mb-1" />
                           <div className="text-sm font-bold">{t('Tools')}</div>
                           <p className="text-xs text-muted-foreground leading-tight">{t('Advanced Invoicing')}</p>
                         </Link>
-                        <Link href="/product/features/tasks" className="flex flex-col gap-1 hover:bg-muted p-2 rounded-lg transition-colors group/item">
+                        <Link href="/product/features/tasks" prefetch={false} className="flex flex-col gap-1 hover:bg-muted p-2 rounded-lg transition-colors group/item">
                           <ListTodo className="w-5 h-5 text-blue-500 mb-1" />
                           <div className="text-sm font-bold">{t('Tasks')}</div>
                           <p className="text-xs text-muted-foreground leading-tight">{t('Automation & Sync')}</p>
@@ -166,23 +166,23 @@ export function Navbar() {
                       <div>
                         <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2 block">{t('Deep Dives')}</span>
                         <div className="grid grid-cols-2 gap-x-2 gap-y-1">
-                          <Link href="/product/features/inventory-tracking" className="flex items-center gap-2 hover:bg-muted p-2 rounded-md transition-colors group/link">
+                          <Link href="/product/features/inventory-tracking" prefetch={false} className="flex items-center gap-2 hover:bg-muted p-2 rounded-md transition-colors group/link">
                             <Package className="w-4 h-4 text-muted-foreground group-hover/link:text-foreground" />
                             <span className="text-sm font-medium">{t('Inventory Tracking')}</span>
                           </Link>
-                          <Link href="/product/features/ledgers" className="flex items-center gap-2 hover:bg-muted p-2 rounded-md transition-colors group/link">
+                          <Link href="/product/features/ledgers" prefetch={false} className="flex items-center gap-2 hover:bg-muted p-2 rounded-md transition-colors group/link">
                             <BookOpenCheck className="w-4 h-4 text-muted-foreground group-hover/link:text-foreground" />
                             <span className="text-sm font-medium">{t('Ledgers & Dues')}</span>
                           </Link>
-                          <Link href="/product/features/invoice-customization" className="flex items-center gap-2 hover:bg-muted p-2 rounded-md transition-colors group/link">
+                          <Link href="/product/features/invoice-customization" prefetch={false} className="flex items-center gap-2 hover:bg-muted p-2 rounded-md transition-colors group/link">
                             <ReceiptText className="w-4 h-4 text-muted-foreground group-hover/link:text-foreground" />
                             <span className="text-sm font-medium">{t('Invoice Customization')}</span>
                           </Link>
-                          <Link href="/product/features/offline-security" className="flex items-center gap-2 hover:bg-muted p-2 rounded-md transition-colors group/link">
+                          <Link href="/product/features/offline-security" prefetch={false} className="flex items-center gap-2 hover:bg-muted p-2 rounded-md transition-colors group/link">
                             <ShieldCheck className="w-4 h-4 text-muted-foreground group-hover/link:text-foreground" />
                             <span className="text-sm font-medium">{t('Offline Security')}</span>
                           </Link>
-                          <Link href="/product/features/whatsapp-cloud-backup" className="flex items-center gap-2 hover:bg-muted p-2 rounded-md transition-colors col-span-2 group/link">
+                          <Link href="/product/features/whatsapp-cloud-backup" prefetch={false} className="flex items-center gap-2 hover:bg-muted p-2 rounded-md transition-colors col-span-2 group/link">
                             <MessageCircle className="w-4 h-4 text-muted-foreground group-hover/link:text-foreground" />
                             <span className="text-sm font-medium">{t('WhatsApp & Cloud Backup')}</span>
                           </Link>
@@ -195,14 +195,14 @@ export function Navbar() {
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                  <Link href="/about">
+                  <Link href="/about" prefetch={false}>
                     {t('about', 'About Us')}
                   </Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                  <Link href="/contact">
+                  <Link href="/contact" prefetch={false}>
                     {t('contact', 'Contact')}
                   </Link>
                 </NavigationMenuLink>
@@ -238,14 +238,14 @@ export function Navbar() {
                   alt="ScaleERP Logo"
                   width={28}
                   height={28}
-                  className="h-7 w-auto object-contain block dark:hidden"
+                  className="h-7 w-7 object-contain block dark:hidden"
                 />
                 <img
                   src="/brand/app-icon-square-dark-green.png"
                   alt="ScaleERP Logo"
                   width={28}
                   height={28}
-                  className="h-7 w-auto object-contain rounded-sm hidden dark:block"
+                  className="h-7 w-7 object-contain rounded-sm hidden dark:block"
                 />
                 <span className="font-logo font-bold text-2xl tracking-tight text-foreground">
                   ScaleERP
@@ -260,18 +260,18 @@ export function Navbar() {
                 <Link href="/pricing" className="text-lg font-medium hover:text-brand-primary">{t('pricing', 'Pricing')}</Link>
                 <div className="flex flex-col gap-2">
                   <span className="text-lg font-medium text-zinc-500">{t('Features')}</span>
-                  <Link href="/product/features/platform" className="text-base font-medium hover:text-brand-primary pl-4 border-l-2 border-zinc-200 dark:border-zinc-800 ml-1">{t('Platform')}</Link>
-                  <Link href="/product/features/tools" className="text-base font-medium hover:text-brand-primary pl-4 border-l-2 border-zinc-200 dark:border-zinc-800 ml-1">{t('Tools')}</Link>
-                  <Link href="/product/features/tasks" className="text-base font-medium hover:text-brand-primary pl-4 border-l-2 border-zinc-200 dark:border-zinc-800 ml-1">{t('Tasks')}</Link>
-                  <Link href="/product/features/all-features" className="text-base font-medium hover:text-brand-primary pl-4 border-l-2 border-zinc-200 dark:border-zinc-800 ml-1">{t('All Features')}</Link>
-                  <Link href="/product/features/comparison" className="text-base font-medium hover:text-brand-primary pl-4 border-l-2 border-zinc-200 dark:border-zinc-800 ml-1">{t('Comparison')}</Link>
+                  <Link href="/product/features/platform" prefetch={false} className="text-base font-medium hover:text-brand-primary pl-4 border-l-2 border-zinc-200 dark:border-zinc-800 ml-1">{t('Platform')}</Link>
+                  <Link href="/product/features/tools" prefetch={false} className="text-base font-medium hover:text-brand-primary pl-4 border-l-2 border-zinc-200 dark:border-zinc-800 ml-1">{t('Tools')}</Link>
+                  <Link href="/product/features/tasks" prefetch={false} className="text-base font-medium hover:text-brand-primary pl-4 border-l-2 border-zinc-200 dark:border-zinc-800 ml-1">{t('Tasks')}</Link>
+                  <Link href="/product/features/all-features" prefetch={false} className="text-base font-medium hover:text-brand-primary pl-4 border-l-2 border-zinc-200 dark:border-zinc-800 ml-1">{t('All Features')}</Link>
+                  <Link href="/product/features/comparison" prefetch={false} className="text-base font-medium hover:text-brand-primary pl-4 border-l-2 border-zinc-200 dark:border-zinc-800 ml-1">{t('Comparison')}</Link>
                   
                   <span className="text-lg font-medium text-zinc-500 mt-2">{t('Use Cases')}</span>
-                  <Link href="/product/use-cases/feed-stores" className="text-base font-medium hover:text-brand-primary pl-4 border-l-2 border-zinc-200 dark:border-zinc-800 ml-1">{t('Feed Stores')}</Link>
-                  <Link href="/product/use-cases/wholesale-brokers" className="text-base font-medium hover:text-brand-primary pl-4 border-l-2 border-zinc-200 dark:border-zinc-800 ml-1">{t('Wholesale Brokers')}</Link>
+                  <Link href="/product/use-cases/feed-stores" prefetch={false} className="text-base font-medium hover:text-brand-primary pl-4 border-l-2 border-zinc-200 dark:border-zinc-800 ml-1">{t('Feed Stores')}</Link>
+                  <Link href="/product/use-cases/wholesale-brokers" prefetch={false} className="text-base font-medium hover:text-brand-primary pl-4 border-l-2 border-zinc-200 dark:border-zinc-800 ml-1">{t('Wholesale Brokers')}</Link>
                 </div>
-                <Link href="/about" className="text-lg font-medium hover:text-brand-primary">{t('about', 'About Us')}</Link>
-                <Link href="/contact" className="text-lg font-medium hover:text-brand-primary">{t('contact', 'Contact')}</Link>
+                <Link href="/about" prefetch={false} className="text-lg font-medium hover:text-brand-primary">{t('about', 'About Us')}</Link>
+                <Link href="/contact" prefetch={false} className="text-lg font-medium hover:text-brand-primary">{t('contact', 'Contact')}</Link>
                 
                 <div className="flex flex-col gap-2 mt-4 border-t pt-4">
                   <Button asChild className="w-full justify-center bg-brand-primary text-brand-dark hover:bg-brand-primary/90 font-bold flex items-center gap-2">

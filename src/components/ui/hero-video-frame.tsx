@@ -11,11 +11,14 @@ interface HeroVideoFrameProps {
 }
 
 export function HeroVideoFrame({
-  posterSrc = "/assets/Dashboard.png",
+  posterSrc = "/assets/Dashboard.webp",
   videoSrc = "https://www.youtube.com/embed/y1WYCrMw0UY?autoplay=1&mute=1&loop=1&playlist=y1WYCrMw0UY&controls=0&modestbranding=1",
   title = "ScaleERP High-Stress Checkout Demo",
 }: HeroVideoFrameProps) {
   const [isPlaying, setIsPlaying] = useState(false);
+  const resolvedPoster = posterSrc.startsWith("/assets/") && posterSrc.endsWith(".png")
+    ? posterSrc.replace(/\.png$/, ".webp")
+    : posterSrc;
 
   return (
     <div className="relative w-full aspect-video bg-black overflow-hidden rounded-b-xl">
@@ -36,7 +39,7 @@ export function HeroVideoFrame({
         >
           {/* High-res optimized poster image */}
           <Image
-            src={posterSrc}
+            src={resolvedPoster}
             alt={title}
             fill
             priority

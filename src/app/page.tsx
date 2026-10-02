@@ -2,17 +2,30 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import { FaBolt, FaBookOpen, FaBoxOpen, FaShieldAlt, FaWifi, FaArrowRight, FaCheckCircle, FaChartLine, FaWindows } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { BlurIn } from "@/components/ui/blur-in";
-import { SafariMockup } from "@/components/ui/safari-mockup";
-import { HeroVideoFrame } from "@/components/ui/hero-video-frame";
 import { Marquee } from "@/components/ui/marquee";
-import { FarmHeroPattern } from "@/components/ui/farm-hero-pattern";
 import { useTranslation } from "react-i18next";
 import { JargonTooltip } from "@/components/JargonTooltip";
+
+const SafariMockup = dynamic(
+  () => import("@/components/ui/safari-mockup").then((m) => m.SafariMockup),
+  { ssr: true }
+);
+
+const HeroVideoFrame = dynamic(
+  () => import("@/components/ui/hero-video-frame").then((m) => m.HeroVideoFrame),
+  { ssr: true }
+);
+
+const FarmHeroPattern = dynamic(
+  () => import("@/components/ui/farm-hero-pattern").then((m) => m.FarmHeroPattern),
+  { ssr: true }
+);
 
 export default function Home() {
   const { t } = useTranslation();
@@ -155,7 +168,7 @@ export default function Home() {
                 <CardDescription className="text-foreground/60 mt-3 text-base max-w-md leading-relaxed">{t('lightning_desc', 'Designed for the chaos of the retail checkout counter. Generate invoices and clear parties instantly with keyboard-first navigation.')}</CardDescription>
               </CardHeader>
               <CardContent className="relative flex-grow ml-6 md:ml-10 mt-2 md:mt-0 p-0 overflow-hidden rounded-tl-2xl border-t border-l border-border/40 shadow-sm group-hover:scale-[1.01] transition-transform duration-500 ease-out origin-top-left bg-card">
-                <Image src="/assets/AddTransaction.png" alt="Billing UI" fill priority sizes="(max-width: 768px) 100vw, (max-width: 1200px) 58vw, 680px" className="object-cover object-left-top" />
+                <Image src="/assets/AddTransaction.webp" alt="Billing UI" fill priority sizes="(max-width: 768px) 100vw, (max-width: 1200px) 58vw, 680px" className="object-cover object-left-top" />
               </CardContent>
             </Card>
 
@@ -168,7 +181,7 @@ export default function Home() {
                   <CardDescription className="text-foreground/50 mt-1 text-sm">{t('replace_desc', 'Automate your ledgers securely.')}</CardDescription>
                 </CardHeader>
                 <CardContent className="relative flex-grow ml-6 md:ml-8 mt-2 md:mt-0 p-0 overflow-hidden rounded-tl-xl border-t border-l border-border/40 shadow-sm group-hover:scale-[1.02] transition-transform duration-500 ease-out origin-top-left bg-card">
-                  <Image src="/assets/TransactionRecords.png" alt="Ledger UI" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 42vw, 480px" className="object-cover object-left-top" />
+                  <Image src="/assets/TransactionRecords.webp" alt="Ledger UI" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 42vw, 480px" className="object-cover object-left-top" />
                 </CardContent>
               </Card>
 
@@ -179,7 +192,7 @@ export default function Home() {
                   <CardDescription className="text-foreground/50 mt-1 text-sm">{t('know_desc', 'Real-time alerts & tracking.')}</CardDescription>
                 </CardHeader>
                 <CardContent className="relative flex-grow ml-6 md:ml-8 mt-2 md:mt-0 p-0 overflow-hidden rounded-tl-xl border-t border-l border-border/40 shadow-sm group-hover:scale-[1.02] transition-transform duration-500 ease-out origin-top-left bg-card">
-                  <Image src="/assets/Reports.png" alt="Inventory UI" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 42vw, 480px" className="object-cover object-left-top" />
+                  <Image src="/assets/Reports.webp" alt="Inventory UI" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 42vw, 480px" className="object-cover object-left-top" />
                 </CardContent>
               </Card>
             </div>
@@ -209,7 +222,7 @@ export default function Home() {
               </CardHeader>
               <CardContent className="relative flex-grow ml-6 md:ml-10 mt-2 md:mt-0 p-0 overflow-hidden rounded-tl-2xl border-t border-l border-white/10 shadow-2xl group-hover:scale-[1.01] transition-transform duration-700 origin-top-left bg-black ring-1 ring-white/10">
                 <HeroVideoFrame
-                  posterSrc="/assets/MarathiDashboard.png"
+                  posterSrc="/assets/MarathiDashboard.webp"
                   videoSrc="https://www.youtube.com/embed/9PQ3zLulW5w?autoplay=1&mute=1&controls=0"
                   title="ScaleERP Offline Architecture Demo"
                 />
@@ -225,7 +238,7 @@ export default function Home() {
                 </CardDescription>
               </CardHeader>
               <CardContent className="relative flex-grow ml-6 md:ml-10 mt-2 md:mt-0 p-0 overflow-hidden rounded-tl-2xl border-t border-l border-white/10 shadow-2xl group-hover:scale-[1.01] transition-transform duration-700 origin-top-left bg-black ring-1 ring-white/10">
-                <Image src="/assets/LicenseMangement.png" alt="Hardware-Bound RSA License Manager" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 580px" className="object-cover object-left-top" />
+                <Image src="/assets/LicenseMangement.webp" alt="Hardware-Bound RSA License Manager" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 580px" className="object-cover object-left-top" />
               </CardContent>
             </Card>
           </div>
@@ -252,7 +265,7 @@ export default function Home() {
                 <span>{t('hero_download_btn', 'Download for Windows')}</span>
               </Button>
             </Link>
-            <Link href="/contact" passHref>
+            <Link href="/contact" passHref prefetch={false}>
               <Button size="lg" variant="outline" className="border-white/20 bg-white/5 hover:bg-white/10 text-white rounded-lg px-10 h-14 text-base w-full sm:w-auto font-medium transition-colors backdrop-blur-md">
                 {t('talk_sales', 'Talk to Sales')}
               </Button>

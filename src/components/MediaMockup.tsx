@@ -19,16 +19,20 @@ export function MediaMockup({
   src,
   priority = false,
 }: MediaMockupProps) {
+  const resolvedSrc = src?.startsWith("/assets/") && src.endsWith(".png")
+    ? src.replace(/\.png$/, ".webp")
+    : src;
+
   return (
     <div
       className={`relative w-full overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-900/50 shadow-sm flex flex-col items-center justify-center p-6 ${className}`}
     >
       <div className="absolute inset-0 bg-gradient-to-br from-transparent to-zinc-200/50 dark:to-zinc-800/20 pointer-events-none" />
       
-      {src ? (
+      {resolvedSrc ? (
         <div className="relative z-0 w-full mt-6 overflow-hidden rounded-lg aspect-[16/10]">
           <Image
-            src={src}
+            src={resolvedSrc}
             alt={caption || "Media Mockup"}
             width={1200}
             height={750}
