@@ -64,6 +64,7 @@ export default function WholesaleBrokersPage() {
                 <MediaMockup 
                   type="image" 
                   src="/assets/CustomBills.png"
+                  priority={true}
                   caption="A4 Invoice Generation & WhatsApp Reminders Blast" 
                   className="rounded-lg border border-zinc-200 dark:border-zinc-800 shadow-2xl bg-white dark:bg-zinc-950"
                 />

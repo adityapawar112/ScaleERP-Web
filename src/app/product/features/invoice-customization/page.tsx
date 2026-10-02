@@ -58,6 +58,7 @@ export default function InvoiceCustomizationPage() {
                 <MediaMockup 
                   type="image" 
                   src="/assets/CustomBills.png"
+                  priority={true}
                   caption="A zoomed-in preview toggling between A4 Invoice and Thermal Receipt formats." 
                 />
               </div>

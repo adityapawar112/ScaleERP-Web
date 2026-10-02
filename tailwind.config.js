@@ -17,7 +17,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["var(--font-plus-jakarta)", "sans-serif"],
+        sans: ["var(--font-plus-jakarta)", "'Noto Sans Devanagari'", "'Nirmala UI'", "'Mangal'", "sans-serif"],
         heading: ["var(--font-outfit)", "sans-serif"],
         logo: ["var(--font-stack-sans-notch)", "'Stack Sans Notch'", "sans-serif"],
         notch: ["var(--font-stack-sans-notch)", "'Stack Sans Notch'", "sans-serif"],
@@ -101,10 +101,15 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        marquee: {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        marquee: "marquee var(--marquee-duration, 30s) linear infinite",
       },
     },
   },

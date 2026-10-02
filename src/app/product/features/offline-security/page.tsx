@@ -65,6 +65,7 @@ export default function OfflineSecurityPage() {
                 caption={t("os_mockup_1", "Local DB Status: Active | Latency: 2ms")} 
                 className="h-48"
                 src="/assets/scaleerp-architecture.png"
+                priority={true}
               />
             </div>
           </BlurIn>

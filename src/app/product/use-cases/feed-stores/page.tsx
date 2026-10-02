@@ -62,6 +62,7 @@ export default function FeedStoresPage() {
                 <MediaMockup 
                   type="image" 
                   src="/assets/AddTransaction.png"
+                  priority={true}
                   caption="High-speed billing interface with thermal receipt printing" 
                   className="rounded-lg border border-zinc-200 dark:border-zinc-800 shadow-2xl bg-white dark:bg-zinc-900"
                 />

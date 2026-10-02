@@ -31,24 +31,41 @@ export function Navbar() {
   const [isOverDarkSection, setIsOverDarkSection] = React.useState(false);
 
   React.useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      const darkSections = document.querySelectorAll('.dark-section');
-      let overDark = false;
-      const navHeight = 64; 
-      
-      darkSections.forEach((section) => {
-        const rect = section.getBoundingClientRect();
-        if (rect.top <= navHeight && rect.bottom >= 0) {
-          overDark = true;
-        }
-      });
-      setIsOverDarkSection(overDark);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const darkSections = document.querySelectorAll('.dark-section');
+          if (darkSections.length === 0) {
+            setIsOverDarkSection(false);
+            ticking = false;
+            return;
+          }
+          let overDark = false;
+          const navHeight = 64; 
+          
+          for (let i = 0; i < darkSections.length; i++) {
+            const rect = darkSections[i].getBoundingClientRect();
+            if (rect.top <= navHeight && rect.bottom >= 0) {
+              overDark = true;
+              break;
+            }
+          }
+          setIsOverDarkSection(overDark);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
+    // Defer initial layout measurement to avoid forced synchronous reflow during React hydration
+    const timer = setTimeout(handleScroll, 100);
     
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      clearTimeout(timer);
+    };
   }, []);
 
   return (
@@ -60,7 +77,9 @@ export function Navbar() {
             <img
               src="/brand/logomark-icon-green.png"
               alt="ScaleERP Logo"
-              className={`h-7 w-auto object-contain transition-transform group-hover:scale-105 ${
+              width={28}
+              height={28}
+              className={`h-7 w-7 object-contain transition-transform group-hover:scale-105 ${
                 isOverDarkSection ? 'hidden' : 'block dark:hidden'
               }`}
             />
@@ -68,7 +87,9 @@ export function Navbar() {
             <img
               src="/brand/app-icon-square-dark-green.png"
               alt="ScaleERP Logo"
-              className={`h-7 w-auto object-contain transition-transform group-hover:scale-105 rounded-sm ${
+              width={28}
+              height={28}
+              className={`h-7 w-7 object-contain transition-transform group-hover:scale-105 rounded-sm ${
                 isOverDarkSection ? 'block' : 'hidden dark:block'
               }`}
             />
@@ -215,11 +236,15 @@ export function Navbar() {
                 <img
                   src="/brand/logomark-icon-green.png"
                   alt="ScaleERP Logo"
+                  width={28}
+                  height={28}
                   className="h-7 w-auto object-contain block dark:hidden"
                 />
                 <img
                   src="/brand/app-icon-square-dark-green.png"
                   alt="ScaleERP Logo"
+                  width={28}
+                  height={28}
                   className="h-7 w-auto object-contain rounded-sm hidden dark:block"
                 />
                 <span className="font-logo font-bold text-2xl tracking-tight text-foreground">

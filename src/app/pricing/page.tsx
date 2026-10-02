@@ -16,6 +16,53 @@ export default function PricingPage() {
 
   return (
     <div className="flex flex-col min-h-screen">
+      {/* Schema.org Product & Pricing Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Product",
+            "name": "ScaleERP Desktop Software License",
+            "description": "High-velocity, offline-first inventory management, rapid billing, and ledger platform for retail feed stores and wholesale agricultural brokers.",
+            "brand": {
+              "@type": "Brand",
+              "name": "ScaleERP",
+            },
+            "offers": {
+              "@type": "AggregateOffer",
+              "priceCurrency": "INR",
+              "lowPrice": "4999",
+              "highPrice": "9999",
+              "offerCount": "2",
+              "offers": [
+                {
+                  "@type": "Offer",
+                  "name": "ScaleERP Standard Retail Edition",
+                  "price": "4999",
+                  "priceCurrency": "INR",
+                  "priceValidUntil": "2027-12-31",
+                  "availability": "https://schema.org/InStock",
+                  "itemCondition": "https://schema.org/NewCondition",
+                  "url": "https://scaleerp.vercel.app/pricing",
+                  "description": "Designed for single retail feed stores and counter billing with local SQLite storage, thermal printing, and WhatsApp receipts.",
+                },
+                {
+                  "@type": "Offer",
+                  "name": "ScaleERP Wholesale Pro Edition",
+                  "price": "9999",
+                  "priceCurrency": "INR",
+                  "priceValidUntil": "2027-12-31",
+                  "availability": "https://schema.org/InStock",
+                  "itemCondition": "https://schema.org/NewCondition",
+                  "url": "https://scaleerp.vercel.app/pricing",
+                  "description": "For high-volume wholesale distributors and broker networks with multi-godown tracking, broker commissions, and cloud synchronization.",
+                },
+              ],
+            },
+          }),
+        }}
+      />
       {/* 1. Hero Section - Redesigned from scratch with inverted theme support */}
       <section className="relative px-4 pt-32 pb-32 w-full bg-zinc-950 dark:bg-zinc-50 text-white dark:text-zinc-900 rounded-b-[3rem] sm:rounded-b-[4rem] overflow-hidden shadow-2xl transition-colors duration-500">
         

@@ -8,6 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { BlurIn } from "@/components/ui/blur-in";
 import { SafariMockup } from "@/components/ui/safari-mockup";
+import { HeroVideoFrame } from "@/components/ui/hero-video-frame";
 import { Marquee } from "@/components/ui/marquee";
 import { FarmHeroPattern } from "@/components/ui/farm-hero-pattern";
 import { useTranslation } from "react-i18next";
@@ -18,6 +19,41 @@ export default function Home() {
 
   return (
     <div className="flex flex-col w-full bg-background selection:bg-brand-primary/20 relative">
+      {/* Schema.org SoftwareApplication Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "ScaleERP",
+            "operatingSystem": "Windows 10, Windows 11",
+            "applicationCategory": "BusinessApplication",
+            "description": "Lightning-fast, offline-first inventory management and rapid billing platform for wholesale distributors, feed retailers, and agricultural brokers.",
+            "offers": {
+              "@type": "AggregateOffer",
+              "priceCurrency": "INR",
+              "lowPrice": "4999",
+              "highPrice": "9999",
+              "offerCount": "2",
+            },
+            "softwareVersion": "1.0.0",
+            "author": {
+              "@type": "Organization",
+              "name": "ScaleERP",
+              "url": "https://scaleerp.vercel.app",
+            },
+            "featureList": [
+              "100% Offline SQLite WAL engine",
+              "RSA-2048 hardware-bound cryptographic licensing",
+              "80mm ESC/POS thermal printing",
+              "Multi-godown inventory management",
+              "WhatsApp payment reminders",
+              "Double-entry wholesale party ledgers",
+            ],
+          }),
+        }}
+      />
       
       {/* 1. Hero Section */}
       <section className="relative w-full pt-24 pb-20 md:pt-36 md:pb-32 flex flex-col items-center justify-center text-center px-4 overflow-hidden">
@@ -62,17 +98,15 @@ export default function Home() {
             </div>
           </BlurIn>
           
-          {/* Visual Focus: Massive Safari Mockup with YouTube Video */}
+          {/* Visual Focus: Massive Safari Mockup with YouTube Video Facade */}
           <BlurIn delay={0.6} className="w-full px-2 sm:px-0">
             <div className="mt-12 sm:mt-20 mx-auto relative w-full max-w-5xl rounded-xl z-20 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] ring-1 ring-border/50 bg-background/70 p-2 backdrop-blur-xl">
               <SafariMockup url="app.scaleerp.com/dashboard">
-                <iframe 
-                  className="w-full aspect-video border-b-xl object-cover pointer-events-auto bg-black"
-                  src="https://www.youtube.com/embed/y1WYCrMw0UY?autoplay=1&mute=1&loop=1&playlist=y1WYCrMw0UY&controls=0&modestbranding=1" 
-                  title="ScaleERP High-Stress Checkout"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                  allowFullScreen
-                ></iframe>
+                <HeroVideoFrame
+                  posterSrc="/assets/Dashboard.png"
+                  videoSrc="https://www.youtube.com/embed/y1WYCrMw0UY?autoplay=1&mute=1&loop=1&playlist=y1WYCrMw0UY&controls=0&modestbranding=1"
+                  title="ScaleERP High-Stress Checkout Demo"
+                />
               </SafariMockup>
             </div>
           </BlurIn>
@@ -121,7 +155,7 @@ export default function Home() {
                 <CardDescription className="text-foreground/60 mt-3 text-base max-w-md leading-relaxed">{t('lightning_desc', 'Designed for the chaos of the retail checkout counter. Generate invoices and clear parties instantly with keyboard-first navigation.')}</CardDescription>
               </CardHeader>
               <CardContent className="relative flex-grow ml-6 md:ml-10 mt-2 md:mt-0 p-0 overflow-hidden rounded-tl-2xl border-t border-l border-border/40 shadow-sm group-hover:scale-[1.01] transition-transform duration-500 ease-out origin-top-left bg-card">
-                <Image src="/assets/AddTransaction.png" alt="Billing UI" fill className="object-cover object-left-top" />
+                <Image src="/assets/AddTransaction.png" alt="Billing UI" fill priority sizes="(max-width: 768px) 100vw, (max-width: 1200px) 58vw, 680px" className="object-cover object-left-top" />
               </CardContent>
             </Card>
 
@@ -134,7 +168,7 @@ export default function Home() {
                   <CardDescription className="text-foreground/50 mt-1 text-sm">{t('replace_desc', 'Automate your ledgers securely.')}</CardDescription>
                 </CardHeader>
                 <CardContent className="relative flex-grow ml-6 md:ml-8 mt-2 md:mt-0 p-0 overflow-hidden rounded-tl-xl border-t border-l border-border/40 shadow-sm group-hover:scale-[1.02] transition-transform duration-500 ease-out origin-top-left bg-card">
-                  <Image src="/assets/TransactionRecords.png" alt="Ledger UI" fill className="object-cover object-left-top" />
+                  <Image src="/assets/TransactionRecords.png" alt="Ledger UI" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 42vw, 480px" className="object-cover object-left-top" />
                 </CardContent>
               </Card>
 
@@ -145,7 +179,7 @@ export default function Home() {
                   <CardDescription className="text-foreground/50 mt-1 text-sm">{t('know_desc', 'Real-time alerts & tracking.')}</CardDescription>
                 </CardHeader>
                 <CardContent className="relative flex-grow ml-6 md:ml-8 mt-2 md:mt-0 p-0 overflow-hidden rounded-tl-xl border-t border-l border-border/40 shadow-sm group-hover:scale-[1.02] transition-transform duration-500 ease-out origin-top-left bg-card">
-                  <Image src="/assets/Reports.png" alt="Inventory UI" fill className="object-cover object-left-top" />
+                  <Image src="/assets/Reports.png" alt="Inventory UI" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 42vw, 480px" className="object-cover object-left-top" />
                 </CardContent>
               </Card>
             </div>
@@ -174,21 +208,11 @@ export default function Home() {
                 </CardDescription>
               </CardHeader>
               <CardContent className="relative flex-grow ml-6 md:ml-10 mt-2 md:mt-0 p-0 overflow-hidden rounded-tl-2xl border-t border-l border-white/10 shadow-2xl group-hover:scale-[1.01] transition-transform duration-700 origin-top-left bg-black ring-1 ring-white/10">
-                <div className="absolute inset-0 w-full h-full flex flex-col">
-                  <div className="flex items-center px-4 py-3 bg-[#1e1e1e] border-b border-white/5 flex-none">
-                    <div className="flex space-x-2">
-                      <div className="w-2.5 h-2.5 rounded-full bg-white/20"></div>
-                      <div className="w-2.5 h-2.5 rounded-full bg-white/20"></div>
-                      <div className="w-2.5 h-2.5 rounded-full bg-white/20"></div>
-                    </div>
-                  </div>
-                  <iframe 
-                    className="w-full flex-grow object-cover pointer-events-auto"
-                    src="https://www.youtube.com/embed/9PQ3zLulW5w?autoplay=1&mute=1&controls=0" 
-                    title="ScaleERP Offline Demo"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                  ></iframe>
-                </div>
+                <HeroVideoFrame
+                  posterSrc="/assets/MarathiDashboard.png"
+                  videoSrc="https://www.youtube.com/embed/9PQ3zLulW5w?autoplay=1&mute=1&controls=0"
+                  title="ScaleERP Offline Architecture Demo"
+                />
               </CardContent>
             </Card>
 
@@ -201,7 +225,7 @@ export default function Home() {
                 </CardDescription>
               </CardHeader>
               <CardContent className="relative flex-grow ml-6 md:ml-10 mt-2 md:mt-0 p-0 overflow-hidden rounded-tl-2xl border-t border-l border-white/10 shadow-2xl group-hover:scale-[1.01] transition-transform duration-700 origin-top-left bg-black ring-1 ring-white/10">
-                <Image src="/assets/LicenseMangement.png" alt="Hardware-Bound RSA License Manager" fill className="object-cover object-left-top" />
+                <Image src="/assets/LicenseMangement.png" alt="Hardware-Bound RSA License Manager" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 580px" className="object-cover object-left-top" />
               </CardContent>
             </Card>
           </div>

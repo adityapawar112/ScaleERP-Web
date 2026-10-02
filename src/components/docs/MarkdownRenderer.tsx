@@ -62,45 +62,43 @@ function processTextNodes(children: React.ReactNode): React.ReactNode {
 
 export function MarkdownRenderer({ content }: { content: string }) {
   return (
-    <TooltipProvider>
-      <div className="prose prose-lg dark:prose-invert prose-headings:font-heading max-w-3xl">
-        <ReactMarkdown
-          remarkPlugins={[remarkGfm]}
-          components={{
-            p: ({ node, children, ...props }) => {
-              return <p {...props}>{processTextNodes(children)}</p>;
-            },
-            li: ({ node, children, ...props }) => {
-              return <li {...props}>{processTextNodes(children)}</li>;
-            },
-            blockquote: (props) => {
-              const { node, children, ...rest } = props;
-              
-              const extractText = (element: any): string => {
-                if (typeof element === 'string') return element;
-                if (Array.isArray(element)) return element.map(extractText).join('');
-                if (element && element.props && element.props.children) {
-                  return extractText(element.props.children);
-                }
-                return '';
-              };
-              
-              const textContent = extractText(children);
-              
-              if (textContent.includes('📸') && textContent.includes('Screenshot')) {
-                const match = textContent.match(/\[(.*?)\]/);
-                const description = match ? match[1] : textContent.replace(/📸.*?Screenshot Placement:?/i, '').trim();
-                
-                return <MediaPlaceholder description={description} type="image" />;
+    <div className="prose prose-lg dark:prose-invert prose-headings:font-heading max-w-3xl">
+      <ReactMarkdown
+        remarkPlugins={[remarkGfm]}
+        components={{
+          p: ({ node, children, ...props }) => {
+            return <p {...props}>{processTextNodes(children)}</p>;
+          },
+          li: ({ node, children, ...props }) => {
+            return <li {...props}>{processTextNodes(children)}</li>;
+          },
+          blockquote: (props) => {
+            const { node, children, ...rest } = props;
+            
+            const extractText = (element: any): string => {
+              if (typeof element === 'string') return element;
+              if (Array.isArray(element)) return element.map(extractText).join('');
+              if (element && element.props && element.props.children) {
+                return extractText(element.props.children);
               }
+              return '';
+            };
+            
+            const textContent = extractText(children);
+            
+            if (textContent.includes('📸') && textContent.includes('Screenshot')) {
+              const match = textContent.match(/\[(.*?)\]/);
+              const description = match ? match[1] : textContent.replace(/📸.*?Screenshot Placement:?/i, '').trim();
               
-              return <blockquote {...rest}>{processTextNodes(children)}</blockquote>;
+              return <MediaPlaceholder description={description} type="image" />;
             }
-          }}
-        >
-          {content}
-        </ReactMarkdown>
-      </div>
-    </TooltipProvider>
+            
+            return <blockquote {...rest}>{processTextNodes(children)}</blockquote>;
+          }
+        }}
+      >
+        {content}
+      </ReactMarkdown>
+    </div>
   );
 }

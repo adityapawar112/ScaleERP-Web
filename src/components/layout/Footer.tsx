@@ -21,7 +21,9 @@ export function Footer() {
               <img
                 src="/brand/app-icon-square-dark-green.png"
                 alt="ScaleERP Logo"
-                className="h-8 w-auto object-contain rounded-sm"
+                width={32}
+                height={32}
+                className="h-8 w-8 object-contain rounded-sm"
               />
               <span className="font-logo font-bold text-3xl tracking-tight text-white">
                 ScaleERP
@@ -101,7 +103,7 @@ export function Footer() {
           <div className="mt-4 md:mt-0 flex items-center space-x-2">
             <span className="text-xs text-gray-400 font-public uppercase tracking-widest">{t('Engineered By')}</span>
             <span className="font-logo font-bold text-lg tracking-wider text-white flex items-center gap-1.5">
-              <img src="/brand/app-icon-square-dark-green.png" alt="ScaleERP" className="h-4 w-auto inline rounded-sm" />
+              <img src="/brand/app-icon-square-dark-green.png" alt="ScaleERP" width={16} height={16} className="h-4 w-auto inline rounded-sm" />
               ScaleERP
             </span>
           </div>

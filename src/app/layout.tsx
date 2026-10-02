@@ -15,11 +15,13 @@ import "./globals.css";
 const outfit = Outfit({
   subsets: ["latin"],
   variable: "--font-outfit",
+  display: "swap",
 });
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-plus-jakarta",
+  display: "swap",
 });
 
 const stackSansNotch = localFont({
@@ -62,7 +64,7 @@ export default function RootLayout({
             <TooltipProvider delayDuration={1000}>
               <Navbar />
               <Breadcrumbs />
-              <main className="flex-grow">
+              <main className="flex-grow min-h-[calc(100vh-16rem)]">
                 {children}
               </main>
               <Footer />

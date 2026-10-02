@@ -14,7 +14,7 @@ export default function TasksPage() {
   const { t } = useTranslation();
 
   return (
-    <main className="min-h-screen flex flex-col bg-background">
+    <div className="min-h-screen flex flex-col bg-background">
       {/* 1. Hero Section Blueprint */}
       <section className="relative px-4 pt-32 pb-32 w-full bg-zinc-950 dark:bg-zinc-50 text-white dark:text-zinc-900 rounded-b-[3rem] sm:rounded-b-[4rem] overflow-hidden shadow-2xl transition-colors duration-500">
         <ProductPattern />
@@ -64,6 +64,7 @@ export default function TasksPage() {
                   type="image" 
                   src="/assets/WhatappManager.png" 
                   caption={t("tasks_hero_caption", "Instant WhatsApp Share & Payment Tracking")} 
+                  priority={true}
                 />
             </div>
           </BlurIn>
@@ -174,6 +175,6 @@ export default function TasksPage() {
           </Link>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

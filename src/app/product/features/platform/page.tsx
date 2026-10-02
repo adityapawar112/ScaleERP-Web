@@ -14,7 +14,7 @@ export default function PlatformPage() {
   const { t } = useTranslation();
 
   return (
-    <main className="min-h-screen flex flex-col bg-background">
+    <div className="min-h-screen flex flex-col bg-background">
       {/* 1. Hero Section Blueprint */}
       <section className="relative px-4 pt-32 pb-32 w-full bg-zinc-950 dark:bg-zinc-50 text-white dark:text-zinc-900 rounded-b-[3rem] sm:rounded-b-[4rem] overflow-hidden shadow-2xl transition-colors duration-500">
         <ProductPattern />
@@ -64,6 +64,7 @@ export default function PlatformPage() {
                   type="image" 
                   src="/assets/Dashboard.png" 
                   caption={t("platform_hero_caption", "Offline-First Point of Sale & Operational Terminal")} 
+                  priority={true}
                 />
             </div>
           </BlurIn>
@@ -202,6 +203,6 @@ export default function PlatformPage() {
           </Link>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

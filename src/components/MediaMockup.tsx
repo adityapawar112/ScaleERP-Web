@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { PlayCircle, Image as ImageIcon } from "lucide-react";
 
 interface MediaMockupProps {
@@ -8,9 +9,16 @@ interface MediaMockupProps {
   caption?: string;
   className?: string;
   src?: string;
+  priority?: boolean;
 }
 
-export function MediaMockup({ type, caption, className = "", src }: MediaMockupProps) {
+export function MediaMockup({
+  type,
+  caption,
+  className = "",
+  src,
+  priority = false,
+}: MediaMockupProps) {
   return (
     <div
       className={`relative w-full overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-900/50 shadow-sm flex flex-col items-center justify-center p-6 ${className}`}
@@ -18,8 +26,16 @@ export function MediaMockup({ type, caption, className = "", src }: MediaMockupP
       <div className="absolute inset-0 bg-gradient-to-br from-transparent to-zinc-200/50 dark:to-zinc-800/20 pointer-events-none" />
       
       {src ? (
-        <div className="relative z-0 w-full mt-6">
-          <img src={src} alt={caption || "Media Mockup"} className="w-full h-auto object-contain rounded-lg" />
+        <div className="relative z-0 w-full mt-6 overflow-hidden rounded-lg aspect-[16/10]">
+          <Image
+            src={src}
+            alt={caption || "Media Mockup"}
+            width={1200}
+            height={750}
+            priority={priority}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="w-full h-auto object-contain rounded-lg transition-transform duration-300 hover:scale-[1.01]"
+          />
         </div>
       ) : (
         <div className="relative z-10 flex flex-col items-center space-y-4 text-zinc-500 dark:text-zinc-400 mt-4">
@@ -32,7 +48,6 @@ export function MediaMockup({ type, caption, className = "", src }: MediaMockupP
       )}
       
       <div className="relative z-10 flex flex-col items-center space-y-4 text-zinc-500 dark:text-zinc-400 mt-auto">
-        
         {caption && !src && (
           <p className="text-sm font-medium text-center max-w-[80%] text-zinc-600 dark:text-zinc-300">
             {caption}

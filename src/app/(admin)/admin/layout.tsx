@@ -44,11 +44,15 @@ function AdminLayoutInner({ children }: { children: React.ReactNode }) {
             <img
               src="/brand/logomark-icon-green.png"
               alt="ScaleERP Logo"
-              className="h-12 w-auto object-contain block dark:hidden"
+              width={48}
+              height={48}
+              className="h-12 w-12 object-contain block dark:hidden"
             />
             <img
               src="/brand/app-icon-square-dark-green.png"
               alt="ScaleERP Logo"
+              width={48}
+              height={48}
               className="h-12 w-12 object-contain rounded-xl shadow-lg hidden dark:block"
             />
           </div>
@@ -105,11 +109,15 @@ function AdminLayoutInner({ children }: { children: React.ReactNode }) {
               <img
                 src="/brand/logomark-icon-green.png"
                 alt="ScaleERP"
-                className="h-7 w-auto object-contain block dark:hidden transition-transform group-hover:scale-105"
+                width={28}
+                height={28}
+                className="h-7 w-7 object-contain block dark:hidden transition-transform group-hover:scale-105"
               />
               <img
                 src="/brand/app-icon-square-dark-green.png"
                 alt="ScaleERP"
+                width={28}
+                height={28}
                 className="h-7 w-7 object-contain rounded-md hidden dark:block transition-transform group-hover:scale-105"
               />
               <span className="font-heading font-bold text-lg text-foreground">
