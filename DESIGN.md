@@ -1,22 +1,27 @@
 ---
 name: ScaleERP Web Design System
-description: Design tokens and aesthetic guidelines for the ScaleERP ecosystem
+description: Centralized brand design tokens and aesthetic guidelines for the ScaleERP ecosystem
 colors:
-  primary: "#B4532B"
-  accent-green: "#10B981"
-  neutral-bg-light: "oklch(0.985 0.015 75)"
-  neutral-bg-dark: "#09090b"
-  neutral-surface: "oklch(1 0 0)"
-  text-primary: "oklch(0.15 0 0)"
-  text-muted: "oklch(0.556 0 0)"
-  border: "oklch(0.922 0 0)"
+  brand-primary: "#00E600"
+  brand-primary-tint-1: "#4DEE4D"
+  brand-primary-tint-2: "#99F599"
+  brand-primary-tint-3: "#D9FBD9"
+  brand-secondary: "#F5F5F5"
+  brand-dark: "#171717"
+  brand-dark-tint-1: "#5D5D5D"
+  brand-dark-tint-2: "#A2A2A2"
+  brand-dark-tint-3: "#DCDCDC"
+  brand-black: "#000000"
+  brand-gray-slate: "#404040"
+  brand-gray-silver: "#BFBFBF"
+  brand-white: "#FFFFFF"
 typography:
   display:
+    fontFamily: "var(--font-stack-sans-notch), 'Stack Sans Notch', sans-serif"
+  heading:
     fontFamily: "var(--font-outfit), sans-serif"
   body:
     fontFamily: "var(--font-plus-jakarta), sans-serif"
-  code:
-    fontFamily: "var(--font-stack-sans-notch), monospace"
 rounded:
   base: "0.625rem"
 spacing:
@@ -27,40 +32,45 @@ spacing:
 
 ## Overview
 
-**Creative North Star: "The Grounded Digital Fortress"**
+**Creative North Star: "High-Velocity Digital Fortress"**
 
-ScaleERP Web is built to feel simultaneously grounded, trustworthy, and surgically modern. The visual identity bridges the working pride of rural/semi-urban agricultural commodity wholesale with the high-velocity precision of a world-class offline software engine.
+ScaleERP Web is built to feel clean, high-precision, and surgically modern. The visual identity bridges the relentless pace of high-volume wholesale commercial trade with the robust reliability of an offline-first software engine.
 
 ### Key Visual Anchors:
-- **Earthy Terracotta Primary Accent (`#B4532B`)**: Evoking rich soil, red brick godowns, and warmth. Used for primary CTAs, active indicators, and focus outlines.
-- **Deep Emerald Trust Accent (`#10B981`)**: Reflecting lush crops, positive ledger balance, and cryptographic verification status.
-- **Adaptive Dual-Theme Hierarchy**: Pure white / warm cream cards in light mode with crystal-clear contrast; rich zinc/obsidian dark mode (`#09090b`) for prolonged, low-eye-strain godown operations.
-- **Modern Geometric Typography**: Outfit for commanding, authoritative headlines; Plus Jakarta Sans for dense, tabular financial figures and ledger data.
+- **Vibrant Electric Green Primary Accent (`#00E600`)**: Core brand voice representing active telemetry, positive ledger balances, high system health, and primary action buttons.
+- **Deep Charcoal Dark Mode Slate (`#171717`)**: High-contrast, low-eye-strain backdrop for extended billing shifts and nocturnal warehouse auditing.
+- **Clean Neutral Canvas (`#F5F5F5`)**: High-contrast, clean neutral background for light mode counter operations.
+- **Stack Sans Notch & Modern Typography**: Stack Sans Notch for logos, brand badges, and technical counters; Outfit for commanding headlines; Plus Jakarta Sans for dense, tabular financial ledgers.
 
 ---
 
 ## Color System
 
-### Primary
-- **Terracotta** (`#B4532B` / `oklch(0.55 0.16 45)`): Core brand voice. Used for interactive buttons, primary badges, and high-priority action targets.
+### Primary & Brand Tints
+- **Brand Primary** (`#00E600`): Primary CTAs, active states, focus rings, and positive system vitals.
+- **Tint 1** (`#4DEE4D`): Hover state for primary buttons.
+- **Tint 2** (`#99F599`): Active indicators and badge accents.
+- **Tint 3** (`#D9FBD9`): Subtle background fills for alert banners and success badges.
 
-### Secondary / Semantic
-- **Emerald Green** (`#10B981`): Cryptographic licensing validity, successful payments, and positive cash flow.
-- **Amber Warning** (`#F59E0B`): 7-Day Grace Soft Lock notices and low stock alerts.
-- **Crimson Destructive** (`#EF4444`): Total Hard Lock, license expiration, and transaction deletion warnings.
+### Dark Tone Scale
+- **Brand Dark** (`#171717`): Core dark surface, headers, and text primary in light mode.
+- **Dark Tint 1** (`#5D5D5D`): Secondary text and muted UI borders.
+- **Dark Tint 2** (`#A2A2A2`): Subtle metadata text and placeholder styling.
+- **Dark Tint 3** (`#DCDCDC`): Light mode borders and divider lines.
 
 ### Neutrals & Surfaces
-- **Light Theme Background** (`oklch(0.985 0.015 75)`): Warm cream background reducing eye strain during high-noon counter billing.
-- **Dark Theme Background** (`#09090b`): Deep obsidian slate providing maximum contrast for text and tabular figures.
-- **Surface Elevation**: Cards and dialog containers elevate to pure white (`#FFFFFF`) in light mode and deep zinc (`#18181b`) in dark mode with subtle 1px border outlines.
+- **Light Theme Background** (`#F5F5F5`): Clean neutral canvas for high-contrast light mode.
+- **Dark Theme Background** (`#171717` / `oklch(0.15 0 0)`): Deep charcoal backdrop reducing glare in dim warehouse/counter environments.
+- **Surface Elevation**: Cards and modal containers elevate to pure white (`#FFFFFF`) in light mode and elevated dark zinc/charcoal (`oklch(0.205 0 0)`) in dark mode.
 
 ---
 
 ## Typography Hierarchy
 
-- **Display & Headings**: Outfit (`var(--font-outfit)`). Geometric, clean, and modern.
-- **Body & Dense Ledgers**: Plus Jakarta Sans (`var(--font-plus-jakarta)`). Highly legible across small laptop screens and mobile devices.
-- **Monospace & Code Tokens**: Stack Sans Notch / Monospace for 16-digit license keys, hardware UUIDs, and technical logs.
+- **Brand & Display**: Stack Sans Notch (`var(--font-stack-sans-notch)`). Clean, engineered aesthetic used for brand badges, 16-digit license keys, and hardware IDs.
+- **Display & Headings**: Outfit (`var(--font-outfit)`). Geometric, authoritative, and clean.
+- **Body & Dense Ledgers**: Plus Jakarta Sans (`var(--font-plus-jakarta)`). Highly legible across high-density financial tables and mobile screens.
+- **Indic Scripts**: Noto Sans Devanagari / Nirmala UI / Mangal for Hindi and Marathi scripts.
 
 ---
 
@@ -68,11 +78,11 @@ ScaleERP Web is built to feel simultaneously grounded, trustworthy, and surgical
 
 ### Buttons & Inputs
 - **Radius**: Soft tactile baseline of 10px (`rounded-lg` / `0.625rem`).
-- **Primary Buttons**: Terracotta background with white text, subtle hover lift, and accessible focus rings.
-- **Secondary Buttons**: Ghost or bordered neutral surfaces with responsive hover feedback.
+- **Primary Buttons**: Vibrant Green background (`#00E600`) with dark text (`#171717`), subtle hover lift, and accessible focus rings.
+- **Secondary Buttons**: Neutral surface with subtle 1px border outlines and responsive hover feedback.
 
 ### Modals & Dialogs
-- Always maintain viewport bounds (`max-h-[85vh] overflow-y-auto`) to ensure comfortable interaction on small 1366x768 POS laptop displays.
+- Always maintain viewport bounds (`max-h-[85vh] overflow-y-auto`) to ensure comfortable interaction on standard 1366x768 POS laptop displays.
 
 ### Tooltips & Jargon Accessibility
 - Always wrap technical terms (e.g. SQLite WAL, RSA Cryptography, Hardware ID) in the `<JargonTooltip>` component to preserve clarity for non-technical retail users.
