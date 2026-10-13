@@ -7,7 +7,7 @@
   <p><b>Cloud control plane, cryptographic licensing authority, and knowledge portal for the ScaleERP ecosystem.</b></p>
 
   <p>
-    <a href="https://scaleerp.vercel.app"><img src="https://img.shields.io/badge/Production_URL-scaleerp.vercel.app-2563eb?style=flat-square&logo=vercel&logoColor=white" alt="Production URL" /></a>
+    <a href="https://scale-erp.vercel.app"><img src="https://img.shields.io/badge/Production_URL-scale--erp.vercel.app-2563eb?style=flat-square&logo=vercel&logoColor=white" alt="Production URL" /></a>
     <a href="https://github.com/adityapawar112/ScaleERP-Desktop"><img src="https://img.shields.io/badge/Desktop_Repo-ScaleERP--Desktop-059669?style=flat-square&logo=electron&logoColor=white" alt="Desktop Repo" /></a>
     <img src="https://img.shields.io/badge/Framework-Next.js_15.1-000000?style=flat-square&logo=nextdotjs&logoColor=white" alt="Next.js 15" />
     <img src="https://img.shields.io/badge/Frontend-React_19-0284c7?style=flat-square&logo=react&logoColor=white" alt="React 19" />
@@ -18,7 +18,7 @@
   </p>
 
   <p>
-    <a href="https://scaleerp.vercel.app"><b>Live Cloud Portal</b></a> &nbsp;•&nbsp;
+    <a href="https://scale-erp.vercel.app"><b>Live Cloud Portal</b></a> &nbsp;•&nbsp;
     <a href="https://github.com/adityapawar112/ScaleERP-Desktop"><b>Desktop Client Repository</b></a> &nbsp;•&nbsp;
     <a href="#-licensing-lifecycle--sequence-architecture"><b>Licensing Architecture</b></a> &nbsp;•&nbsp;
     <a href="#-api-endpoint-specifications"><b>API Reference</b></a> &nbsp;•&nbsp;
@@ -124,7 +124,7 @@ All endpoints are built using Next.js 15 App Router route handlers with strict p
 ### Activation Payload Example
 
 ```bash
-curl -X POST https://scaleerp.vercel.app/api/v1/licensing/activate \
+curl -X POST https://scale-erp.vercel.app/api/v1/licensing/activate \
   -H "Content-Type: application/json" \
   -d '{
     "activationKey": "SERP-9482-1049-5820",
