@@ -44,7 +44,7 @@ export default function PricingPage() {
                   "priceValidUntil": "2027-12-31",
                   "availability": "https://schema.org/InStock",
                   "itemCondition": "https://schema.org/NewCondition",
-                  "url": "https://scaleerp.vercel.app/pricing",
+                  "url": "https://scale-erp.vercel.app/pricing",
                   "description": "Designed for single retail feed stores and counter billing with local SQLite storage, thermal printing, and WhatsApp receipts.",
                 },
                 {
@@ -55,7 +55,7 @@ export default function PricingPage() {
                   "priceValidUntil": "2027-12-31",
                   "availability": "https://schema.org/InStock",
                   "itemCondition": "https://schema.org/NewCondition",
-                  "url": "https://scaleerp.vercel.app/pricing",
+                  "url": "https://scale-erp.vercel.app/pricing",
                   "description": "For high-volume wholesale distributors and broker networks with multi-godown tracking, broker commissions, and cloud synchronization.",
                 },
               ],

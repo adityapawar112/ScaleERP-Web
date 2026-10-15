@@ -30,21 +30,21 @@ ScaleERP combines a resilient offline Electron + SQLite desktop client with a cl
 - **Automated Cloud Backup**: Scheduled local SQLite snapshots with optional encrypted Google Drive synchronization.
 
 ## Core Documentation
-- [Quick Start Guide](https://scaleerp.vercel.app/docs/getting-started/installation-and-license): Installation, first-run wizard, and license activation.
-- [Inventory & Godown Operations](https://scaleerp.vercel.app/docs/inventory-godowns/manage-products): Stock tracking, multi-godown allocation, low-stock thresholds.
-- [Retail Billing & Invoicing](https://scaleerp.vercel.app/docs/retail-customers/create-retail-bill): Counter sales, GST calculations, thermal print dispatch.
-- [Wholesale Broker Ledgers](https://scaleerp.vercel.app/docs/wholesale-brokers/broker-ledgers): Commission tracking, consignment purchases, balance reconciliation.
-- [Data Backups & Recovery](https://scaleerp.vercel.app/docs/backups-security/data-backups): Local backup scheduling and automated recovery procedures.
-- [Cryptographic Licensing Protocol](https://scaleerp.vercel.app/docs/backups-security/offline-licensing): Offline asymmetric signing, envelope verification, and public key verification.
+- [Quick Start Guide](https://scale-erp.vercel.app/docs/getting-started/installation-and-license): Installation, first-run wizard, and license activation.
+- [Inventory & Godown Operations](https://scale-erp.vercel.app/docs/inventory-godowns/manage-products): Stock tracking, multi-godown allocation, low-stock thresholds.
+- [Retail Billing & Invoicing](https://scale-erp.vercel.app/docs/retail-customers/create-retail-bill): Counter sales, GST calculations, thermal print dispatch.
+- [Wholesale Broker Ledgers](https://scale-erp.vercel.app/docs/wholesale-brokers/broker-ledgers): Commission tracking, consignment purchases, balance reconciliation.
+- [Data Backups & Recovery](https://scale-erp.vercel.app/docs/backups-security/data-backups): Local backup scheduling and automated recovery procedures.
+- [Cryptographic Licensing Protocol](https://scale-erp.vercel.app/docs/backups-security/offline-licensing): Offline asymmetric signing, envelope verification, and public key verification.
 
 ## Public Platform Links
-- [Product Overview](https://scaleerp.vercel.app/product): Complete feature architecture, speed benchmarks, and comparisons.
-- [Pricing Plans](https://scaleerp.vercel.app/pricing): Transparent pricing tiers with 30-day trial and perpetual options.
-- [Download Desktop Client](https://scaleerp.vercel.app/download): Windows 64-bit installer (`ScaleERP-Setup-1.0.0.exe`) and portable standalone package.
-- [Interactive Demo](https://scaleerp.vercel.app/demo): Interactive browser-based simulation of the billing workflow.
-- [Resource Hub](https://scaleerp.vercel.app/resources): Technical articles on godown inventory, thermal printer setup, and GST ledger compliance.
+- [Product Overview](https://scale-erp.vercel.app/product): Complete feature architecture, speed benchmarks, and comparisons.
+- [Pricing Plans](https://scale-erp.vercel.app/pricing): Transparent pricing tiers with 30-day trial and perpetual options.
+- [Download Desktop Client](https://scale-erp.vercel.app/download): Windows 64-bit installer (`ScaleERP-Setup-1.0.0.exe`) and portable standalone package.
+- [Interactive Demo](https://scale-erp.vercel.app/demo): Interactive browser-based simulation of the billing workflow.
+- [Resource Hub](https://scale-erp.vercel.app/resources): Technical articles on godown inventory, thermal printer setup, and GST ledger compliance.
 
 ## Developer & Telemetry API
-- [POST /api/v1/licensing/activate](https://scaleerp.vercel.app/api/v1/licensing/activate): Cryptographically signs license payloads using RSA-PSS SHA-256.
-- [POST /api/v1/licensing/sync-heartbeat](https://scaleerp.vercel.app/api/v1/licensing/sync-heartbeat): Background workstation heartbeat check and entitlement updates.
-- [GET /api/v1/download](https://scaleerp.vercel.app/api/v1/download): Release binary and portable installer distribution router.
+- [POST /api/v1/licensing/activate](https://scale-erp.vercel.app/api/v1/licensing/activate): Cryptographically signs license payloads using RSA-PSS SHA-256.
+- [POST /api/v1/licensing/sync-heartbeat](https://scale-erp.vercel.app/api/v1/licensing/sync-heartbeat): Background workstation heartbeat check and entitlement updates.
+- [GET /api/v1/download](https://scale-erp.vercel.app/api/v1/download): Release binary and portable installer distribution router.

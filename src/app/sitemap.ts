@@ -3,7 +3,7 @@ import { getDocsNav } from "@/lib/docs";
 import { getAllResources } from "@/lib/resources";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "https://scaleerp.vercel.app";
+  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "https://scale-erp.vercel.app";
   const now = new Date();
 
   // 1. Core static marketing and product pages

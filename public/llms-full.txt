@@ -93,12 +93,12 @@ Traditional ERP and inventory software solutions in rural and semi-urban commerc
 
 ## 4. Key Public Routes & Resources
 
-- Marketing Home: https://scaleerp.vercel.app/
-- Product Capabilities: https://scaleerp.vercel.app/product
-- Pricing & Editions: https://scaleerp.vercel.app/pricing
-- Client Download: https://scaleerp.vercel.app/download
-- Browser Demo: https://scaleerp.vercel.app/demo
-- Technical Documentation: https://scaleerp.vercel.app/docs
-- Industry Knowledge Hub: https://scaleerp.vercel.app/resources
-- Privacy Policy: https://scaleerp.vercel.app/privacy
-- Terms of Service: https://scaleerp.vercel.app/terms
+- Marketing Home: https://scale-erp.vercel.app/
+- Product Capabilities: https://scale-erp.vercel.app/product
+- Pricing & Editions: https://scale-erp.vercel.app/pricing
+- Client Download: https://scale-erp.vercel.app/download
+- Browser Demo: https://scale-erp.vercel.app/demo
+- Technical Documentation: https://scale-erp.vercel.app/docs
+- Industry Knowledge Hub: https://scale-erp.vercel.app/resources
+- Privacy Policy: https://scale-erp.vercel.app/privacy
+- Terms of Service: https://scale-erp.vercel.app/terms

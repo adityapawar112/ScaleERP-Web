@@ -54,7 +54,7 @@ export default function Home() {
             "author": {
               "@type": "Organization",
               "name": "ScaleERP",
-              "url": "https://scaleerp.vercel.app",
+              "url": "https://scale-erp.vercel.app",
             },
             "featureList": [
               "100% Offline SQLite WAL engine",

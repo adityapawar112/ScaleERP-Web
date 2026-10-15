@@ -31,8 +31,15 @@ const stackSansNotch = localFont({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || "https://scale-erp.vercel.app"),
   title: "ScaleERP | Premium Offline Inventory & Ledger Software for Feed Stores",
   description: "Upgrade your wholesale or retail business with ScaleERP. A lightning-fast, offline-first desktop application for inventory management, ledgers, and billing.",
+  verification: {
+    google: "atS68nYTNrhpr83ZN_eP9w_Jv7mu9e6OyRuniOQTWZE",
+  },
+  alternates: {
+    canonical: "./",
+  },
   icons: {
     icon: [
       { url: "/favicon.ico" },
