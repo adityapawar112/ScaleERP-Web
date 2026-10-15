@@ -122,10 +122,10 @@ export default function WhatsappCloudBackupPage() {
                   <strong className="text-zinc-900 dark:text-zinc-100 font-mono">{t("wc_card_c_encrypts", "encrypts")}</strong>
                 </JargonTooltip>
                 {t("wc_card_c_copy_pt2", " your entire local ")}
-                <JargonTooltip explanation={t("tooltip_sqlite", "A high-performance local database system.")}>
-                  <strong className="text-zinc-900 dark:text-zinc-100 font-mono">SQLite</strong>
+                <JargonTooltip explanation={t("tooltip_sqlite_wal", "A high-speed database inside your computer that saves every bill to your hard drive in less than a thousandth of a second, even if power or internet fails.")}>
+                  <strong className="text-zinc-900 dark:text-zinc-100 font-mono">SQLite WAL</strong>
                 </JargonTooltip>
-                {t("wc_card_c_copy_pt3", " database and pushes a secure backup to the cloud for disaster recovery.")}
+                {t("wc_card_c_copy_pt3", " database and syncs an off-site backup to Google Drive for instant crash recovery.")}
               </p>
               <div className="mt-6">
                 <MediaMockup 

@@ -82,7 +82,21 @@ export default function InvoiceCustomizationPage() {
                 {t("inv_cust_card_a_title")}
               </h3>
               <p className="text-zinc-600 dark:text-zinc-400">
-                {t("inv_cust_card_a_desc")}
+                {(() => {
+                  const desc = t("inv_cust_card_a_desc");
+                  const regex = /(3-inch thermal receipts|3-इंच थर्मल रसीद|3-इंच थर्मल पावती)/i;
+                  const parts = desc.split(regex);
+                  if (parts.length === 1) return desc;
+                  return parts.map((part, i) =>
+                    regex.test(part) ? (
+                      <JargonTooltip key={i} explanation={t("tooltip_thermal_escpos")}>
+                        <span className="font-medium text-zinc-900 dark:text-zinc-100">{part}</span>
+                      </JargonTooltip>
+                    ) : (
+                      part
+                    )
+                  );
+                })()}
               </p>
             </div>
 
@@ -102,7 +116,29 @@ export default function InvoiceCustomizationPage() {
                 {t("inv_cust_card_c_title")}
               </h3>
               <p className="text-zinc-600 dark:text-zinc-400">
-                Add your business name, logo, <JargonTooltip explanation={t("tooltip_gst")}>GST</JargonTooltip> details, and custom terms & conditions to your invoice headers and footers.
+                {(() => {
+                  const desc = t("inv_cust_card_c_desc");
+                  const regex = /(HSN codes|HSN कोड|GSTIN)/i;
+                  const parts = desc.split(regex);
+                  if (parts.length === 1) return desc;
+                  return parts.map((part, i) => {
+                    if (part.includes("HSN")) {
+                      return (
+                        <JargonTooltip key={i} explanation={t("tooltip_hsn")}>
+                          <span className="font-medium text-zinc-900 dark:text-zinc-100">{part}</span>
+                        </JargonTooltip>
+                      );
+                    }
+                    if (part.includes("GSTIN") || part.includes("GST")) {
+                      return (
+                        <JargonTooltip key={i} explanation={t("tooltip_gst")}>
+                          <span className="font-medium text-zinc-900 dark:text-zinc-100">{part}</span>
+                        </JargonTooltip>
+                      );
+                    }
+                    return part;
+                  });
+                })()}
               </p>
             </div>
           </div>

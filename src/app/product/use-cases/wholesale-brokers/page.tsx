@@ -44,7 +44,21 @@ export default function WholesaleBrokersPage() {
               </BlurIn>
               <BlurIn delay={0.4}>
                 <p className="max-w-2xl text-xl sm:text-2xl text-zinc-400 dark:text-zinc-600 font-medium leading-relaxed mx-auto lg:mx-0">
-                  {t("wb_hero_h2")}
+                  {(() => {
+                    const text = t("wb_hero_h2");
+                    const regex = /(per-bag brokerage|प्रति बोरी आढ़त \(दलाली\)|प्रति बोरी आढ़त|प्रति पोते अडत \(दलाली\)|प्रति पोते अडत)/i;
+                    const parts = text.split(regex);
+                    if (parts.length === 1) return text;
+                    return parts.map((part, i) =>
+                      regex.test(part) ? (
+                        <JargonTooltip key={i} explanation={t("tooltip_brokerage")}>
+                          <span className="font-semibold text-white dark:text-zinc-900 underline decoration-dotted underline-offset-4">{part}</span>
+                        </JargonTooltip>
+                      ) : (
+                        part
+                      )
+                    );
+                  })()}
                 </p>
               </BlurIn>
               <BlurIn delay={0.6}>
@@ -177,11 +191,7 @@ export default function WholesaleBrokersPage() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-zinc-400 leading-relaxed max-w-4xl text-lg">
-                    {t("wb_card_e_copy").split(' ').map((word, i) => 
-                      word.toLowerCase().includes('scaleerp') || word.includes('ओरोस्केल')
-                        ? <JargonTooltip key={i} explanation={t("tooltip_scaleerp") || "The enterprise-grade architecture supporting ScaleERP."}>{word} </JargonTooltip> 
-                        : word + ' '
-                    )}
+                    {t("wb_card_e_copy")}
                   </p>
                 </CardContent>
               </Card>

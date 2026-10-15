@@ -132,7 +132,7 @@ export default function AboutPage() {
                 </JargonTooltip>
                 {t("about_engineering_grid_copy_3")}
                 <JargonTooltip explanation={t("tooltip_rsa_offline")}>
-                  <strong className="text-white font-mono">RSA Offline Licensing</strong>
+                  <strong className="text-white font-mono">RSA-2048</strong>
                 </JargonTooltip>
                 {t("about_engineering_grid_copy_4")}
               </p>
