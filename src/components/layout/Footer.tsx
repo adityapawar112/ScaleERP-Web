@@ -29,8 +29,8 @@ export function Footer() {
                 ScaleERP
               </span>
             </div>
-            <p className="text-sm text-gray-300 font-public mb-6">
-              {t('Rooted in Soil, Empowered by Precision. The lightning-fast, ')}<JargonTooltip explanation={t("Works without an active internet connection by saving data locally on your device.")}>{t('offline-first')}</JargonTooltip>{t(' inventory and ledger engine built explicitly for India’s feed stores.')}
+            <p className="text-sm text-gray-300 font-public mb-6 leading-relaxed">
+              {t("footer_blurb", "The 4-second, 100% offline counter billing, godown stock, and bahi-khata software built for Indian wholesale traders, mandi brokers, and agro-retailers.")}
             </p>
           </div>
           

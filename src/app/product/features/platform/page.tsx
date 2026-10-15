@@ -174,8 +174,8 @@ export default function PlatformPage() {
             <div className="mt-6 max-w-2xl">
               <MediaMockup 
                 type="image" 
-                src="/assets/scaleerp-architecture.webp" 
-                caption={t("platform_engine_arch", "SQLite WAL Local Engine (<2ms Latency) & Cloud Telemetry")} 
+                src="/assets/Dashboard.webp" 
+                caption={t("platform_engine_arch", "ScaleERP High-Velocity Desktop Workstation Engine")} 
               />
             </div>
           </div>

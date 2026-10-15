@@ -31,37 +31,33 @@ export function HeroVideoFrame({
           allowFullScreen
         />
       ) : (
-        <button
-          type="button"
-          onClick={() => setIsPlaying(true)}
-          className="group relative w-full h-full block focus:outline-none focus:ring-2 focus:ring-brand-primary"
-          aria-label={`Play ${title}`}
-        >
-          {/* High-res optimized poster image */}
+        <div className="relative w-full h-full block">
+          {/* High-res workstation dashboard image rendered cleanly at 100% opacity */}
           <Image
             src={resolvedPoster}
             alt={title}
             fill
             priority
             sizes="(max-width: 1200px) 100vw, 1200px"
-            className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.02] opacity-90"
+            className="object-cover object-top opacity-100"
           />
 
-          {/* Vignette / Backdrop overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/20 group-hover:bg-black/30 transition-colors" />
-
-          {/* Animated Centered Play Trigger */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
-            <div className="relative flex items-center justify-center w-20 h-20 rounded-full bg-brand-primary/90 text-brand-dark shadow-xl transition-all duration-300 group-hover:scale-110 group-hover:bg-brand-primary group-active:scale-95">
-              <span className="absolute -inset-2 rounded-full bg-brand-primary/30 animate-ping opacity-75 pointer-events-none" />
-              <Play className="w-8 h-8 fill-current translate-x-0.5" />
-            </div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/70 backdrop-blur-md border border-white/10 text-xs font-semibold text-white tracking-wide shadow-md">
-              <span className="h-2 w-2 rounded-full bg-brand-primary animate-pulse" />
-              <span>Watch 60s POS Counter Stress Test</span>
-            </div>
-          </div>
-        </button>
+          {/* Floating pill badge in the bottom-right corner - leaves KPI cards completely visible */}
+          <button
+            type="button"
+            onClick={() => setIsPlaying(true)}
+            className="absolute bottom-4 right-4 z-20 group inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-zinc-900/95 text-white border border-emerald-500/50 shadow-xl hover:bg-zinc-950 hover:border-emerald-400 hover:scale-105 active:scale-95 transition-all duration-200 backdrop-blur-md cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-400"
+            aria-label={`Watch ${title}`}
+          >
+            <span className="relative flex items-center justify-center w-6 h-6 rounded-full bg-emerald-500 text-zinc-950">
+              <Play className="w-3.5 h-3.5 fill-current translate-x-0.5" />
+            </span>
+            <span className="text-xs font-semibold tracking-wide text-zinc-100 group-hover:text-emerald-300 transition-colors">
+              Watch 60s Live Counter Demo
+            </span>
+            <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+          </button>
+        </div>
       )}
     </div>
   );

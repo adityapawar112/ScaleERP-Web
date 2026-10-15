@@ -10,16 +10,16 @@ export function HardwareGrid() {
   const { t } = useTranslation();
 
   return (
-    <div id="hardware-compatibility" className="w-full max-w-5xl mx-auto my-12 p-6 sm:p-10 rounded-3xl border border-border/80 bg-card/60 backdrop-blur-md shadow-xl">
-      <div className="text-center max-w-2xl mx-auto space-y-3 mb-10">
+    <div id="hardware-compatibility" className="w-full max-w-6xl mx-auto my-12">
+      <div className="text-center max-w-2xl mx-auto space-y-3 mb-12">
         <Badge variant="outline" className="text-brand-dark dark:text-brand-primary border-brand-primary/40 bg-brand-primary/10 px-4 py-1 text-xs font-bold uppercase rounded-full">
           Hardware Compatibility
         </Badge>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-extrabold text-foreground tracking-tight">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-outfit font-bold text-foreground tracking-tight">
           {t("hw_grid_title", "Runs Smoothly on Your Existing Shop Computer & Printers")}
         </h2>
         <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
-          {t("hw_grid_desc", "No. ScaleERP is built to run fast on the budget computers and printers already sitting in Indian shops.")}
+          {t("hw_grid_desc", "No need to buy expensive new hardware. ScaleERP runs lightning fast on the budget PCs and printers already sitting on Indian shop counters.")}
         </p>
       </div>
 

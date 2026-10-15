@@ -5,13 +5,36 @@
 .font-logo,
 .font-stack-notch,
 .font-notch,
-.font-display,
-.font-heading,
-h1, h2, h3, h4,
-.highlight-word,
 .highlight-notch {
   font-family: var(--font-stack-sans-notch), "Stack Sans Notch", var(--font-outfit), sans-serif;
   font-optical-sizing: auto;
+}
+
+.font-outfit {
+  font-family: var(--font-outfit), sans-serif;
+}
+
+.font-jakarta {
+  font-family: var(--font-plus-jakarta), sans-serif;
+}
+
+/* Base Headings: Default to Outfit for clean display readability without ink-trap letter cuts */
+h2, h3, h4, .font-heading {
+  font-family: var(--font-outfit), sans-serif;
+}
+
+/* Devanagari Script Fix: Prevent line-height clipping top matras and bottom ukaars */
+html[lang="mr"] h1, html[lang="hi"] h1,
+html[lang="mr"] h2, html[lang="hi"] h2,
+html[lang="mr"] h3, html[lang="hi"] h3 {
+  line-height: 1.35 !important;
+  letter-spacing: 0em !important;
+  font-family: var(--font-noto-devanagari), var(--font-outfit), sans-serif !important;
+}
+
+html[lang="mr"] p, html[lang="hi"] p,
+html[lang="mr"] span, html[lang="hi"] span {
+  line-height: 1.625 !important;
 }
 
 @layer base {

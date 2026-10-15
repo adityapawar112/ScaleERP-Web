@@ -42,7 +42,7 @@ export function MorningRushCalculator() {
           <label htmlFor="morning-bills-slider" className="text-sm font-semibold text-foreground flex items-center gap-2">
             <FaUsers className="text-brand-dark dark:text-brand-primary" />
             <span>Morning Counter Rush Volume:</span>
-            <span className="text-base font-bold text-terracotta font-notch tracking-tight">{billsCount} Bills / Morning</span>
+            <span className="text-base font-bold text-terracotta font-outfit tabular-nums tracking-tight">{billsCount} Bills / Morning</span>
           </label>
           <span className="text-xs text-muted-foreground">Adjust to match your shop's peak morning traffic</span>
         </div>
@@ -54,7 +54,7 @@ export function MorningRushCalculator() {
           step="5"
           value={billsCount}
           onChange={(e) => setBillsCount(parseInt(e.target.value, 10))}
-          className="w-full accent-terracotta cursor-pointer h-2 bg-muted rounded-lg"
+          className="w-full h-2.5 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:h-6 [&::-webkit-slider-thumb]:w-6 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-emerald-500 [&::-webkit-slider-thumb]:ring-4 [&::-webkit-slider-thumb]:ring-emerald-500/25 [&::-webkit-slider-thumb]:cursor-pointer [&::-webkit-slider-thumb]:shadow-md [&::-moz-range-thumb]:h-6 [&::-moz-range-thumb]:w-6 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:bg-emerald-500 [&::-moz-range-thumb]:ring-4 [&::-moz-range-thumb]:ring-emerald-500/25 [&::-moz-range-thumb]:border-0 [&::-moz-range-thumb]:cursor-pointer"
           aria-label="Morning Counter Rush Volume"
         />
         <div className="flex justify-between text-[11px] text-muted-foreground font-medium">
@@ -79,7 +79,7 @@ export function MorningRushCalculator() {
           </CardHeader>
           <CardContent className="space-y-3 pt-0">
             <div className="p-3 rounded-lg bg-amber-500/10 border border-amber-500/20 text-center">
-              <span className="text-2xl font-extrabold text-amber-600 dark:text-amber-400 font-notch">~{legacyTimeMins} min</span>
+              <span className="text-2xl font-extrabold text-amber-600 dark:text-amber-400 font-outfit tabular-nums">~{legacyTimeMins} min</span>
               <p className="text-[11px] text-muted-foreground mt-0.5">to clear {billsCount} customers (45s per bill)</p>
             </div>
             <ul className="text-xs text-muted-foreground space-y-1.5 list-disc list-inside">
@@ -103,7 +103,7 @@ export function MorningRushCalculator() {
           </CardHeader>
           <CardContent className="space-y-3 pt-0">
             <div className="p-3 rounded-lg bg-rose-500/10 border border-rose-500/20 text-center">
-              <span className="text-2xl font-extrabold text-rose-600 dark:text-rose-400 font-notch">~{legacyTimeMins} min</span>
+              <span className="text-2xl font-extrabold text-rose-600 dark:text-rose-400 font-outfit tabular-nums">~{legacyTimeMins} min</span>
               <p className="text-[11px] text-muted-foreground mt-0.5">confusing screens slow down billing</p>
             </div>
             <ul className="text-xs text-muted-foreground space-y-1.5 list-disc list-inside">
@@ -116,7 +116,7 @@ export function MorningRushCalculator() {
 
         {/* ScaleERP Card (Winner) */}
         <Card className="border-2 border-emerald-500/40 bg-emerald-500/5 dark:bg-emerald-950/20 shadow-md flex flex-col justify-between relative overflow-hidden">
-          <div className="absolute top-0 right-0 bg-emerald-600 text-white text-[10px] font-bold px-3 py-0.5 rounded-bl-lg uppercase tracking-wider font-notch">
+          <div className="absolute top-0 right-0 bg-emerald-600 text-white text-[10px] font-bold px-3 py-0.5 rounded-bl-lg uppercase tracking-wider font-outfit">
             4-Sec Billing
           </div>
           <CardHeader className="pb-3">
@@ -132,8 +132,8 @@ export function MorningRushCalculator() {
           </CardHeader>
           <CardContent className="space-y-3 pt-0">
             <div className="p-3 rounded-lg bg-emerald-500/15 border border-emerald-500/30 text-center">
-              <span className="text-3xl font-extrabold text-emerald-600 dark:text-emerald-400 font-notch">~{scaleErpTimeMins} min</span>
-              <p className="text-[11px] font-semibold text-emerald-700 dark:text-emerald-300 mt-0.5">
+              <span className="text-3xl font-extrabold text-emerald-600 dark:text-emerald-400 font-outfit tabular-nums">~{scaleErpTimeMins} min</span>
+              <p className="text-[11px] font-semibold text-emerald-700 dark:text-emerald-300 mt-0.5 tabular-nums">
                 Saved ~{timeSavedMins} mins every morning!
               </p>
             </div>
@@ -147,11 +147,11 @@ export function MorningRushCalculator() {
       </div>
 
       {/* Financial ROI Banner */}
-      <div className="p-4 sm:p-5 rounded-xl bg-card border border-border flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div className="p-4 sm:p-5 rounded-xl bg-card border border-border flex flex-col sm:flex-row items-center justify-between gap-4 mb-8">
         <div className="space-y-1 text-center sm:text-left">
-          <span className="text-xs uppercase font-bold text-muted-foreground tracking-wider font-notch">Estimated Monthly Shop Recovery</span>
+          <span className="text-xs uppercase font-bold text-muted-foreground tracking-wider font-outfit">Estimated Monthly Shop Recovery</span>
           <p className="text-sm sm:text-base font-semibold text-foreground">
-            You save <span className="text-emerald-600 dark:text-emerald-400 font-bold font-notch">{monthlyHoursSaved} hours of counter rush every month</span> while eliminating customer drop-offs and calculation disputes.
+            You save <span className="text-emerald-600 dark:text-emerald-400 font-bold font-outfit tabular-nums">{monthlyHoursSaved} hours of counter rush every month</span> while eliminating customer drop-offs and calculation disputes.
           </p>
         </div>
         <Link href="/download" passHref className="flex-shrink-0">
@@ -160,6 +160,36 @@ export function MorningRushCalculator() {
             <FaArrowRight className="text-xs" />
           </Button>
         </Link>
+      </div>
+
+      {/* High-Contrast Integrated Dark Footer Bar */}
+      <div className="-mx-6 -mb-6 sm:-mx-8 sm:-mb-8 bg-zinc-950 text-white rounded-b-2xl p-6 sm:p-8 grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-zinc-800 border-t border-zinc-800 shadow-inner">
+        <div className="py-3 sm:py-0 sm:px-6 first:pl-0 text-center sm:text-left space-y-1.5">
+          <div className="text-2xl sm:text-3xl font-extrabold text-emerald-400 font-outfit tracking-tight">
+            {t('rush_metric_1_val', 'Under 4 Sec')}
+          </div>
+          <p className="text-xs text-zinc-400 leading-relaxed font-normal">
+            {t('rush_metric_1_label', 'To print a complete receipt using just your keyboard Enter key')}
+          </p>
+        </div>
+
+        <div className="py-3 sm:py-0 sm:px-6 text-center sm:text-left space-y-1.5">
+          <div className="text-2xl sm:text-3xl font-extrabold text-emerald-400 font-outfit tracking-tight">
+            {t('rush_metric_2_val', '100% Offline')}
+          </div>
+          <p className="text-xs text-zinc-400 leading-relaxed font-normal">
+            {t('rush_metric_2_label', 'Zero dependence on Wi-Fi, mobile data, or remote servers during billing')}
+          </p>
+        </div>
+
+        <div className="py-3 sm:py-0 sm:px-6 last:pr-0 text-center sm:text-left space-y-1.5">
+          <div className="text-2xl sm:text-3xl font-extrabold text-blue-400 font-outfit tracking-tight">
+            {t('rush_metric_3_val', '1-Day Training')}
+          </div>
+          <p className="text-xs text-zinc-400 leading-relaxed font-normal">
+            {t('rush_metric_3_label', 'Any counter clerk can bill in Marathi, Hindi, or English on their very first day')}
+          </p>
+        </div>
       </div>
     </div>
   );

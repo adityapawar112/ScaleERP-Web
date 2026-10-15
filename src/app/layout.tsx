@@ -4,7 +4,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import localFont from "next/font/local";
-import { Outfit, Plus_Jakarta_Sans } from "next/font/google";
+import { Outfit, Plus_Jakarta_Sans, Noto_Sans_Devanagari } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -21,6 +21,12 @@ const outfit = Outfit({
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-plus-jakarta",
+  display: "swap",
+});
+
+const notoDevanagari = Noto_Sans_Devanagari({
+  subsets: ["devanagari", "latin"],
+  variable: "--font-noto-devanagari",
   display: "swap",
 });
 
@@ -60,7 +66,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`antialiased min-h-screen flex flex-col ${outfit.variable} ${plusJakarta.variable} ${stackSansNotch.variable} font-sans`}>
+      <body className={`antialiased min-h-screen flex flex-col ${outfit.variable} ${plusJakarta.variable} ${notoDevanagari.variable} ${stackSansNotch.variable} font-sans`}>
         <I18nProvider>
           <ThemeProvider
             attribute="class"
