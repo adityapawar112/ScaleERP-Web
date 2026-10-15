@@ -62,7 +62,7 @@ export default function ComparisonPage() {
             <div className="relative bg-zinc-900/50 dark:bg-white/50 backdrop-blur-2xl border border-white/10 dark:border-zinc-900/10 rounded-lg p-8 shadow-2xl overflow-hidden group hover:-translate-y-1 transition-transform duration-500">
                 <MediaMockup 
                   type="image" 
-                  src="/assets/InvoiceExample.png" 
+                  src="/assets/InvoiceExample.webp" 
                   caption="Clean, High-Velocity Invoice Generation vs Legacy ERP" 
                 />
             </div>
@@ -90,7 +90,7 @@ export default function ComparisonPage() {
             <div className="mt-auto pt-6">
                <MediaMockup 
                  type="image" 
-                 src="/assets/AddTransaction.png" 
+                 src="/assets/AddTransaction.webp" 
                  caption="Modern Transaction Creation Interface" 
                />
             </div>
@@ -107,7 +107,7 @@ export default function ComparisonPage() {
             <div className="mt-auto pt-6">
                <MediaMockup 
                  type="image" 
-                 src="/assets/TransactionRecords.png" 
+                 src="/assets/TransactionRecords.webp" 
                  caption="Streamlined Transaction & Ledger Audit Views" 
                />
             </div>

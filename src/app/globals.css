@@ -3,8 +3,14 @@
 @tailwind utilities;
 
 .font-logo,
-.font-stack-notch {
-  font-family: var(--font-stack-sans-notch), "Stack Sans Notch", sans-serif;
+.font-stack-notch,
+.font-notch,
+.font-display,
+.font-heading,
+h1, h2, h3, h4,
+.highlight-word,
+.highlight-notch {
+  font-family: var(--font-stack-sans-notch), "Stack Sans Notch", var(--font-outfit), sans-serif;
   font-optical-sizing: auto;
 }
 

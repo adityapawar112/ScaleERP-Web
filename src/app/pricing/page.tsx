@@ -10,6 +10,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { JargonTooltip } from "@/components/JargonTooltip";
 import { MediaMockup } from "@/components/MediaMockup";
 import { BlurIn } from "@/components/ui/blur-in";
+import { HardwareGrid } from "@/components/HardwareGrid";
 
 export default function PricingPage() {
   const { t } = useTranslation();
@@ -83,17 +84,19 @@ export default function PricingPage() {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 dark:bg-emerald-500 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500 dark:bg-emerald-600"></span>
                 </span>
-                <span className="text-sm font-semibold tracking-wide text-zinc-200 dark:text-zinc-800 uppercase">Enterprise Ready</span>
+                <span className="text-sm font-semibold tracking-wide text-zinc-200 dark:text-zinc-800 uppercase">
+                  {t("pricing_badge", "Honest, Transparent Shop Pricing")}
+                </span>
               </div>
             </BlurIn>
             <BlurIn delay={0.2}>
-              <h1 className="font-heading text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight">
-                {t("pricing_page_title")}
+              <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight">
+                {t("pricing_title", "No Per-Bill Charges. No Monthly Cloud Trap. Pay Once a Year.")}
               </h1>
             </BlurIn>
             <BlurIn delay={0.4}>
-              <p className="max-w-2xl text-xl sm:text-2xl text-zinc-400 dark:text-zinc-600 font-medium leading-relaxed">
-                {t("pricing_page_subtitle")}
+              <p className="max-w-2xl text-lg sm:text-xl text-zinc-400 dark:text-zinc-600 font-medium leading-relaxed">
+                {t("pricing_subtitle", "Every plan includes unlimited bills, unlimited products, unlimited party khatas, and full Marathi/English counter support.")}
               </p>
             </BlurIn>
           </div>
@@ -157,55 +160,43 @@ export default function PricingPage() {
           <Card className="flex flex-col border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 shadow-lg hover:shadow-xl transition-shadow relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-1 bg-zinc-200 dark:bg-zinc-800" />
             <CardHeader className="pt-10 pb-6">
-              <CardTitle className="text-2xl font-bold">{t("pricing_plan_retail")}</CardTitle>
-              <div className="mt-4 flex items-baseline text-4xl font-extrabold text-zinc-900 dark:text-zinc-50">
-                {t("pricing_standard_price").split('/')[0]}
-                <span className="ml-1 text-xl font-medium text-muted-foreground">/{t("pricing_standard_price").split('/')[1] || "Year"}</span>
+              <CardTitle className="text-2xl font-bold">{t("tier_std_name", "Standard Retail Counter")}</CardTitle>
+              <div className="mt-4 flex items-baseline text-4xl font-extrabold text-zinc-900 dark:text-zinc-50 font-notch tracking-tight">
+                {t("tier_std_price", "₹4,999 / year").split('/')[0]}
+                <span className="ml-1 text-xl font-medium text-muted-foreground">/{t("tier_std_price", "₹4,999 / year").split('/')[1] || "Year"}</span>
               </div>
               <CardDescription className="text-base mt-4">
-                {t("pricing_standard_copy")}
+                {t("tier_std_desc", "Ideal for single-counter agro, feed, hardware, and kirana shops that need fast billing and zero customer queues.")}
               </CardDescription>
             </CardHeader>
             <CardContent className="flex-1 space-y-8">
               <ul className="space-y-4 text-sm sm:text-base">
                 <li className="flex items-start">
                   <Check className="h-5 w-5 text-primary shrink-0 mr-3 mt-0.5" />
-                  <span>{t("pricing_feat_1")}</span>
+                  <span>1 Shop Computer Lifetime Machine-Locked License</span>
                 </li>
                 <li className="flex items-start">
                   <Check className="h-5 w-5 text-primary shrink-0 mr-3 mt-0.5" />
-                  <span>{t("pricing_feat_2")}</span>
+                  <span>Unlimited 3-Inch Thermal & A4 GST Invoices</span>
                 </li>
                 <li className="flex items-start">
                   <Check className="h-5 w-5 text-primary shrink-0 mr-3 mt-0.5" />
-                  <span>
-                    {t("pricing_feat_3").split(' ').map((word, i) => 
-                      word.toLowerCase().includes('ledger') || word.includes('लेजर्स') 
-                        ? <JargonTooltip key={i} explanation={t("tooltip_ledger")}>{word} </JargonTooltip> 
-                        : word + ' '
-                    )}
-                  </span>
+                  <span>Customer Bahi-Khata with Previous Dues Printed on Bill</span>
                 </li>
                 <li className="flex items-start">
                   <Check className="h-5 w-5 text-primary shrink-0 mr-3 mt-0.5" />
-                  <span>{t("pricing_feat_4")}</span>
+                  <span>Stock by Brand, Batch, and Purchase Rate</span>
                 </li>
                 <li className="flex items-start">
                   <Check className="h-5 w-5 text-primary shrink-0 mr-3 mt-0.5" />
-                  <span>
-                    {t("pricing_feat_5").split(' ').map((word, i) => 
-                      word.includes('RSA') 
-                        ? <JargonTooltip key={i} explanation={t("tooltip_rsa")}>{word} </JargonTooltip> 
-                        : word + ' '
-                    )}
-                  </span>
+                  <span>100% Offline Speed (Zero Wi-Fi or Cloud Dependence)</span>
                 </li>
               </ul>
               
               <div className="mt-8">
                 <MediaMockup 
                   type="image" 
-                  src="/assets/CustomBills.png" 
+                  src="/assets/CustomBills.webp" 
                   caption="Print Thermal or A4 Invoice" 
                   className="h-40" 
                 />
@@ -214,7 +205,7 @@ export default function PricingPage() {
             <CardFooter className="pb-8">
               <Button asChild className="w-full h-12 text-md" variant="outline">
                 <Link href="/download">
-                  {t("pricing_cta_primary")}
+                  {t("pricing_cta_primary", "Download 30-Day Free Trial")}
                 </Link>
               </Button>
             </CardFooter>
@@ -223,44 +214,44 @@ export default function PricingPage() {
           {/* Card B: Pro */}
           <Card className="flex flex-col border-terracotta dark:border-terracotta bg-white dark:bg-zinc-950 shadow-2xl relative overflow-hidden ring-1 ring-terracotta/20">
             <div className="absolute top-0 left-0 w-full h-1 bg-terracotta" />
-            <div className="absolute top-6 right-6 bg-terracotta/10 text-terracotta px-3 py-1 rounded-full text-xs font-bold tracking-wide uppercase">
-              Popular
+            <div className="absolute top-6 right-6 bg-terracotta/10 text-terracotta px-3 py-1 rounded-full text-xs font-bold tracking-wide uppercase font-notch">
+              Popular for Mandis
             </div>
             <CardHeader className="pt-10 pb-6">
-              <CardTitle className="text-2xl font-bold">{t("pricing_plan_wholesale")}</CardTitle>
-              <div className="mt-4 flex items-baseline text-4xl font-extrabold text-terracotta">
-                {t("pricing_pro_price").split('/')[0]}
-                <span className="ml-1 text-xl font-medium text-muted-foreground">/{t("pricing_pro_price").split('/')[1] || "Year"}</span>
+              <CardTitle className="text-2xl font-bold">{t("tier_pro_name", "Wholesale & Mandi Broker Pro")}</CardTitle>
+              <div className="mt-4 flex items-baseline text-4xl font-extrabold text-terracotta font-notch tracking-tight">
+                {t("tier_pro_price", "₹9,999 / year").split('/')[0]}
+                <span className="ml-1 text-xl font-medium text-muted-foreground">/{t("tier_pro_price", "₹9,999 / year").split('/')[1] || "Year"}</span>
               </div>
               <CardDescription className="text-base mt-4">
-                {t("pricing_pro_copy")}
+                {t("tier_pro_desc", "Built for wholesale distributors and APMC commission brokers managing multiple godowns, truck consignments, and heavy market Udhari.")}
               </CardDescription>
             </CardHeader>
             <CardContent className="flex-1 space-y-8">
-              <p className="font-medium text-sm text-zinc-900 dark:text-zinc-100">{t("pricing_feat_pro_1")}</p>
+              <p className="font-medium text-sm text-zinc-900 dark:text-zinc-100">Everything in Standard, plus:</p>
               <ul className="space-y-4 text-sm sm:text-base">
                 <li className="flex items-start">
                   <Zap className="h-5 w-5 text-terracotta shrink-0 mr-3 mt-0.5" />
-                  <span>{t("pricing_feat_pro_2")}</span>
+                  <span>Multi-Godown Stock Allocation (Godown A vs B vs Transit)</span>
                 </li>
                 <li className="flex items-start">
                   <Zap className="h-5 w-5 text-terracotta shrink-0 mr-3 mt-0.5" />
-                  <span>{t("pricing_feat_pro_3")}</span>
+                  <span>Wholesale Commission & Per-Bag Aadhati Ledgers</span>
                 </li>
                 <li className="flex items-start">
                   <Zap className="h-5 w-5 text-terracotta shrink-0 mr-3 mt-0.5" />
-                  <span>{t("pricing_feat_pro_4")}</span>
+                  <span>1-Click WhatsApp Payment Reminders in Marathi & Hindi</span>
                 </li>
                 <li className="flex items-start">
                   <Zap className="h-5 w-5 text-terracotta shrink-0 mr-3 mt-0.5" />
-                  <span>{t("pricing_feat_pro_5")}</span>
+                  <span>Automatic 2:00 AM Google Drive Khata Backups</span>
                 </li>
               </ul>
 
               <div className="mt-8">
                 <MediaMockup 
                   type="image" 
-                  src="/assets/WhatappManager.png" 
+                  src="/assets/WhatappManager.webp" 
                   caption="1-Click WhatsApp Reminders & Statements" 
                   className="h-40 border-terracotta/20" 
                 />
@@ -269,74 +260,93 @@ export default function PricingPage() {
             <CardFooter className="pb-8">
               <Button asChild className="w-full h-12 text-md bg-terracotta hover:bg-terracotta/90 text-white">
                 <Link href="/download">
-                  {t("pricing_cta_primary")}
+                  {t("pricing_cta_primary", "Download 30-Day Free Trial")}
                 </Link>
               </Button>
             </CardFooter>
           </Card>
 
         </div>
+
+        {/* Enterprise Multi-Counter Banner */}
+        <div className="mt-12 p-8 rounded-2xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="space-y-2 text-center md:text-left">
+            <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-muted-foreground font-notch">
+              <span>{t("tier_ent_name", "Multi-Counter Enterprise")}</span>
+              <span>•</span>
+              <span className="text-emerald-600 dark:text-emerald-400 font-bold font-notch">{t("tier_ent_price", "Custom Quote")}</span>
+            </div>
+            <h3 className="text-xl font-bold font-heading text-zinc-900 dark:text-zinc-100">
+              Running Multiple Counters, Mandi Stalls or Godown Branches?
+            </h3>
+            <p className="text-sm text-muted-foreground max-w-2xl leading-relaxed">
+              {t("tier_ent_desc", "For large trading yards and wholesale firms running multiple billing counters across branches.")} Includes dedicated setup assistance, custom invoice formatting, and direct phone support.
+            </p>
+          </div>
+          <Button asChild size="lg" variant="outline" className="border-zinc-300 dark:border-zinc-700 flex-shrink-0">
+            <Link href="/contact" prefetch={false}>
+              Contact Sales for Setup
+            </Link>
+          </Button>
+        </div>
       </section>
 
-      {/* 3. The Trust & FAQ Grid */}
+      {/* 3. Hardware Compatibility Reassurance */}
+      <section className="px-4 py-8 mx-auto w-full max-w-7xl">
+        <HardwareGrid />
+      </section>
+
+      {/* 4. The Trust & FAQ Grid */}
       <section className="bg-zinc-50 dark:bg-zinc-900/30 border-y border-zinc-200 dark:border-zinc-800">
         <div className="px-4 py-24 mx-auto w-full max-w-6xl lg:px-8">
           <div className="mb-12 text-center">
-            <h2 className="font-heading text-3xl font-bold tracking-tight sm:text-4xl mb-4 text-zinc-900 dark:text-zinc-100">Questions? We have answers.</h2>
-            <p className="text-muted-foreground max-w-xl mx-auto text-lg">Everything you need to know about ScaleERP billing and security.</p>
+            <h2 className="font-heading text-3xl font-bold tracking-tight sm:text-4xl mb-4 text-zinc-900 dark:text-zinc-100">
+              {t("download_faq_title", "Frequently Asked Questions")}
+            </h2>
+            <p className="text-muted-foreground max-w-xl mx-auto text-lg">
+              Practical answers to the common objections shopkeepers have before switching.
+            </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <Card className="bg-white dark:bg-zinc-950 border-zinc-200 dark:border-zinc-800 shadow-sm md:col-span-2">
+            <Card className="bg-white dark:bg-zinc-950 border-zinc-200 dark:border-zinc-800 shadow-sm">
               <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <HardDrive className="h-5 w-5 text-primary" />
-                  {t("pricing_faq_title_1")}
+                <CardTitle className="text-base flex items-center gap-2">
+                  <Zap className="h-5 w-5 text-terracotta flex-shrink-0" />
+                  <span>{t("faq_q1", "What happens if my shop internet goes down for 3 days?")}</span>
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground leading-relaxed">
-                  {t("pricing_faq_copy_1").split(' ').map((word, i) => 
-                      word.includes('SQLite') 
-                        ? <JargonTooltip key={i} explanation={t("tooltip_airgapped")}>{word} </JargonTooltip> 
-                        : word + ' '
-                  )}
+                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                  {t("faq_a1", "Nothing stops. Your billing, stock deduction, thermal printing, and party khatas run 100% inside your shop computer. You can print 5,000 bills with the internet cable unplugged.")}
                 </p>
-                <div className="mt-6">
-                  <MediaMockup 
-                    type="image" 
-                    src="/assets/Backups.png" 
-                    caption="1-Click Local Backups & Restores" 
-                    className="h-32" 
-                  />
-                </div>
               </CardContent>
             </Card>
 
             <Card className="bg-white dark:bg-zinc-950 border-zinc-200 dark:border-zinc-800 shadow-sm">
               <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Zap className="h-5 w-5 text-primary" />
-                  {t("pricing_faq_title_2")}
+                <CardTitle className="text-base flex items-center gap-2">
+                  <HardDrive className="h-5 w-5 text-primary flex-shrink-0" />
+                  <span>{t("faq_q2", "What if my computer hard disk crashes or catches a virus?")}</span>
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground leading-relaxed">
-                  {t("pricing_faq_copy_2")}
+                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                  {t("faq_a2", "ScaleERP creates a daily local backup zip on your PC and automatically uploads an encrypted copy to your personal Google Drive at 2:00 AM. If you change your PC, we restore your entire business down to the last rupee in 5 minutes.")}
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="bg-white dark:bg-zinc-950 border-zinc-200 dark:border-zinc-800 shadow-sm md:col-span-3">
+            <Card className="bg-white dark:bg-zinc-950 border-zinc-200 dark:border-zinc-800 shadow-sm">
               <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Download className="h-5 w-5 text-primary" />
-                  {t("pricing_faq_title_3")}
+                <CardTitle className="text-base flex items-center gap-2">
+                  <Download className="h-5 w-5 text-emerald-500 flex-shrink-0" />
+                  <span>{t("faq_q3", "My counter staff only reads Marathi or Hindi. Can they use this?")}</span>
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground leading-relaxed">
-                  {t("pricing_faq_copy_3")}
+                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                  {t("faq_a3", "Yes. You can switch the entire software screen and printed customer receipts to Marathi or Hindi in one click. It is designed so a newly hired clerk can learn billing in 15 minutes without any accounting background.")}
                 </p>
               </CardContent>
             </Card>

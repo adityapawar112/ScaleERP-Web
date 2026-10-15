@@ -62,7 +62,7 @@ export default function ToolsPage() {
             <div className="relative bg-zinc-900/50 dark:bg-white/50 backdrop-blur-2xl border border-white/10 dark:border-zinc-900/10 rounded-lg p-8 shadow-2xl overflow-hidden group hover:-translate-y-1 transition-transform duration-500">
                 <MediaMockup 
                   type="image" 
-                  src="/assets/CustomBills.png" 
+                  src="/assets/CustomBills.webp" 
                   caption={t("tools_hero_caption", "Customizable Thermal & A4 Invoice Builder")} 
                   priority={true}
                 />
@@ -87,7 +87,7 @@ export default function ToolsPage() {
             <div className="mt-6">
               <MediaMockup 
                 type="image" 
-                src="/assets/InvoiceExample.png" 
+                src="/assets/InvoiceExample.webp"
                 caption={t("tools_invoice_settings", "Invoice Customization: Terms, Signatures, and Tax Calculations")} 
               />
             </div>
@@ -98,7 +98,7 @@ export default function ToolsPage() {
             <div className="mt-6">
               <MediaMockup 
                 type="image" 
-                src="/assets/MarathiDashboard.png" 
+                src="/assets/MarathiDashboard.webp" 
                 caption={t("tools_marathi_invoice", "Bilingual Localized Interface (मराठी & English)")} 
               />
             </div>
@@ -122,7 +122,7 @@ export default function ToolsPage() {
             <div className="mt-6">
               <MediaMockup 
                 type="image" 
-                src="/assets/Dashboard.png" 
+                src="/assets/Dashboard.webp" 
                 caption={t("tools_summary_widget", "Executive Dashboard: Live Net Receivables & Profit Metrics")} 
               />
             </div>
@@ -133,7 +133,7 @@ export default function ToolsPage() {
             <div className="mt-6">
               <MediaMockup 
                 type="image" 
-                src="/assets/TransactionRecords.png" 
+                src="/assets/TransactionRecords.webp" 
                 caption={t("tools_party_table", "Audit Trails & Party Ledger Breakdown")} 
               />
             </div>
@@ -144,7 +144,7 @@ export default function ToolsPage() {
             <div className="mt-6">
               <MediaMockup 
                 type="image" 
-                src="/assets/Reports.png" 
+                src="/assets/Reports.webp" 
                 caption={t("tools_analytics_chart", "Comprehensive Reporting: Sales, Purchases, Stock Flow")} 
               />
             </div>

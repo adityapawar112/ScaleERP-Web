@@ -62,7 +62,7 @@ export default function PlatformPage() {
             <div className="relative bg-zinc-900/50 dark:bg-white/50 backdrop-blur-2xl border border-white/10 dark:border-zinc-900/10 rounded-lg p-8 shadow-2xl overflow-hidden group hover:-translate-y-1 transition-transform duration-500">
                 <MediaMockup 
                   type="image" 
-                  src="/assets/Dashboard.png" 
+                  src="/assets/Dashboard.webp" 
                   caption={t("platform_hero_caption", "Offline-First Point of Sale & Operational Terminal")} 
                   priority={true}
                 />
@@ -87,7 +87,7 @@ export default function PlatformPage() {
             <div className="mt-6">
               <MediaMockup 
                 type="image" 
-                src="/assets/TransactionRecords.png" 
+                src="/assets/TransactionRecords.webp" 
                 caption={t("platform_inv_preview", "Live Godown Stock Inventory Grid")} 
               />
             </div>
@@ -98,7 +98,7 @@ export default function PlatformPage() {
             <div className="mt-6">
               <MediaMockup 
                 type="image" 
-                src="/assets/AddTransaction.png" 
+                src="/assets/AddTransaction.webp" 
                 caption={t("platform_stock_adjust", "Rapid Stock Entry and Barcode/SKU Selection")} 
               />
             </div>
@@ -109,7 +109,7 @@ export default function PlatformPage() {
             <div className="mt-6">
               <MediaMockup 
                 type="image" 
-                src="/assets/Reports.png" 
+                src="/assets/Reports.webp" 
                 caption={t("platform_stock_reports", "Low Stock Alerts & Inventory Depletion Velocity")} 
               />
             </div>
@@ -133,7 +133,7 @@ export default function PlatformPage() {
             <div className="mt-6">
               <MediaMockup 
                 type="image" 
-                src="/assets/TransactionRecords.png" 
+                src="/assets/TransactionRecords.webp" 
                 caption={t("platform_party_ledger", "Party Balances & Full Transaction History")} 
               />
             </div>
@@ -144,7 +144,7 @@ export default function PlatformPage() {
             <div className="mt-6">
               <MediaMockup 
                 type="image" 
-                src="/assets/InvoiceExample.png" 
+                src="/assets/InvoiceExample.webp" 
                 caption={t("platform_settle_invoice", "Clean Settle Account Dialog & Payment Slips")} 
               />
             </div>
@@ -174,7 +174,7 @@ export default function PlatformPage() {
             <div className="mt-6 max-w-2xl">
               <MediaMockup 
                 type="image" 
-                src="/assets/scaleerp-architecture.png" 
+                src="/assets/scaleerp-architecture.webp" 
                 caption={t("platform_engine_arch", "SQLite WAL Local Engine (<2ms Latency) & Cloud Telemetry")} 
               />
             </div>

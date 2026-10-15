@@ -58,7 +58,7 @@ export default function ContactPage() {
               type="image" 
               caption="ScaleERP Technical Expert Avatar" 
               className="h-48 w-48 lg:h-64 lg:w-64 rounded-full border-4 border-white dark:border-zinc-800 shadow-xl p-0 overflow-hidden" 
-              src="/assets/contact_expert.png"
+              src="/assets/contact_expert.webp"
             />
           </BlurIn>
         </div>

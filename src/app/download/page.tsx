@@ -26,6 +26,8 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { JargonTooltip } from "@/components/JargonTooltip";
+import { HardwareGrid } from "@/components/HardwareGrid";
+import { MigrationWalkthrough } from "@/components/MigrationWalkthrough";
 
 interface DemoKeyResponse {
   success: boolean;
@@ -198,19 +200,19 @@ export default function DownloadPage() {
           </Badge>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold tracking-tight text-foreground">
-            {t("download_hero_title", "Fast Offline Billing & Inventory for Windows")}
+            {t("dl_hero_title", "Install ScaleERP on Your Shop Computer in 2 Minutes")}
           </h1>
 
           <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
             {t(
-              "download_hero_subtitle",
-              "Built for retail counters, godowns, and wholesale distributors. Runs 100% locally on your PC with instant receipt printing, reliable offline accounting, and zero cloud delays."
+              "dl_hero_desc",
+              "Click below to download the genuine Windows installer and get an instant 30-day Wholesale Pro trial key on your screen. No credit card required."
             )}
           </p>
 
           <div className="pt-2">
             <a
-              href="#requirements"
+              href="#hardware-compatibility"
               className="text-xs font-medium text-muted-foreground hover:text-foreground inline-flex items-center gap-1 transition-colors"
             >
               <span>{t("download_jump_license", "View hardware requirements & system specs ↓")}</span>
@@ -334,7 +336,21 @@ export default function DownloadPage() {
           </Card>
         </div>
 
-        {/* 3. Cryptographic Binary Integrity (SHA-256) */}
+        {/* Safe Guarantee Banner */}
+        <div className="p-4 sm:p-5 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-center flex flex-col sm:flex-row items-center justify-center gap-3">
+          <ShieldCheck className="w-5 h-5 text-emerald-600 dark:text-emerald-400 flex-shrink-0" />
+          <p className="text-xs sm:text-sm font-semibold text-emerald-800 dark:text-emerald-200">
+            {t("dl_safe_badge", "100% Genuine & Virus-Free Official Build • Verified Safe for Windows 10 & Windows 11 Accounting PCs")}
+          </p>
+        </div>
+
+        {/* 3. Budget Hardware Compatibility Grid */}
+        <HardwareGrid />
+
+        {/* 4. 10-Minute Excel Party Migration Walkthrough */}
+        <MigrationWalkthrough />
+
+        {/* 5. Safe Binary Integrity (SHA-256 for Audits) */}
         <Card className="border border-border/70 bg-card/40 backdrop-blur-sm overflow-hidden">
           <CardHeader className="p-6 pb-3">
             <div className="flex items-center gap-2.5">
@@ -404,128 +420,45 @@ export default function DownloadPage() {
           </CardContent>
         </Card>
 
-        {/* 4. Hardware & System Requirements Grid */}
-        <div id="requirements" className="space-y-6 pt-4">
-          <div className="text-center space-y-2">
-            <h2 className="text-2xl sm:text-3xl font-heading font-bold text-foreground">
-              {t("download_sysreq_title", "Hardware & System Requirements")}
-            </h2>
-            <p className="text-sm text-muted-foreground max-w-xl mx-auto">
-              {t(
-                "download_sysreq_subtitle",
-                "Optimized for high-speed counter checkout on standard commercial PC hardware."
-              )}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {/* OS */}
-            <div className="p-5 rounded-xl border border-border/60 bg-card/40 backdrop-blur-sm space-y-2">
-              <div className="flex items-center gap-2.5 text-brand-dark dark:text-brand-primary">
-                <FaWindows className="w-4 h-4" />
-                <span className="font-semibold text-sm text-foreground">Operating System</span>
-              </div>
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                Windows 10 (64-bit) or Windows 11. Standard user privileges supported.
-              </p>
-            </div>
-
-            {/* CPU */}
-            <div className="p-5 rounded-xl border border-border/60 bg-card/40 backdrop-blur-sm space-y-2">
-              <div className="flex items-center gap-2.5 text-blue-500">
-                <Cpu className="w-4 h-4" />
-                <span className="font-semibold text-sm text-foreground">Processor</span>
-              </div>
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                Dual-Core 2.0 GHz or faster (Intel Core i3 / AMD Ryzen 3 or equivalent).
-              </p>
-            </div>
-
-            {/* RAM */}
-            <div className="p-5 rounded-xl border border-border/60 bg-card/40 backdrop-blur-sm space-y-2">
-              <div className="flex items-center gap-2.5 text-emerald-500">
-                <Laptop className="w-4 h-4" />
-                <span className="font-semibold text-sm text-foreground">Memory (RAM)</span>
-              </div>
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                4 GB minimum (8 GB recommended for stores managing 50,000+ stock master items).
-              </p>
-            </div>
-
-            {/* Storage */}
-            <div className="p-5 rounded-xl border border-border/60 bg-card/40 backdrop-blur-sm space-y-2">
-              <div className="flex items-center gap-2.5 text-amber-500">
-                <HardDrive className="w-4 h-4" />
-                <span className="font-semibold text-sm text-foreground">Storage</span>
-              </div>
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                500 MB free space. Solid-State Drive (SSD) recommended for instantaneous ledger writes.
-              </p>
-            </div>
-
-            {/* Printers & Peripherals */}
-            <div className="p-5 rounded-xl border border-border/60 bg-card/40 backdrop-blur-sm space-y-2">
-              <div className="flex items-center gap-2.5 text-purple-500">
-                <Printer className="w-4 h-4" />
-                <span className="font-semibold text-sm text-foreground">Printers & Scanners</span>
-              </div>
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                Thermal printers (ESC/POS 2-inch & 3-inch), Laser/Inkjet A4 & A5 printers, and standard USB barcode scanners.
-              </p>
-            </div>
-
-            {/* Connectivity */}
-            <div className="p-5 rounded-xl border border-border/60 bg-card/40 backdrop-blur-sm space-y-2">
-              <div className="flex items-center gap-2.5 text-brand-dark dark:text-brand-primary">
-                <Lock className="w-4 h-4" />
-                <span className="font-semibold text-sm text-foreground">Connectivity</span>
-              </div>
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                100% offline billing. Internet is only required for initial 1-click activation and optional cloud backups.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* 5. Clean FAQ Section */}
+        {/* 6. Merchant FAQs */}
         <div className="space-y-6 pt-6 border-t border-border/50">
           <div className="text-center space-y-2">
             <h2 className="text-2xl font-heading font-bold text-foreground">
               {t("download_faq_title", "Frequently Asked Questions")}
             </h2>
             <p className="text-sm text-muted-foreground">
-              Common questions about downloading, running, and licensing ScaleERP.
+              Straightforward operational answers for wholesale and retail shop owners.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-5 rounded-xl border border-border/50 bg-card/40 space-y-2">
+            <div className="p-6 rounded-2xl border border-border/60 bg-card/60 backdrop-blur-sm space-y-3">
               <h3 className="font-semibold text-sm text-foreground flex items-center gap-2">
                 <HelpCircle className="w-4 h-4 text-brand-primary flex-shrink-0" />
-                <span>Does ScaleERP need internet to bill?</span>
+                <span>{t("faq_q1", "What happens if my shop internet goes down for 3 days?")}</span>
               </h3>
               <p className="text-xs text-muted-foreground leading-relaxed">
-                No. ScaleERP runs 100% offline. Internet connectivity is only needed for the quick initial 1-click activation and optional end-of-day cloud backups.
+                {t("faq_a1", "Nothing stops. Your billing, stock deduction, thermal printing, and party khatas run 100% inside your shop computer. You can print 5,000 bills with the internet cable unplugged.")}
               </p>
             </div>
 
-            <div className="p-5 rounded-xl border border-border/50 bg-card/40 space-y-2">
+            <div className="p-6 rounded-2xl border border-border/60 bg-card/60 backdrop-blur-sm space-y-3">
               <h3 className="font-semibold text-sm text-foreground flex items-center gap-2">
                 <Printer className="w-4 h-4 text-emerald-500 flex-shrink-0" />
-                <span>What printers and scanners work?</span>
+                <span>{t("faq_q2", "What if my computer hard disk crashes or catches a virus?")}</span>
               </h3>
               <p className="text-xs text-muted-foreground leading-relaxed">
-                ScaleERP works out of the box with standard 2-inch and 3-inch ESC/POS thermal printers, standard A4/A5 laser or inkjet printers, and standard USB barcode scanners.
+                {t("faq_a2", "ScaleERP creates a daily local backup zip on your PC and automatically uploads an encrypted copy to your personal Google Drive at 2:00 AM. If you change your PC, we restore your entire business down to the last rupee in 5 minutes.")}
               </p>
             </div>
 
-            <div className="p-5 rounded-xl border border-border/50 bg-card/40 space-y-2">
+            <div className="p-6 rounded-2xl border border-border/60 bg-card/60 backdrop-blur-sm space-y-3">
               <h3 className="font-semibold text-sm text-foreground flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-blue-500 flex-shrink-0" />
-                <span>What happens after the 30-day trial?</span>
+                <span>{t("faq_q3", "My counter staff only reads Marathi or Hindi. Can they use this?")}</span>
               </h3>
               <p className="text-xs text-muted-foreground leading-relaxed">
-                All your store data, stock records, and invoices remain 100% safe in your local database. When you purchase a permanent license, simply enter your new key to continue uninterrupted.
+                {t("faq_a3", "Yes. You can switch the entire software screen and printed customer receipts to Marathi or Hindi in one click. It is designed so a newly hired clerk can learn billing in 15 minutes without any accounting background.")}
               </p>
             </div>
           </div>

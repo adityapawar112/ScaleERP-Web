@@ -62,7 +62,7 @@ export default function TasksPage() {
             <div className="relative bg-zinc-900/50 dark:bg-white/50 backdrop-blur-2xl border border-white/10 dark:border-zinc-900/10 rounded-lg p-8 shadow-2xl overflow-hidden group hover:-translate-y-1 transition-transform duration-500">
                 <MediaMockup 
                   type="image" 
-                  src="/assets/WhatappManager.png" 
+                  src="/assets/WhatappManager.webp" 
                   caption={t("tasks_hero_caption", "Instant WhatsApp Share & Payment Tracking")} 
                   priority={true}
                 />
@@ -87,7 +87,7 @@ export default function TasksPage() {
             <div className="mt-6">
               <MediaMockup 
                 type="image" 
-                src="/assets/AddTransaction.png" 
+                src="/assets/AddTransaction.webp" 
                 caption={t("tasks_bill_share", "One-Click WhatsApp Share on Invoice Generation")} 
               />
             </div>
@@ -98,7 +98,7 @@ export default function TasksPage() {
             <div className="mt-6">
               <MediaMockup 
                 type="image" 
-                src="/assets/WhatappManager.png" 
+                src="/assets/WhatappManager.webp" 
                 caption={t("tasks_whatsapp_reminder", "Customizable WhatsApp Payment Reminders & Message Templates")} 
               />
             </div>
@@ -122,7 +122,7 @@ export default function TasksPage() {
             <div className="mt-6">
               <MediaMockup 
                 type="image" 
-                src="/assets/Backups.png" 
+                src="/assets/Backups.webp" 
                 caption={t("tasks_backup_status", "Automated Local & Cloud Backup Encryption")} 
               />
             </div>
@@ -133,7 +133,7 @@ export default function TasksPage() {
             <div className="mt-6">
               <MediaMockup 
                 type="image" 
-                src="/assets/Reports.png" 
+                src="/assets/Reports.webp" 
                 caption={t("tasks_export_reports", "Comprehensive Data Export to Excel & PDF Reports")} 
               />
             </div>
@@ -146,7 +146,7 @@ export default function TasksPage() {
             <div className="mt-6">
               <MediaMockup 
                 type="image" 
-                src="/assets/LicenseMangement.png" 
+                src="/assets/LicenseMangement.webp" 
                 caption={t("tasks_license_mgmt", "Cryptographic Hardware ID & Offline Machine Licensing")} 
               />
             </div>

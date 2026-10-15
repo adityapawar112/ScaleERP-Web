@@ -4,30 +4,30 @@ import { MediaMockup } from "@/components/MediaMockup";
 function getScreenshotForDescription(desc: string): string {
   const lower = desc.toLowerCase();
   if (lower.includes("license") || lower.includes("fingerprint") || lower.includes("tamper") || lower.includes("clock") || lower.includes("hardware")) {
-    return "/assets/LicenseMangement.png";
+    return "/assets/LicenseMangement.webp";
   }
   if (lower.includes("backup") || lower.includes("restore") || lower.includes("google") || lower.includes("cloud")) {
-    return "/assets/Backups.png";
+    return "/assets/Backups.webp";
   }
   if (lower.includes("whatsapp") || lower.includes("preset") || lower.includes("template")) {
-    return "/assets/WhatappManager.png";
+    return "/assets/WhatappManager.webp";
   }
   if (lower.includes("report") || lower.includes("excel") || lower.includes("pdf") || lower.includes("export")) {
-    return "/assets/Reports.png";
+    return "/assets/Reports.webp";
   }
   if (lower.includes("broker") || lower.includes("customer") || lower.includes("ledger") || lower.includes("history")) {
-    return "/assets/TransactionRecords.png";
+    return "/assets/TransactionRecords.webp";
   }
   if (lower.includes("invoice") || lower.includes("thermal") || lower.includes("layout") || lower.includes("styling") || lower.includes("brand") || lower.includes("setting")) {
-    return "/assets/CustomBills.png";
+    return "/assets/CustomBills.webp";
   }
   if (lower.includes("sale") || lower.includes("bill") || lower.includes("product") || lower.includes("transaction") || lower.includes("payment details") || lower.includes("stock")) {
-    return "/assets/AddTransaction.png";
+    return "/assets/AddTransaction.webp";
   }
   if (lower.includes("marathi") || lower.includes("language")) {
-    return "/assets/MarathiDashboard.png";
+    return "/assets/MarathiDashboard.webp";
   }
-  return "/assets/Dashboard.png";
+  return "/assets/Dashboard.webp";
 }
 
 export function MediaPlaceholder({ description, type = "image" }: { description: string, type?: "image" | "video" }) {

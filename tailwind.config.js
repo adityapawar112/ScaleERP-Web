@@ -18,7 +18,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ["var(--font-plus-jakarta)", "'Noto Sans Devanagari'", "'Nirmala UI'", "'Mangal'", "sans-serif"],
-        heading: ["var(--font-outfit)", "sans-serif"],
+        heading: ["var(--font-stack-sans-notch)", "var(--font-outfit)", "'Stack Sans Notch'", "sans-serif"],
         logo: ["var(--font-stack-sans-notch)", "'Stack Sans Notch'", "sans-serif"],
         notch: ["var(--font-stack-sans-notch)", "'Stack Sans Notch'", "sans-serif"],
         bauhaus: ["var(--font-stack-sans-notch)", "var(--font-outfit)", "sans-serif"],
