@@ -6,27 +6,31 @@
 .font-stack-notch,
 .font-notch,
 .highlight-notch {
-  font-family: var(--font-stack-sans-notch), "Stack Sans Notch", var(--font-outfit), sans-serif;
+  font-family: var(--font-outfit), var(--font-noto-devanagari), sans-serif;
   font-optical-sizing: auto;
 }
 
 .font-outfit {
-  font-family: var(--font-outfit), sans-serif;
+  font-family: var(--font-outfit), var(--font-noto-devanagari), sans-serif;
 }
 
 .font-jakarta {
-  font-family: var(--font-plus-jakarta), sans-serif;
+  font-family: var(--font-plus-jakarta), var(--font-noto-devanagari), sans-serif;
 }
 
 /* Base Headings: Default to Outfit for clean display readability without ink-trap letter cuts */
-h2, h3, h4, .font-heading {
-  font-family: var(--font-outfit), sans-serif;
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: var(--font-outfit), var(--font-noto-devanagari), sans-serif;
 }
 
 /* Devanagari Script Fix: Prevent line-height clipping top matras and bottom ukaars */
 html[lang="mr"] h1, html[lang="hi"] h1,
 html[lang="mr"] h2, html[lang="hi"] h2,
-html[lang="mr"] h3, html[lang="hi"] h3 {
+html[lang="mr"] h3, html[lang="hi"] h3,
+html[lang="mr"] h4, html[lang="hi"] h4,
+html[lang="mr"] .font-heading, html[lang="hi"] .font-heading,
+html[lang="mr"] .font-logo, html[lang="hi"] .font-logo,
+html[lang="mr"] .font-notch, html[lang="hi"] .font-notch {
   line-height: 1.35 !important;
   letter-spacing: 0em !important;
   font-family: var(--font-noto-devanagari), var(--font-outfit), sans-serif !important;
@@ -41,6 +45,7 @@ html[lang="mr"] span, html[lang="hi"] span {
   .theme {
   }
   :root {
+    --font-stack-sans-notch: var(--font-outfit);
     /* ScaleERP Centralized Brand Design Tokens */
     --brand-primary: #00E600;
     --brand-primary-tint-1: #4DEE4D;

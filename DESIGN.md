@@ -17,7 +17,7 @@ colors:
   brand-white: "#FFFFFF"
 typography:
   display:
-    fontFamily: "var(--font-stack-sans-notch), 'Stack Sans Notch', sans-serif"
+    fontFamily: "var(--font-outfit), sans-serif"
   heading:
     fontFamily: "var(--font-outfit), sans-serif"
   body:
@@ -40,7 +40,7 @@ ScaleERP Web is built to feel clean, high-precision, and surgically modern. The 
 - **Vibrant Electric Green Primary Accent (`#00E600`)**: Core brand voice representing active telemetry, positive ledger balances, high system health, and primary action buttons.
 - **Deep Charcoal Dark Mode Slate (`#171717`)**: High-contrast, low-eye-strain backdrop for extended billing shifts and nocturnal warehouse auditing.
 - **Clean Neutral Canvas (`#F5F5F5`)**: High-contrast, clean neutral background for light mode counter operations.
-- **Stack Sans Notch & Modern Typography**: Stack Sans Notch for logos, brand badges, and technical counters; Outfit for commanding headlines; Plus Jakarta Sans for dense, tabular financial ledgers.
+- **Outfit & Modern Typography**: Outfit for commanding headlines, logos, and badges; Plus Jakarta Sans for dense, tabular financial ledgers; Noto Sans Devanagari for Marathi and Hindi typing.
 
 ---
 
@@ -67,10 +67,9 @@ ScaleERP Web is built to feel clean, high-precision, and surgically modern. The 
 
 ## Typography Hierarchy
 
-- **Brand & Display**: Stack Sans Notch (`var(--font-stack-sans-notch)`). Clean, engineered aesthetic used for brand badges, 16-digit license keys, and hardware IDs.
-- **Display & Headings**: Outfit (`var(--font-outfit)`). Geometric, authoritative, and clean.
+- **Brand, Display & Headings**: Outfit (`var(--font-outfit)`). Geometric, authoritative, and clean for headlines, badges, and brand logos.
 - **Body & Dense Ledgers**: Plus Jakarta Sans (`var(--font-plus-jakarta)`). Highly legible across high-density financial tables and mobile screens.
-- **Indic Scripts**: Noto Sans Devanagari / Nirmala UI / Mangal for Hindi and Marathi scripts.
+- **Indic Scripts**: Noto Sans Devanagari (`var(--font-noto-devanagari)`) with custom matra/ukaar line-height padding for flawless Hindi and Marathi scripts.
 
 ---
 

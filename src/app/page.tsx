@@ -112,17 +112,18 @@ export default function Home() {
           </Badge>
           
           <BlurIn delay={0}>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] leading-[1.08] font-notch font-extrabold tracking-tight text-foreground drop-shadow-sm max-w-4xl">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] leading-[1.08] font-heading font-extrabold tracking-tight text-foreground drop-shadow-sm max-w-4xl">
               {t('hero_headline_pt1', 'Print Bills in ')}
               <span className="text-emerald-600 dark:text-emerald-400 font-bold">{t('hero_headline_pt2', '4 Seconds')}</span>
               {t('hero_headline_pt3', '. Recover ')}
               <span className="text-emerald-600 dark:text-emerald-400 font-bold">{t('hero_headline_pt4', 'Every Rupee')}</span>
-              {t('hero_headline_pt5', ' of Udhari. Runs 100% Without Internet.')}
+              {t('hero_headline_pt5', ' of Udhari.')}
             </h1>
           </BlurIn>
           
           <BlurIn delay={0.2}>
             <p className="font-sans text-base sm:text-lg md:text-xl text-foreground/80 font-normal max-w-2xl mx-auto leading-relaxed">
+              <span className="font-semibold text-foreground">{t('hero_subheadline_lead', 'Runs 100% without internet.')}</span>{' '}
               {t('hero_subheadline', 'Stop losing customers to slow software and internet cuts. Manage counter billing, multi-godown stock, broker commissions, and customer khatas in English, Hindi, and Marathi.')}
             </p>
           </BlurIn>

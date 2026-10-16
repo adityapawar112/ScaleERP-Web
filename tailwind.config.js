@@ -18,13 +18,13 @@ export default {
     extend: {
       fontFamily: {
         sans: ["var(--font-plus-jakarta)", "var(--font-noto-devanagari)", "'Noto Sans Devanagari'", "'Nirmala UI'", "sans-serif"],
-        outfit: ["var(--font-outfit)", "sans-serif"],
-        jakarta: ["var(--font-plus-jakarta)", "sans-serif"],
-        heading: ["var(--font-outfit)", "sans-serif"],
-        logo: ["var(--font-stack-sans-notch)", "'Stack Sans Notch'", "sans-serif"],
-        notch: ["var(--font-stack-sans-notch)", "'Stack Sans Notch'", "sans-serif"],
-        bauhaus: ["var(--font-outfit)", "sans-serif"],
-        display: ["var(--font-outfit)", "var(--font-stack-sans-notch)", "sans-serif"],
+        outfit: ["var(--font-outfit)", "var(--font-noto-devanagari)", "sans-serif"],
+        jakarta: ["var(--font-plus-jakarta)", "var(--font-noto-devanagari)", "sans-serif"],
+        heading: ["var(--font-outfit)", "var(--font-noto-devanagari)", "sans-serif"],
+        logo: ["var(--font-outfit)", "var(--font-noto-devanagari)", "sans-serif"],
+        notch: ["var(--font-outfit)", "var(--font-noto-devanagari)", "sans-serif"],
+        bauhaus: ["var(--font-outfit)", "var(--font-noto-devanagari)", "sans-serif"],
+        display: ["var(--font-outfit)", "var(--font-noto-devanagari)", "sans-serif"],
       },
       colors: {
         border: "var(--border)",
